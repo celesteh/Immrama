@@ -18,7 +18,7 @@ height = config.getint('working', 'height')
 filename = config.get('working', 'file') # -> "value1"
 data_dir = config.get('working', 'data') # -> "value1"
 
-
+# check config
 if width is None:
     width = 800
 if height is None:
@@ -27,6 +27,7 @@ if data_dir.endswith('/') == False:
     data_dir = data_dir +'/'
 
 
+# when we want to read a file
 def read_file(filename):
     text = ""
     
@@ -68,7 +69,7 @@ def read_text():
 
     return text
 
-
+# add anything unicode
 def add_text(text, drawing, size, x,y, rotate):
     #print('add_text, {}, {}, {}, {}'.format(text, size, x, y))
 
@@ -103,6 +104,8 @@ def add_text(text, drawing, size, x,y, rotate):
     g.add(gtext)
     drawing.add(g)
 
+
+# one of the items in the pallete
 def make_dots(drawing, num, topx, topy, botx, boty, max_s, min_s):
 
     if botx < topx:
@@ -124,6 +127,10 @@ def make_dots(drawing, num, topx, topy, botx, boty, max_s, min_s):
         r = random.randint(max_s, min_s)
         drawing.add(drawing.circle(center=(x, y), r=r))
 
+#end dots
+
+
+# try and sort out the font
 encoded_font = ""
 with open(data_dir + "Bravura64.txt") as font:
     encoded_font=font.read() 
@@ -138,6 +145,7 @@ dwg.add_stylesheet('{0}style.css', 'style', u'no', u'all'.format(data_dir))
 dwg.add(svgwrite.image.Image('{}Bravura.svg'.format(data_dir)))
 
 
+# the pallete of music symbols
 glyphs = ['&#x0e201;','&#x1d157;','&#x1d15d;','&#x0e0c1;','&#x0e0c2;','&#x0e155;','&#x0e159;',
 '&#x0e15B;','&#x1d158;','&#x0e522;','&#x0e523;','&#x0e524;','&#x1D13D;','&#x0e009;','&#x1d1b1;',
 '&#x0e5b6;','&#x1d1b2;','&#x0e5b7;','&#x1d116;','&#x0e020;','&#x1d117;','&#x0e021;','&#x1d118;',
@@ -190,6 +198,7 @@ def rand_y():
 
 def dots():
 
+    #dot bounds
     radius = random.randint(1, 8)
     topx = rand_x()
     topy = rand_y()
@@ -250,7 +259,7 @@ def squiggle():
 
     path = dwg.path(d=points, stroke='black', stroke_width = width, fill='white')
     dwg.add(path)
-
+#end squiggle
 
 def glyph():
     #def add_text(text, drawing, size, x,y):
@@ -296,6 +305,8 @@ if random.randrange(0,100) < 36:
 
     # text images have 1-2 items
     items = random.randrange(2,3)
+
+#end the if that decides text stuff
 
 tasks = range(len(options)) 
 random.shuffle(tasks)
