@@ -29,10 +29,10 @@ if webdir.endswith('/') == False:
 dest = webdir+'score.svg'
 
 if dur is None:
-    dur = 25
+    dur = 300
 
 if slide_dur is None:
-    slide_dur is 300
+    slide_dur is 25
 
 if init_sleep is None:
     init_sleep = 5
@@ -67,21 +67,29 @@ while loop > 0 :
     before = time.time()
     os.system("./im_render.py")
     after = time.time()
+
     shutil.copy(tmp, dest)
+
+
+    # calculate the timings
+    if first == 1:
+        #dont' start counting until we've shown the first image
+        start_time = after
+        first = 0
+
 
     gen_dur = after - before
 
     # sleep for a bit
-    if first ==1:
+    if (time.time() - start_time) + slide_dur >= dur: # are we at the end?
         time.sleep(slide_dur)
-        first = 0
     elif slide_dur > gen_dur:
         time.sleep(slide_dur - gen_dur)
  
     prev = after
 
     # should we keep looping, or has it been long enough?
-    loop = time.time() - start_time
+    loop = dur - (time.time() - start_time)
     
 #end while
 
