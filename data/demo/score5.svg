@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet href="style.css" type="text/css" title="style" alternate="no" media="all"?><svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="600px"
+   version="1.1"
+   width="800px"
+   id="svg2"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="imramma.svg">
+  <metadata
+     id="metadata34">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="434"
+     inkscape:window-height="415"
+     id="namedview32"
+     showgrid="false"
+     inkscape:zoom="0.295"
+     inkscape:cx="400"
+     inkscape:cy="300"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4">
+    <style
+       type="text/css"
+       id="style6">@font-face {
+  font-family: Bravura;
+  src: local(&quot;Bravura Regular&quot;),
+    local(&quot;BravuraRegular&quot;), 
+    local(&quot;Bravura&quot;),
+     url(Bravura.otf) format(&quot;opentype&quot;),
+    url(Bravura.svg) format(&quot;svg&quot;);
+}
+</style>
+  </defs>
+  <image
+     sodipodi:absref="/tmp/./data/Bravura.svg"
+     xlink:href="./data/Bravura.svg"
+     id="image8" />
+  <path
+     d="M 168 179 L 156 771"
+     id="id1" />
+  <g
+     style="font-size:81px;stroke:#000000;stroke-width:1;font-family:Bravura"
+     id="text13">
+    <path
+       d="m 198.84372,220.13353 0.82078,-40.49168 -2.59147,-0.0525 -0.82078,40.49168 2.59147,0.0525 m 20.24584,0.41039 0.82078,-40.49168 -2.59147,-0.0525 -0.82078,40.49168 2.59147,0.0525 m -40.49168,-0.82078 0.82077,-40.49168 -2.59146,-0.0525 -0.82078,40.49168 2.59147,0.0525 m 60.73752,1.23117 0.82078,-40.49168 -2.59147,-0.0525 -0.82078,40.49168 2.59147,0.0525"
+       style=""
+       id="path3016" />
+  </g>
+  <path
+     d="M 353 250 L 918 315"
+     id="id2" />
+  <g
+     style="font-size:253px;stroke:#000000;stroke-width:1;font-family:Bravura"
+     id="text20">
+    <path
+       d="m 384.44891,288.7623 c 19.60467,2.25541 37.00959,-11.78641 39.23608,-31.13974 2.22648,-19.35333 -11.53507,-36.98066 -31.13974,-39.23607 -19.35333,-2.22649 -37.00959,11.78641 -39.23608,31.13974 -2.22649,19.35333 11.78641,37.00958 31.13974,39.23607 m 7.14213,-62.08152 c 14.82917,1.70601 25.75701,15.18731 24.051,30.01649 -1.70602,14.82917 -15.40974,25.47675 -30.23892,23.77074 -14.82917,-1.70601 -25.50567,-15.15839 -23.79965,-29.98757 1.70601,-14.82917 15.15839,-25.50567 29.98757,-23.79966"
+       style=""
+       id="path3019" />
+  </g>
+  <path
+     d="M 501 498 L  498 501 507 510 504 522 501 522 510 525 513 528 522 537 531 537 540 543 546 543 555 555 555 561 564 567 570 570 570 573 567 579 564 582 561 591 570 600 573 603 573 606 579 618 588 618 594 627 594 633 603 645 612 651 621 663 621 666 627 669 624 669 630 669 636 669 636 678 642 687 648 693 654 693 660 693 657 693 657 693 660 696 663 699 666 705 666 705 669 711 672 711 672 717 672 717 672 726 675 726 675 732 678 741 678 750 684 753 687 759 684 765 687 771 693 780 699 783 696 789 693 789 696 795 699 804 705 816 711 819 720 828 729 831 729 834 732 843 735 846 732 849 738 858 738 861 735 873 741 873 741 879 744 891 753 900 762 903 759 912 759 912 756 912 759 918 762 924 771 936 777 945 777 957 783 969 783 981 789 990 792 999 795 1011 801 1023 807 1032 804 1044 801 1050 807 1053 816 1062 822 1071 819 1071 825 1080 828 1089 834 1095 843 1107 849 1116 855 1122 855 1131 861 1140 858 1140 864 1146 870 1152 879 1152 885 1152 888 1158 891 1170 888 1176 888 1182 897 1182 906 1182 915 1191 912 1194 921 1200 927 1203 933 1212 933 1218 942 1230 945 1242 942 1251 951 1263 954 1263 957 1269 957 1275 954 1275 951 1281 954 1284 960 1293 963 1296 969 1299 978 1311 987 1317 984 1323 981 1329"
+     fill="white"
+     stroke="black"
+     stroke-width="3"
+     id="path24" />
+  <path
+     style="stroke:#000000;stroke-width:13"
+     d="M 42,76 249,402"
+     id="line26" />
+  <path
+     style="stroke:#000000;stroke-width:8"
+     d="M 766,30 560,343"
+     id="line28" />
+  <path
+     style="fill:#ffffff;stroke:#000000;stroke-width:7"
+     d="m 958,182 c 0,93.33612 -75.66388,169 -169,169 -93.33612,0 -169,-75.66388 -169,-169 0,-93.336123 75.66388,-169 169,-169 93.33612,0 169,75.663877 169,169 z"
+     id="circle30" />
+</svg>
