@@ -339,4 +339,4 @@ with open(filename, 'w') as fp:
 
 os.system('inkscape -f {0} --verb EditSelectAll --verb SelectionUnGroup --verb EditSelectAll --verb ObjectToPath --verb FileSave --verb FileQuit'.format(filename))
 
-#os.system('inkscape {0} --export-text-to-path --export-plain-svg imramma.svg'.format(filename))
+#os.system('inkscape {0} --export-text-to-path --export-plain-svg {0}'.format(filename))
