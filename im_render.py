@@ -17,6 +17,7 @@ width =  config.getint('working', 'width')
 height = config.getint('working', 'height')
 filename = config.get('working', 'file') # -> "value1"
 data_dir = config.get('working', 'data') # -> "value1"
+inkscape = config.get('working', 'inkscape')
 
 # check config
 if width is None:
@@ -337,6 +338,6 @@ with open(filename, 'w') as fp:
     fp.write(xmlstr)
     fp.close()
 
-os.system('inkscape -f {0} --verb EditSelectAll --verb SelectionUnGroup --verb EditSelectAll --verb ObjectToPath --verb FileSave --verb FileQuit'.format(filename))
+os.system('{0} -f {1} --verb EditSelectAll --verb SelectionUnGroup --verb EditSelectAll --verb ObjectToPath --verb FileSave --verb FileQuit'.format(inkscape, filename))
 
-#os.system('inkscape {0} --export-text-to-path --export-plain-svg {0}'.format(filename))
+#os.system('{0} {1} --export-text-to-path --export-plain-svg {1}'.format(inkscape, filename))
