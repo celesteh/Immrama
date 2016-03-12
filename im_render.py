@@ -138,12 +138,14 @@ with open(data_dir + "Bravura64.txt") as font:
 
 #dwg = svgwrite.Drawing(filename=filename, size = ("{}px".format(width), "{}px".format(height)))
 dwg = svgwrite.Drawing(size = ("{}px".format(width), "{}px".format(height)))
+
+
 dwg.defs.add(dwg.style('@font-face {\n  font-family: Bravura;\n' 
 + '  src: local("Bravura Regular"),\n    local("BravuraRegular"), \n    local("Bravura"),\n' 
 #'    url(data:font/opentype;charset=utf-8;base64,{}==) format("embedded-opentype"),\n'.format(encoded_font.rstrip()) +
 + '     url(Bravura.otf) format("opentype"),\n    url(Bravura.svg) format("svg");\n}\n', type="text/css"))
 dwg.add_stylesheet('{0}style.css', 'style', u'no', u'all'.format(data_dir))
-dwg.add(svgwrite.image.Image('{}Bravura.svg'.format(data_dir)))
+#dwg.add(svgwrite.image.Image('{}Bravura.svg'.format(data_dir)))
 
 
 # the pallete of music symbols
@@ -264,6 +266,8 @@ def squiggle():
 
 def glyph():
     #def add_text(text, drawing, size, x,y):
+    #get the glyph's path from Bravura.svg in the data dir
+    #path = dwg.path(d=pathdata, stroke='black', target=(rand_x(), rand_y()), rotation=(random.randrange(0,100) < 80), transform='scale({0})'.format(random.randrang(0.5, 50)))
     add_text(unescape(random.choice(glyphs)), dwg, random.randint(50,400), rand_x(), rand_y(), (random.randrange(0,100) < 80))
 
 options = { 0: dots,
@@ -328,16 +332,21 @@ for index in tasks:
 #glyph()
 
 #dwg.save()
-xmlstr = dwg.tostring()
+xmlstr = """<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet href="style.css" type="text/css" title="style" alternate="no" media="all"?>
+"""
+
+xmlstr = xmlstr + dwg.tostring()
 
 xmlstr = xmlstr.encode('ascii', 'xmlcharrefreplace') # re-escape the glyphs
 
 with open(filename, 'w') as fp:
-    fp.write('<?xml version="1.0" encoding="utf-8" ?>\n')
-    fp.write('<?xml-stylesheet href="style.css" type="text/css" title="style" alternate="no" media="all"?>\n')
+    #fp.write('<?xml version="1.0" encoding="utf-8" ?>\n')
+    #fp.write('<?xml-stylesheet href="style.css" type="text/css" title="style" alternate="no" media="all"?>\n')
     fp.write(xmlstr)
     fp.close()
 
-os.system('{0} -f {1} --verb EditSelectAll --verb SelectionUnGroup --verb EditSelectAll --verb ObjectToPath --verb FileSave --verb FileQuit'.format(inkscape, filename))
+## skip for demo
+#os.system('{0} -f {1} --verb EditSelectAll --verb SelectionUnGroup --verb EditSelectAll --verb ObjectToPath --verb FileSave --verb FileQuit'.format(inkscape, filename))
 
-#os.system('{0} {1} --export-text-to-path --export-plain-svg {1}'.format(inkscape, filename))
+os.system('{0} {1} --export-text-to-path --export-plain-svg {1}'.format(inkscape, filename))
