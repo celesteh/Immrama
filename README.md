@@ -4,6 +4,9 @@ A live notated graphic score
 ## Requirements
 This requires the python library svgwrite, the Bravura font and inkscape.
 
+### Bravura
+As this uses inkscape from the command line, Bravura must be installed as a system-wide truetype font. On linux, copy Bravura.ttf to the usr/share/fonts folder. Reload the cache: `sudo fc-cache -f -v`
+
 ## Display
 These scripts generate HTML, which you can view in a web browser while running it, or, to view on multiple devices, you will need a web server.
 
@@ -22,4 +25,4 @@ Set inkscape to have the path to inkscape on your computer
 
 ## Run
 From the command line, start the piece:
-    ./immrama
+    `./immrama`
