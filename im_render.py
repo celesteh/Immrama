@@ -31,7 +31,7 @@ if data_dir.endswith('/') == False:
 # when we want to read a file
 def read_file(filename):
     text = ""
-    
+
     #pick some text from this very file?
     with open(filename) as sourcefile:
 
@@ -53,9 +53,9 @@ def read_file(filename):
 
 
 def read_text():
-    #pick some text from this very file?    
+    #pick some text from this very file?
     texta = read_file('im_render.py')
-    
+
     # and the config file, because why not?
     textb =  read_file('config.ini')
 
@@ -98,7 +98,7 @@ def add_text(text, drawing, size, x,y, rotate):
 
     gtext = drawing.text(text, insert=(x,y), font_size = size, font_family='Bravura');
 
-    #gtext.add(drawing.tspan(text))    
+    #gtext.add(drawing.tspan(text))
 
     if rotate:
         gtext.add(tpath)
@@ -132,19 +132,21 @@ def make_dots(drawing, num, topx, topy, botx, boty, max_s, min_s):
 
 
 # try and sort out the font
-encoded_font = ""
-with open(data_dir + "Bravura64.txt") as font:
-    encoded_font=font.read() 
+#encoded_font = ""
+#with open(data_dir + "Bravura64.txt") as font:
+#    encoded_font=font.read()
+
 
 #dwg = svgwrite.Drawing(filename=filename, size = ("{}px".format(width), "{}px".format(height)))
 dwg = svgwrite.Drawing(size = ("{}px".format(width), "{}px".format(height)))
 
-
-dwg.defs.add(dwg.style('@font-face {\n  font-family: Bravura;\n' 
-+ '  src: local("Bravura Regular"),\n    local("BravuraRegular"), \n    local("Bravura"),\n' 
+dwg.defs.add(dwg.style('@font-face {\n  font-family: Bravura;\n'
++ '  src: local("Bravura Regular"),\n    local("BravuraRegular"), \n    local("Bravura"),\n'
 #'    url(data:font/opentype;charset=utf-8;base64,{}==) format("embedded-opentype"),\n'.format(encoded_font.rstrip()) +
-+ '     url(Bravura.otf) format("opentype"),\n    url(Bravura.svg) format("svg");\n}\n', type="text/css"))
++ '     url(Bravura.ttf) format("truetype"),\n     url(Bravura.otf) format("opentype"),\n    url(Bravura.svg) format("svg");\n}\n', type="text/css"))
 dwg.add_stylesheet('{0}style.css', 'style', u'no', u'all'.format(data_dir))
+#dwg.defs.add(missing_glyphs)
+
 #dwg.add(svgwrite.image.Image('{}Bravura.svg'.format(data_dir)))
 
 
@@ -165,16 +167,16 @@ def unescape(s):
     if isinstance(s, unicode):
         s = s.encode("utf-8")
         want_unicode = True
-   
+
     # the rest of this assumes that `s` is UTF-8
     list = []
-  
+
     # create and initialize a parser object
     p = xml.parsers.expat.ParserCreate("utf-8")
     p.buffer_text = True
     p.returns_unicode = want_unicode
     p.CharacterDataHandler = list.append
-  
+
     # parse the data wrapped in a dummy element
     # (needed so the "document" is well-formed)
     p.Parse("<e>", 0)
@@ -182,7 +184,7 @@ def unescape(s):
     p.Parse("</e>", 1)
 
     #print(list)
-  
+
     # join the extracted strings and return
     es = ""
     if want_unicode:
@@ -277,7 +279,7 @@ options = { 0: dots,
     4: glyph,
     5: glyph,
     6: draw_line,
-    7: draw_line, 
+    7: draw_line,
     8: squiggle }
 
 
@@ -301,8 +303,8 @@ if random.randrange(0,100) < 36:
             rotate = (random.randrange(0, 100) < 30)
             add_text(line, dwg, random.randint(35, 70), random.randint(100, 600), random.randint(100, 300), rotate)
 
- 
- 
+
+
 
 
     #put text on path
@@ -313,7 +315,7 @@ if random.randrange(0,100) < 36:
 
 #end the if that decides text stuff
 
-tasks = range(len(options)) 
+tasks = range(len(options))
 random.shuffle(tasks)
 print(tasks)
 
@@ -322,7 +324,7 @@ for index in tasks:
 
     #index = random.randint(0,6);
     options[index]()
- 
+
 #add_text('this is a test', dwg, 50, 100, 100, True)
 #add_text('this is also a test', dwg, 50, 100, 100, False)
 
@@ -340,6 +342,11 @@ xmlstr = xmlstr + dwg.tostring()
 
 xmlstr = xmlstr.encode('ascii', 'xmlcharrefreplace') # re-escape the glyphs
 
+#missing_glyphs =''
+with open(data_dir + "Bravura.svg") as font:
+    #missing_glyphs =font.read()
+    xmlstr = xmlstr.replace('</style>', font.read() + '</style>' )
+
 with open(filename, 'w') as fp:
     #fp.write('<?xml version="1.0" encoding="utf-8" ?>\n')
     #fp.write('<?xml-stylesheet href="style.css" type="text/css" title="style" alternate="no" media="all"?>\n')
@@ -349,4 +356,4 @@ with open(filename, 'w') as fp:
 ## skip for demo
 #os.system('{0} -f {1} --verb EditSelectAll --verb SelectionUnGroup --verb EditSelectAll --verb ObjectToPath --verb FileSave --verb FileQuit'.format(inkscape, filename))
 
-os.system('{0} {1} --export-text-to-path --export-plain-svg {1}'.format(inkscape, filename))
+#os.system('{0} {1} --export-text-to-path --export-plain-svg {1}'.format(inkscape, filename))
