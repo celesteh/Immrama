@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 if [ "$EUID" -ne 0 ]
@@ -5,7 +6,7 @@ if [ "$EUID" -ne 0 ]
 	exit
 fi
 
-if [[ $# -lt 1 ]]; then
+if [[ $# -ne 1 ]];
 	then echo "You need to pass a password!"
 	echo "Usage:"
 	echo "sudo $0 yourChosenPassword [apName]"
@@ -19,24 +20,13 @@ if [[ $# -eq 2 ]]; then
 	$APSSID=$2
 fi
 
+
 apt-get remove --purge hostapd -y
 apt-get install hostapd dnsmasq iptables-persistent conntrack nginx php5 php5-common php5-fpm hostapd-y
 
-cat >> /etc/dhcpcd.conf <<EOF
-interface wlan0
-    static ip_address=172.24.1.1/24
-EOF
-
-sed -i '/^ *wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf/s,^,#,' /etc/network/interfaces
-
-mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
 cat > /etc/dnsmasq.conf <<EOF
-interface=wlan0      # Use interface wlan0
-bind-interfaces      # Bind to the interface to make sure we aren't sending things elsewhere
-server=8.8.8.8       # Forward DNS requests to Google DNS
-domain-needed        # Don't forward short names
-bogus-priv           # Never forward addresses in the non-routed address spaces.
-dhcp-range=10.0.0.100,10.0.0.200,4h # Assign IP addresses between 10.0.0.100 and 10.0.0.200 with a 4 hour lease time
+interface=wlan0
+dhcp-range=10.0.0.2,10.0.0.5,255.255.255.0,12h
 EOF
 
 cat > /etc/hostapd/hostapd.conf <<EOF
@@ -52,11 +42,16 @@ auth_algs=1
 ssid=$APSSID
 EOF
 
-sed -i 's,^[#]DAEMON_CONFG=.*$,DAEMON_CONF="/etc/hostapd/hostapd.conf"' /etc/default/hostapd
+sed -i -- 's/exit 0/ /g' /etc/rc.local
 
-# enable ipv4 forward
-sed -i 's,#net.ipv4.ip_forward=1,net.ipv4.ip_forward=1,' /etc/sysctl.conf
-echo 1 > /proc/sys/net/ipv4/ip_forward  # enable immediately
+cat >> /etc/rc.local <<EOF
+ifconfig wlan0 down
+ifconfig wlan0 10.0.0.1 netmask 255.255.255.0 up
+iwconfig wlan0 power off
+service dnsmasq restart
+hostapd -B /etc/hostapd/hostapd.conf & > /dev/null 2>&1
+exit 0
+EOF
 
 # From https://andrewwippler.com/2016/03/11/wifi-captive-portal/
 # Flush all connections in the firewall
