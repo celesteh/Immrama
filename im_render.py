@@ -11,7 +11,7 @@ from ConfigParser import SafeConfigParser
 
 # read config
 config = SafeConfigParser()
-config.read('config.ini')
+config.read('data/conductor/config.ini')
 
 width =  config.getint('working', 'width')
 height = config.getint('working', 'height')
