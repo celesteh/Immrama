@@ -13,20 +13,29 @@
 Go to https://frillip.com/using-your-raspberry-pi-3-as-a-wifi-access-point-with-hostapd/ and follow all the instructions until you get to the IP tables commands.  Do not use the rules on that page, but use these instead:
 
 `sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-sudo iptables -t nat -I POSTROUTING -p tcp --dport 80 -j MASQUERADE
-sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
-sudo iptables -t nat -A PREROUTING -i wlan0 -m state --state NEW -p tcp --dport 80 -j DNAT --to-destination 172.24.1.1`
+sudo iptables -t nat -I POSTROUTING -p tcp --dport 80 -j MASQUERADE`
+
+`sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT`
+
+`sudo iptables -t nat -A PREROUTING -i wlan0 -m state --state NEW -p tcp --dport 80 -j DNAT --to-destination 172.24.1.1`
 
 Then, save the rules as instructed to on that page and follow the remainder of the instructions on the page.
 
 Add the following to the bottom of `/etc/dnsmasq.conf `
-`server=/local/172.24.1.1
-address=/local/172.24.1.1
-expand-hosts
-domain=local
-local=/local/
-`
+
+`server=/local/172.24.1.1`
+
+`address=/local/172.24.1.1`
+
+`expand-hosts`
+
+`domain=local`
+
+`local=/local/`
+
+
 Add the following to the bottom of `/etc/hosts`
+
 `172.24.1.1      immrama immrama.local`
 
  When you're done, reboot.
