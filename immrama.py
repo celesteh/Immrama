@@ -20,7 +20,7 @@ setproctitle.setproctitle(PROCNAME)
 
 # read config
 config = SafeConfigParser()
-config.read('config.ini')
+config.read('data/conductor/config.ini')
 
 webdir =  config.get('main', 'dir') # -> "value1"
 dur = config.getint('main', 'dur')
