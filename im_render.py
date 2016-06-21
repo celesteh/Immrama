@@ -12,15 +12,15 @@ import argparse
 
 # did we get a config from the CL?
 parser = argparse.ArgumentParser(description='Generate a graphic score.')
-parser.add_argument('config', nargs='?', default='data/conductor/config.ini')
+parser.add_argument('config', nargs='?', default='data/conductor/config.ini', help='Path to a config.ini file')
 args = parser.parse_args()
-filename = args.config
+config_file = args.config
 
-print(filename)
+print(config_file)
 
 # read config
 config = SafeConfigParser()
-config.read(filename)
+config.read(config_file)
 
 width =  config.getint('working', 'width')
 height = config.getint('working', 'height')
