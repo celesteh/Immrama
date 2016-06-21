@@ -6,6 +6,7 @@ $conf = parse_ini_file("config.ini");
 ?>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="../style.css">
 <title>Immrama</title>
 </head>
 <body>
