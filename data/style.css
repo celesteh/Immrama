@@ -8,9 +8,7 @@
 
 html {
   font-family: Bravura, Sonata, Opus, Petrucci, Seville, Ghent, Maestro, InkPen2, Reprise, sans-serif;
-}
-@media handheld {
-  body {
-    font-size: 4em; /* 40px/16=2.5em */
-  }
+
+  font-size: 4em; /* 40px/16=2.5em */
+
 }
