@@ -7,7 +7,6 @@
 }
 
 
-@media handheld {
 
 
   html {
@@ -20,4 +19,3 @@
     font-family : inherit;
     font-size   : inherit; /*100%;*/
   }
-}
