@@ -6,8 +6,9 @@ $conf = parse_ini_file("config.ini");
 ?>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="../style.css">
-<title>Immrama</title>
+  <link rel="stylesheet" href="../screen.css" type="text/css" media="Screen" />
+  <link rel="stylesheet" href="../mobile.css" type="text/css" media="handheld" />
+  <title>Immrama</title>
 </head>
 <body>
   <form action="im_cgi.py" method="post">

@@ -1,0 +1,21 @@
+@media handheld {
+
+  @font-face {
+    font-family: Bravura;
+    src: local("Bravura Regular"),
+      local("BravuraRegular"),
+      local("Bravura"),
+      url(Bravura.ttf) format("opentype");
+  }
+
+  html {
+    font-family: Bravura, Sonata, Opus, Petrucci, Seville, Ghent, Maestro, InkPen2, Reprise, sans-serif;
+
+    font-size: 4em; /* 40px/16=2.5em */
+
+  }
+  button, input, select, textarea {
+    font-family : inherit;
+    font-size   : inherit; /*100%;*/
+  }
+}
