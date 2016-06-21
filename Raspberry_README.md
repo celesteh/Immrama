@@ -10,7 +10,7 @@
 * Do a software update `sudo apt-get update && sudo apt-get upgrade -y`
 
 ## Making the captive portal
-Go to https://frillip.com/using-your-raspberry-pi-3-as-a-wifi-access-point-with-hostapd/ and follow all the instructions until you get to the IP tables commands.  Do not use the rules on that page, but use these instead:
+* Go to https://frillip.com/using-your-raspberry-pi-3-as-a-wifi-access-point-with-hostapd/ and follow all the instructions until you get to the IP tables commands.  Do not use the rules on that page, but use these instead:
 
 `sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 sudo iptables -t nat -I POSTROUTING -p tcp --dport 80 -j MASQUERADE`
@@ -21,7 +21,7 @@ sudo iptables -t nat -I POSTROUTING -p tcp --dport 80 -j MASQUERADE`
 
 Then, save the rules as instructed to on that page and follow the remainder of the instructions on the page.
 
-Add the following to the bottom of `/etc/dnsmasq.conf `
+* Add the following to the bottom of `/etc/dnsmasq.conf `
 
 `server=/local/172.24.1.1`
 
@@ -34,11 +34,11 @@ Add the following to the bottom of `/etc/dnsmasq.conf `
 `local=/local/`
 
 
-Add the following to the bottom of `/etc/hosts`
+* Add the following to the bottom of `/etc/hosts`
 
 `172.24.1.1      immrama immrama.local`
 
- When you're done, reboot.
+* When you're done, reboot.
 
 ## Installing the webserver
 
