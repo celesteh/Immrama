@@ -18,6 +18,7 @@ $conf = parse_ini_file("config.ini");
   Image height: <input type="number" name="height" value=<?php echo $conf['height']; ?>><br>
   Foreground colour: <input type="color" name="foreground" value=<?php echo $conf['foreground']; ?>><br>
   Background clour: <input type="color" name="background" value=<?php echo $conf['background']; ?>><br>
-  <input type="submit">
+
+<BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
   </form>
 </body> </html>
