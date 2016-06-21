@@ -5,7 +5,18 @@ import shutil
 from ConfigParser import SafeConfigParser
 import time
 import os
+import setproctitle
+import psutil
 
+# Make sure we're the onle version of this running
+PROCNAME = "immrama"
+
+for proc in psutil.process_iter():
+    # check whether the process name matches
+    if proc.name() == PROCNAME:
+        proc.kill()
+
+setproctitle.setproctitle(PROCNAME)
 
 # read config
 config = SafeConfigParser()

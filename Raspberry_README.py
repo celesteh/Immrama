@@ -17,13 +17,30 @@ sudo iptables -t nat -I POSTROUTING -p tcp --dport 80 -j MASQUERADE
 sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 sudo iptables -t nat -A PREROUTING -i wlan0 -m state --state NEW -p tcp --dport 80 -j DNAT --to-destination 172.24.1.1`
 
-Then, save the rules as instructed to on that page and follow the remainder of the instructions on the page. When you're done, reboot.
+Then, save the rules as instructed to on that page and follow the remainder of the instructions on the page.
+
+Add the following to the bottom of `/etc/dnsmasq.conf `
+`server=/local/172.24.1.1
+address=/local/172.24.1.1
+expand-hosts
+domain=local
+local=/local/
+`
+Add the following to the bottom of `/etc/hosts`
+`172.24.1.1      immrama immrama.local`
+
+ When you're done, reboot.
 
 ## Installing the webserver
 
 * `sudo apt-get install lighttpd -y`
 
 
-## Immrama requirements
+## Immrama setup
 
 * `sudo pip install svgwrite`
+* `sudo apt-get install python-dev`
+* `sudo pip install setproctitle`
+* `sudo pip install psutil`
+* `cd ~/Documents ; git clone https://github.com/celesteh/Immrama.git`
+* `cd Immrama ; sudo cp -r data/* /var/www/html/`
