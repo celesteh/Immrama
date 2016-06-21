@@ -16,7 +16,7 @@ parser.add_argument('config', nargs='?', default='data/conductor/config.ini', he
 args = parser.parse_args()
 config_file = args.config
 
-print(config_file)
+#print(config_file)
 
 # read config
 config = SafeConfigParser()
@@ -66,7 +66,7 @@ def read_text():
     texta = read_file('im_render.py')
 
     # and the config file, because why not?
-    textb =  read_file('config.ini')
+    textb =  read_file(config_file)
 
     if random.randrange(0,100) < 2:
 
