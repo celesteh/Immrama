@@ -44,6 +44,13 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 
 * `sudo apt-get install lighttpd -y`
 
+* Add the following lines to the bottom of `/etc/lighttpd/lighttpd.conf`
+
+`server.error-handler-404   = "/index.html"`
+
+`$HTTP["host"] == "(.*)$" {`
+`  url.redirect = ( "^(.*)/" => "http://immrama.local/$1" )`
+`}`
 
 ## Immrama setup
 

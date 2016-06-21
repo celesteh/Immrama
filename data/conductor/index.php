@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <?php
 
-// Grant access if the Security code is accurate.
-if ($_POST['security_code'] == "andrew-wippler-is-cool") {
+$conf = parse_ini_file("config.ini");
 
-// Grab the MAC address
-$arp = "/usr/sbin/arp"; // Attempt to get the client's mac address
-$mac = shell_exec("$arp -a ".$_SERVER['REMOTE_ADDR']);
-preg_match('/..:..:..:..:..:../',$mac , $matches);
-$mac2 = $matches[0];
-
-// Reconnect the device to the firewall
-exec("sudo rmtrack " . $_SERVER['REMOTE_ADDR']);
-$i = "sudo iptables -t mangle -A wlan0_Outgoing  -m mac --mac-source ".$_GET['mac']." -j MARK --set-mark 2";
-exec($i);
-
-sleep(5);
-
-?> <html>
+?>
+<html>
 <head>
-<title></title>
+<title>Immrama</title>
 </head>
 <body>
-<h1>You are now free to browse the internet.</h1>
+  <form action="im_cgi.py" method="post">
+  Total Duration (in seconds): <input type="number" name="dur" value=<?php echo $conf['dur']; ?>><br>
+  Duration of each page: <input type="number" name="slide_dur" value=<?php echo $conf['slide_dur']; ?>><br>
+  Initial pause (in seconds): <input type="number" name="init_sleep" value=<?php echo $conf['init_sleep']; ?>><br>
+  Image width: <input type="number" name="width" value=<?php echo $conf['width']; ?>><br>
+  Image height: <input type="number" name="height" value=<?php echo $conf['height']; ?>><br>
+  Foreground colour: <input type="color" name="foreground" value=<?php echo $conf['foreground']; ?>><br>
+  Background clour: <input type="color" name="background" value=<?php echo $conf['background']; ?>><br>
+  <input type="submit">
+  </form>
 </body> </html>
 <?php } else {
   // this is what is seen when first viewing the page

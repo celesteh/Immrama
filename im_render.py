@@ -8,10 +8,19 @@ import xml.parsers.expat
 import socket
 import cgi
 from ConfigParser import SafeConfigParser
+import argparse
+
+# did we get a config from the CL?
+parser = argparse.ArgumentParser(description='Generate a graphic score.')
+parser.add_argument('config', nargs='?', default='data/conductor/config.ini')
+args = parser.parse_args()
+filename = args.config
+
+print(filename)
 
 # read config
 config = SafeConfigParser()
-config.read('data/conductor/config.ini')
+config.read(filename)
 
 width =  config.getint('working', 'width')
 height = config.getint('working', 'height')

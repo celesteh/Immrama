@@ -7,8 +7,9 @@ import time
 import os
 import setproctitle
 import psutil
+import argparse
 
-# Make sure we're the onle version of this running
+# Make sure we're the only version of this running
 PROCNAME = "immrama"
 
 for proc in psutil.process_iter():
@@ -18,9 +19,18 @@ for proc in psutil.process_iter():
 
 setproctitle.setproctitle(PROCNAME)
 
+
+# did we get a config from the CL?
+parser = argparse.ArgumentParser(description='Generate a graphic score.')
+parser.add_argument('config', nargs='?', default='data/conductor/config.ini', help='Path to a config.ini file')
+args = parser.parse_args()
+filename = args.config
+
+print(filename)
+
 # read config
 config = SafeConfigParser()
-config.read('data/conductor/config.ini')
+config.read(filename)
 
 webdir =  config.get('main', 'dir') # -> "value1"
 dur = config.getint('main', 'dur')
@@ -76,7 +86,7 @@ while loop > 0 :
 
     # gender ate the notation
     before = time.time()
-    os.system("./im_render.py")
+    os.system("./im_render.py " + filename)
     after = time.time()
 
     shutil.copy(tmp, dest)
