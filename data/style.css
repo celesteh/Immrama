@@ -6,7 +6,7 @@
     url(Bravura.ttf) format("opentype");
 }
 
-body {
+html {
   font-family: Bravura, Sonata, Opus, Petrucci, Seville, Ghent, Maestro, InkPen2, Reprise, sans-serif;
 }
 @media handheld {
