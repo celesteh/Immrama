@@ -14,5 +14,5 @@ html {
 }
 button, input, select, textarea {
   font-family : inherit;
-  font-size   : 4em; /*100%;*/
+  font-size   : 100%;
 }
