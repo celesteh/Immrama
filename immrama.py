@@ -85,16 +85,16 @@ while loop > 0 :
         time.sleep(slide_dur)
     elif slide_dur > gen_dur:
         time.sleep(slide_dur - gen_dur)
- 
+
     prev = after
 
     # should we keep looping, or has it been long enough?
     loop = dur - (time.time() - start_time)
-    
+
 #end while
 
 # finish
 shutil.copy(data_dir + 'end.svg' , dest)
 #reset
 time.sleep(slide_dur)
-shutil.copy(data_dir + 'start.svg', dest)
+shutil.copy(data_dir + 'ready.svg', dest)
