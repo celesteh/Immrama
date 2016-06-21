@@ -1,18 +1,11 @@
 @font-face {
   font-family: Bravura;
   src: local("Bravura Regular"),
-    local("BravuraRegular"), 
+    local("BravuraRegular"),
     local("Bravura"),
-    url(Bravura.otf) format("opentype");
+    url(Bravura.ttf) format("opentype");
 }
- 
+
 body {
-  font-family: Bravura, Sonata, Opus, Petrucci, Seville, Ghent, Maestro, InkPen2, Reprise, sans-serif; 
+  font-family: Bravura, Sonata, Opus, Petrucci, Seville, Ghent, Maestro, InkPen2, Reprise, sans-serif;
 }
-
-td {font-size:150%;}
-
-.flickr-photo { border: solid 2px #000000; }
-.flickr-yourcomment { }
-.flickr-frame { text-align: left; padding: 3px; }
-.flickr-caption { font-size: 0.8em; margin-top: 0px; }
