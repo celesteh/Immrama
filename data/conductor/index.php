@@ -20,21 +20,3 @@ $conf = parse_ini_file("config.ini");
   <input type="submit">
   </form>
 </body> </html>
-<?php } else {
-  // this is what is seen when first viewing the page
-  ?>
-  <html>
-  <head>
-  <title></title>
-  </head>
-  <body>
-  <h1>Authorization Required</h1>
-  <p>Before continuing, you must first agree to the <a href="#">Terms of Service</a> and be of the legal age to do that in your selective country or have Parental Consent.
-  </p>
-  <form method="post" action="index.php">
-    <input type="hidden" name="security_code" value="andrew-wippler-is-cool" />
-    <input type="checkbox" name="checkbox1" CHECKED /><label for="checkbox1">I Agree to the terms</label><br />
-    <input type="submit" value="Connect" />
-  </form>
-  </body> </html>
-<?php } ?>

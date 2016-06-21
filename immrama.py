@@ -26,7 +26,7 @@ parser.add_argument('config', nargs='?', default='data/conductor/config.ini', he
 args = parser.parse_args()
 filename = args.config
 
-print(filename)
+#print(filename)
 
 # read config
 config = SafeConfigParser()

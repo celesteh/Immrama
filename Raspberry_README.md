@@ -42,7 +42,9 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 
 ## Installing the webserver
 
-* `sudo apt-get install lighttpd -y`
+* `sudo apt-get install lighttpd php5-cgi -y`
+* `sudo lighty-enable-mod fastcgi`
+* `sudo lighty-enable-mod fastcgi-php`
 
 * Add the following lines to the bottom of `/etc/lighttpd/lighttpd.conf`
 
