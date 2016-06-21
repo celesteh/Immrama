@@ -8,5 +8,5 @@
 
 body {
   font-family: Bravura, Sonata, Opus, Petrucci, Seville, Ghent, Maestro, InkPen2, Reprise, sans-serif;
-  font-size: 20px;
+  font-size: 3em; /* 40px/16=2.5em */
 }
