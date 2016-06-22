@@ -61,7 +61,7 @@ foreach($conf as $key => $val)
   <META http-equiv="refresh" content="1;URL=../piece.html">
   </head>
   <body>
-    <?php echo $_POST['dur']; echo $oval ?>
+    <?php echo $_POST['dur'];  ?>
   <p>Redirecting to <a href="../piece.html">piece</a></p>
   </body>
   </html>
