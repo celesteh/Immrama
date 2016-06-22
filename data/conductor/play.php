@@ -81,10 +81,3 @@ write_php_ini($conf, "config.ini");
  // parent's stuff
  exit();
    ?>
-  <?php //$cmd = 'usr/bin/python /home/pi/Documents/Immrama/immrama.py /var/www/html/conductor/config.ini';
-//$pid = shell_exec($cmd);
- ?>
-<?php //exec ("sudo /usr/bin/python /home/pi/Documents/Immrama/immrama.py /var/www/html/conductor/config.ini &");?>
-<?php
-    //`echo "usr/bin/python /home/pi/Documents/Immrama/immrama.py /var/www/html/conductor/config.ini"|at now`;
-?>
