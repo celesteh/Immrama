@@ -59,8 +59,8 @@ write_php_ini($conf, "config.ini");
 $cmd = $conf['working']['installation'] . '/immrama.py';
 $args = $conf['working']['data'] . '/conductor/config.ini';
 
-shell_exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
-
+//shell_exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
+exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
 
 ?>
 <html>
@@ -70,7 +70,7 @@ shell_exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
   <META http-equiv="refresh" content="1;URL=../piece.html">
   </head>
   <body>
-    <?php echo $cmd; ?>
+    <?php echo $cmd . ' ' . $args .' >/dev/null 2>/dev/null &'; ?>
   <p>Redirecting to <a href="../piece.html">piece</a></p>
   </body>
   </html>
