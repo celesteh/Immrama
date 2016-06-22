@@ -10,7 +10,7 @@ $conf = parse_ini_file("config.ini");
   <title>Immrama</title>
 </head>
 <body>
-  <form action="play.php" method="post">
+  <form action="play.py" method="post">
     <p>
 
 
