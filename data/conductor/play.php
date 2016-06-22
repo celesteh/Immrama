@@ -46,9 +46,9 @@ $conf = parse_ini_file("config.ini");
 foreach($conf as $key => $val)
     {
 
-        if (empty($_POST[$key]))  {
+        //if (empty($_POST[$key]))  {
           $oval = $val
-        } //else {
+        //} //else {
           //$oval = $_POST[$key]
         //}
       }
