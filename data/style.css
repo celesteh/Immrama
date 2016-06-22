@@ -25,6 +25,7 @@ html {
 /* define bigger specific styles come here */
   body {
     width: 80%;
+    float: center;
   }
 
 
