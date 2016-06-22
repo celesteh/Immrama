@@ -2,25 +2,25 @@
 <?php
 
 
-//function safefilerewrite($fileName, $dataToSave)
-//{    if ($fp = fopen($fileName, 'w'))
-//    {
-//        $startTime = microtime(TRUE);
-//        do
-//        {            $canWrite = flock($fp, LOCK_EX);
+function safefilerewrite($fileName, $dataToSave)
+{    if ($fp = fopen($fileName, 'w'))
+    {
+        $startTime = microtime(TRUE);
+        do
+        {            $canWrite = flock($fp, LOCK_EX);
            // If lock not obtained sleep for 0 - 100 milliseconds, to avoid collision and CPU load
-//           if(!$canWrite) usleep(round(rand(0, 100)*1000));
-//        } while ((!$canWrite)and((microtime(TRUE)-$startTime) < 5));
+           if(!$canWrite) usleep(round(rand(0, 100)*1000));
+        } while ((!$canWrite)and((microtime(TRUE)-$startTime) < 5));
 
         //file was locked so now we can store information
-//        if ($canWrite)
-//        {            fwrite($fp, $dataToSave);
-//            flock($fp, LOCK_UN);
-//        }
-//        fclose($fp);
-//    }
+        if ($canWrite)
+        {            fwrite($fp, $dataToSave);
+            flock($fp, LOCK_UN);
+        }
+        fclose($fp);
+    }
 
-//}
+}
 
 
 //function write_php_ini($array, $file)
