@@ -43,12 +43,12 @@ function safefilerewrite($fileName, $dataToSave)
 
 $conf = parse_ini_file("config.ini");
 //write_php_ini($conf, "config.ini");
-$oval = 1
+$oval = 1;
 foreach($conf as $key => $val)
     {
 
         //if (empty($_POST[$key]))  {
-          $oval = $oval + 1
+          $oval = $oval + 1;
         //} //else {
           //$oval = $_POST[$key]
         //}
@@ -61,7 +61,7 @@ foreach($conf as $key => $val)
   <META http-equiv="refresh" content="1;URL=../piece.html">
   </head>
   <body>
-    <?php echo $_POST['dur'] ?>
+    <?php echo $_POST['dur']; echo $oval ?>
   <p>Redirecting to <a href="../piece.html">piece</a></p>
   </body>
   </html>
