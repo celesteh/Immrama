@@ -26,17 +26,27 @@ function safefilerewrite($fileName, $dataToSave)
 function write_php_ini($array, $file)
 {
     $res = array();
-    foreach ($array as $title => $section)
-      $res[] = "[$title]";
-      foreach($array[$title] as $key => $val)
+    //foreach ($array as $title => $section)
+    //  $res[] = "[$title]";
+    //  foreach($array[$title] as $key => $val)
+    foreach($array as $key => $val)
       {
-          if (empty($_POST[$key])) {} else {
+          if (empty($_POST[$key])) {
+            //$val = $val;
+          } else {
             $val = $_POST[$key];
           }
           if(is_array($val))
           {
               $res[] = "[$key]";
-              foreach($val as $skey => $sval) $res[] = "$skey = ".(is_numeric($sval) ? $sval : '"'.$sval.'"');
+              foreach($val as $skey => $sval) {
+                if (empty($_POST[$skey])) {
+                  //$val = $val;
+                } else {
+                  $sval = $_POST[$skey];
+                }
+                $res[] = "$skey = ".(is_numeric($sval) ? $sval : '"'.$sval.'"');
+              }
           }
           else $res[] = "$key = ".(is_numeric($val) ? $val : '"'.$val.'"');
       }
