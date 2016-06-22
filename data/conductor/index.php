@@ -12,6 +12,11 @@ $conf = parse_ini_file("config.ini");
 <body>
   <form action="im_cgi.py" method="post">
     <p>
+
+
+<BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
+</p>
+    <p>
   <label for="dur">Total Duration (in seconds):</label>
     <input type="number" name="dur" value=<?php echo $conf['dur']; ?>>
   </p>
