@@ -79,5 +79,5 @@ write_php_ini($conf, "config.ini");
  }
 
  // parent's stuff
- exit();
+ //exit();
    ?>
