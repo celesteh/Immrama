@@ -5,14 +5,14 @@ import ConfigParser
 import cgi, cgitb
 
       # Import modules for CGI handling
-
+filename = '/var/www/html/conductor/config.ini'
 # Create instance of FieldStorage
 form = cgi.FieldStorage()
 
 new_config = ConfigParser.RawConfigParser()
 
 config = ConfigParser.ConfigParser()
-config.readfp(open('config.ini'))
+config.readfp(open(filename))
 
 sections = config.sections()
 for header in sections:
@@ -24,10 +24,10 @@ for header in sections:
         else :
             new_config.set(header, option, config.get(header, option))
 
-with open('config.ini', 'wb') as configfile:
+with open(filename, 'wb') as configfile:
     new_config.write(configfile)
 
-os.system("" + os.path.expanduser('~/Documents/Immrama/im_render.py') + " config.ini &")
+os.system("" + os.path.expanduser('~/Documents/Immrama/im_render.py') + ' ' + filename + " &")
 
 print """
 <html>
