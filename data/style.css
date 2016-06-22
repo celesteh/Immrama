@@ -26,7 +26,7 @@ button, input, select, textarea {
   font-size   : inherit; /*100%;*/
 }
 
-label
+form
 {
 width: 4em;
 float: left;
