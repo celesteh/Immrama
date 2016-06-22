@@ -67,8 +67,22 @@ write_php_ini($conf, "config.ini");
   <p>Redirecting to <a href="../piece.html">piece</a></p>
   </body>
   </html>
-  <?php $cmd = 'usr/bin/python /home/pi/Documents/Immrama/immrama.py /var/www/html/conductor/config.ini';
-$pid = shell_exec($cmd);
+  <?php
+  $pid=pcntl_fork();
+ if($pid==0)
+ {
+   posix_setsid();
+   $cmd = '/home/pi/Documents/Immrama/immrama.py';
+   $args= 'var/www/html/conductor/config.ini'
+   pcntl_exec($cmd,$args,$_ENV);
+   // child becomes the standalone detached process
+ }
+
+ // parent's stuff
+ exit();
+   ?>
+  <?php //$cmd = 'usr/bin/python /home/pi/Documents/Immrama/immrama.py /var/www/html/conductor/config.ini';
+//$pid = shell_exec($cmd);
  ?>
 <?php //exec ("sudo /usr/bin/python /home/pi/Documents/Immrama/immrama.py /var/www/html/conductor/config.ini &");?>
 <?php
