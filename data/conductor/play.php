@@ -56,6 +56,15 @@ function write_php_ini($array, $file)
 $conf = parse_ini_file("config.ini", true);
 write_php_ini($conf, "config.ini");
 
+$pid=pcntl_fork();
+if($pid==0)
+{
+ posix_setsid();
+ $cmd = '/home/pi/Documents/Immrama/immrama.py';
+ $args= 'var/www/html/conductor/config.ini'
+ pcntl_exec($cmd,$args,$_ENV);
+ // child becomes the standalone detached process
+}
 ?>
 <html>
 <head>
@@ -67,17 +76,3 @@ write_php_ini($conf, "config.ini");
   <p>Redirecting to <a href="../piece.html">piece</a></p>
   </body>
   </html>
-  <?php
-  $pid=pcntl_fork();
- if($pid==0)
- {
-   posix_setsid();
-   $cmd = '/home/pi/Documents/Immrama/immrama.py';
-   $args= 'var/www/html/conductor/config.ini'
-   pcntl_exec($cmd,$args,$_ENV);
-   // child becomes the standalone detached process
- }
-
- // parent's stuff
- //exit();
-   ?>
