@@ -42,17 +42,8 @@ function write_php_ini($array, $file)
 }
 
 $conf = parse_ini_file("config.ini");
-write_php_ini($conf, "config.ini");
-$oval = 1;
-foreach($conf as $key => $val)
-    {
+write_php_ini($conf, "config2.ini");
 
-        //if (empty($_POST[$key]))  {
-          $oval = $oval + 1;
-        //} //else {
-          //$oval = $_POST[$key]
-        //}
-      }
 ?>
 <html>
 <head>
