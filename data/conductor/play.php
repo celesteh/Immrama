@@ -1,26 +1,6 @@
 <!DOCTYPE html>
 <?php
 
-$conf = parse_ini_file("config.ini");
-write_php_ini($conf, "config.ini");
-
-function write_php_ini($array, $file)
-{
-    $res = array();
-    foreach($array as $key => $val)
-    {
-        if (empty($_POST[$key])) {} else {
-          $val = $_POST[$key]
-        }
-        if(is_array($val))
-        {
-            $res[] = "[$key]";
-            foreach($val as $skey => $sval) $res[] = "$skey = ".(is_numeric($sval) ? $sval : '"'.$sval.'"');
-        }
-        else $res[] = "$key = ".(is_numeric($val) ? $val : '"'.$val.'"');
-    }
-    safefilerewrite($file, implode("\r\n", $res));
-}
 
 function safefilerewrite($fileName, $dataToSave)
 {    if ($fp = fopen($fileName, 'w'))
@@ -41,6 +21,29 @@ function safefilerewrite($fileName, $dataToSave)
     }
 
 }
+
+
+function write_php_ini($array, $file)
+{
+    $res = array();
+    foreach($array as $key => $val)
+    {
+        if (empty($_POST[$key])) {} else {
+          $val = $_POST[$key]
+        }
+        if(is_array($val))
+        {
+            $res[] = "[$key]";
+            foreach($val as $skey => $sval) $res[] = "$skey = ".(is_numeric($sval) ? $sval : '"'.$sval.'"');
+        }
+        else $res[] = "$key = ".(is_numeric($val) ? $val : '"'.$val.'"');
+    }
+    safefilerewrite($file, implode("\r\n", $res));
+}
+
+$conf = parse_ini_file("config.ini");
+write_php_ini($conf, "config.ini");
+
 ?>
 <html>
 <head>
