@@ -43,7 +43,11 @@ function safefilerewrite($fileName, $dataToSave)
 
 $conf = parse_ini_file("config.ini");
 //write_php_ini($conf, "config.ini");
-
+foreach($conf as $key => $val)
+    {
+    //    if (empty($_POST[$key])) {} else {
+    //      $val = $_POST[$key]
+        }
 ?>
 <html>
 <head>
