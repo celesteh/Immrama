@@ -28,7 +28,7 @@ function write_php_ini($array, $file)
     $res = array();
     foreach ($array as $title => $section)
       $res[] = "[$title]";
-      foreach($section as $key => $val)
+      foreach($array[$title] as $key => $val)
       {
           if (empty($_POST[$key])) {} else {
             $val = $_POST[$key];
