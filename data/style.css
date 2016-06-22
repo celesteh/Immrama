@@ -21,6 +21,17 @@ html {
 
 }
 
+@media only screen and (min-device-width: 680px) {
+/* define bigger specific styles come here */
+  body {
+    width=90%
+  }
+
+
+}
+
+
+
 button, input, select, textarea {
   font-family : inherit;
   font-size   : inherit; /*100%;*/
