@@ -42,7 +42,7 @@ function write_php_ini($array, $file)
 }
 
 $conf = parse_ini_file("config.ini");
-write_php_ini($conf, "config2.ini");
+write_php_ini($conf, "config.ini");
 
 ?>
 <html>
@@ -52,7 +52,7 @@ write_php_ini($conf, "config2.ini");
   <META http-equiv="refresh" content="1;URL=../piece.html">
   </head>
   <body>
-    <?php echo $_POST['dur'];  ?>
   <p>Redirecting to <a href="../piece.html">piece</a></p>
   </body>
   </html>
+<?php system("/home/pi/Documents/Immrama/immrama.py &");?>
