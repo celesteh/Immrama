@@ -52,6 +52,7 @@ $conf = parse_ini_file("config.ini");
   <META http-equiv="refresh" content="1;URL=../piece.html">
   </head>
   <body>
+    <?php echo $_POST['dur'] ?>
   <p>Redirecting to <a href="../piece.html">piece</a></p>
   </body>
   </html>
