@@ -45,13 +45,29 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 * `sudo apt-get install lighttpd php5-cgi -y`
 * `sudo lighty-enable-mod fastcgi`
 * `sudo lighty-enable-mod fastcgi-php`
+* `sudo mkdir /var/www/cgi-bin`
+* edit `/etc/lighttpd/lighttpd.conf`
+  * change the server modules section to:
+`  server.modules = (`
+`        "mod_access",`
+`        "mod_alias",`
+`        "mod_compress",`
+`        "mod_redirect",`
+`        "mod_rewrite",`
+`        "mod_fastcgi",`
+`        "mod_cgi",`
+`)`
 
-* Add the following lines to the bottom of `/etc/lighttpd/lighttpd.conf`
+  * Add the following lines to the bottom of the file
 
 `server.error-handler-404   = "/index.html"`
 
 `$HTTP["host"] == "(.*)$" {`
 `  url.redirect = ( "^(.*)/" => "http://immrama.local/$1" )`
+`}`
+
+`$HTTP["url"] =~ "^/cgi-bin/" {`
+`    cgi.assign = (".py" => "/usr/bin/python")`
 `}`
 
 ## Immrama setup
@@ -61,4 +77,7 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 * `sudo pip install setproctitle`
 * `sudo pip install psutil`
 * `cd ~/Documents ; git clone https://github.com/celesteh/Immrama.git`
+  * If you install this elsewhere, you will need to edit the `data/conductor/config.ini` file to have the full path to your chosen location. Do this before the next step.
 * `cd Immrama ; sudo cp -r data/* /var/www/html/`
+* `sudo chmod 777 /var/www/html/conductor/`
+* `sudo chmod 666 /var/www/html/conductor/config.ini`

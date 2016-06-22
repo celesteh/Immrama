@@ -56,15 +56,12 @@ function write_php_ini($array, $file)
 $conf = parse_ini_file("config.ini", true);
 write_php_ini($conf, "config.ini");
 
-$pid=pcntl_fork();
-if($pid==0)
-{
- posix_setsid();
- $cmd = '/home/pi/Documents/Immrama/immrama.py';
- $args= 'var/www/html/conductor/config.ini'
- pcntl_exec($cmd,$args,$_ENV);
- // child becomes the standalone detached process
-}
+$cmd = $conf['working']['installation'] . '/immrama.py';
+$args = $conf['working']['data'] . '/conductor/config.ini';
+
+shell_exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
+
+
 ?>
 <html>
 <head>
@@ -73,6 +70,7 @@ if($pid==0)
   <META http-equiv="refresh" content="1;URL=../piece.html">
   </head>
   <body>
+    <?php echo $cmd; ?>
   <p>Redirecting to <a href="../piece.html">piece</a></p>
   </body>
   </html>
