@@ -51,6 +51,7 @@ foreach($conf as $key => $val)
         } else {
           $oval = $_POST[$key]
         }
+      }
 ?>
 <html>
 <head>
