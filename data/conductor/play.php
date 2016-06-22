@@ -67,4 +67,7 @@ write_php_ini($conf, "config.ini");
   <p>Redirecting to <a href="../piece.html">piece</a></p>
   </body>
   </html>
-<?php exec ("sudo /usr/bin/python /home/pi/Documents/Immrama/immrama.py /var/www/html/conductor/config.ini &");?>
+<?php //exec ("sudo /usr/bin/python /home/pi/Documents/Immrama/immrama.py /var/www/html/conductor/config.ini &");?>
+<?php
+    `echo "usr/bin/python /home/pi/Documents/Immrama/immrama.py /var/www/html/conductor/config.ini"|at now`;
+?>
