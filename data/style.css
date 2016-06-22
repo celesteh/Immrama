@@ -16,7 +16,7 @@ html {
 /* define mobile specific styles come here */
 
   body {
-    font-size: 4em; /* 40px/16=2.5em */  
+    font-size: 4em; /* 40px/16=2.5em */
   }
 
 }
@@ -24,4 +24,22 @@ html {
 button, input, select, textarea {
   font-family : inherit;
   font-size   : inherit; /*100%;*/
+}
+
+label
+{
+width: 4em;
+float: left;
+text-align: right;
+margin-right: 0.5em;
+display: block
+}
+
+.submit input
+{
+margin-left: 4.5em;
+}
+input
+{
+border: 1px solid #781351
 }
