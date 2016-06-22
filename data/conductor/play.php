@@ -47,9 +47,9 @@ $oval = 1
 foreach($conf as $key => $val)
     {
 
-        if (empty($_POST[$key]))  {
+        //if (empty($_POST[$key]))  {
           $oval = $oval + 1
-        } //else {
+        //} //else {
           //$oval = $_POST[$key]
         //}
       }
