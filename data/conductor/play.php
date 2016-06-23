@@ -58,11 +58,33 @@ write_php_ini($conf, "config.ini");
 
 $cmd = $conf['working']['installation'] . '/immrama.py';
 $args = $conf['working']['data'] . '/conductor/config.ini';
-
+$line = $cmd . " " . $args
 // tried
 //exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
 //Proc_Close (Proc_Open ($cmd . ' ' . $args .'&', Array (), $foo));
-shell_exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
+//shell_exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
+
+function LaunchBackgroundProcess($command){
+  // Run command Asynchroniously (in a separate thread)
+  if(PHP_OS=='WINNT' || PHP_OS=='WIN32' || PHP_OS=='Windows'){
+    // Windows
+    $command = 'start "" '. $command;
+  } else {
+    // Linux/UNIX
+    $command = $command .' > /dev/null &';
+  }
+  $handle = popen($command, 'r');
+  if($handle!==false){
+    pclose($handle);
+    return true;
+  } else {
+    return false;
+  }
+}
+
+LaunchBackgroundProcess($line)
+
+
 
 ?>
 <html>
