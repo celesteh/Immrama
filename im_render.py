@@ -26,7 +26,7 @@ width =  config.getint('working', 'width')
 height = config.getint('working', 'height')
 filename = config.get('working', 'file') # -> "value1"
 data_dir = config.get('working', 'data') # -> "value1"
-inkscape = config.get('working', 'inkscape')
+#inkscape = config.get('working', 'inkscape')
 
 # check config
 if width is None:
