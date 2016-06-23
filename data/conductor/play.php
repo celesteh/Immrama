@@ -61,9 +61,8 @@ $args = $conf['working']['data'] . '/conductor/config.ini';
 
 // tried
 //exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
-
-Proc_Close (Proc_Open ($cmd . ' ' . $args .'&', Array (), $foo));
-//shell_exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
+//Proc_Close (Proc_Open ($cmd . ' ' . $args .'&', Array (), $foo));
+shell_exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
 
 ?>
 <html>
