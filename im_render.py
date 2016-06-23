@@ -36,6 +36,8 @@ if height is None:
 if data_dir.endswith('/') == False:
     data_dir = data_dir +'/'
 
+# seed
+random.seed()
 
 # when we want to read a file
 def read_file(filename):
