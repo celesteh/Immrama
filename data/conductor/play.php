@@ -45,7 +45,7 @@ function write_php_ini($array, $file)
                 } else {
                   $sval = $_POST[$skey];
                 }
-                $res[] = "$skey = ".(is_numeric($sval) ? $sval : '"'.$sval.'"');
+                $res[] = "$skey = ". $val; //(is_numeric($sval) ? $sval : '"'.$sval.'"');
               }
           }
           else $res[] = "$key = ".(is_numeric($val) ? $val : '"'.$val.'"');
