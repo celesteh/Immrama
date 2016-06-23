@@ -67,7 +67,7 @@ $line = $cmd . " " . $args
 function LaunchBackgroundProcess($command){
   // Run command Asynchroniously (in a separate thread)
     // Linux/UNIX
-  $command = $command .' > /dev/null &';
+  $command = $command .'  /dev/null &';
   $handle = popen($command, 'r');
   if($handle!==false){
     pclose($handle);
