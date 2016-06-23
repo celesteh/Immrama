@@ -92,6 +92,6 @@ system("nohup ". $line . " >/dev/null 2>/dev/null &");
   </head>
   <body>
   <!--  <?php echo $cmd . ' ' . $args .' >/dev/null 2>/dev/null &'; ?> -->
-  <p>Redirecting to <a href="../piece.html">piece</a></p>
+  <p>Redirecting to <a href="piece.html">piece</a></p>
   </body>
   </html>
