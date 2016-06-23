@@ -78,8 +78,8 @@ $line = $cmd . " " . $args;
 //}
 //
 //LaunchBackgroundProcess($line);
-exec("nohup ". $line . " >/dev/null 2>/dev/null &");
-
+$escaped = escapeshellcmd("nohup ". $line . " >/dev/null 2>/dev/null &");
+shell_exec($escaped);
 
 ?>
 <html>
