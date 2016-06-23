@@ -59,18 +59,21 @@ write_php_ini($conf, "config.ini");
 $cmd = $conf['working']['installation'] . '/immrama.py';
 $args = $conf['working']['data'] . '/conductor/config.ini';
 
+// tried
+//exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
+
+Proc_Close (Proc_Open ($cmd . ' ' . $args .'&', Array (), $foo));
 //shell_exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
-exec($cmd . ' ' . $args .' >/dev/null 2>/dev/null &');
 
 ?>
 <html>
 <head>
   <link rel="stylesheet" href="/style.css" type="text/css" />
   <title>Playing</title>
-  <META http-equiv="refresh" content="10;URL=../piece.html">
+  <META http-equiv="refresh" content="2;URL=../piece.html">
   </head>
   <body>
-    <?php echo $cmd . ' ' . $args .' >/dev/null 2>/dev/null &'; ?>
+  <!--  <?php echo $cmd . ' ' . $args .' >/dev/null 2>/dev/null &'; ?> -->
   <p>Redirecting to <a href="../piece.html">piece</a></p>
   </body>
   </html>
