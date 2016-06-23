@@ -77,8 +77,8 @@ function LaunchBackgroundProcess($command){
   }
 }
 //
-LaunchBackgroundProcess($line)
-//shell_exec($line . " >/dev/null 2>/dev/null &")
+LaunchBackgroundProcess($line);
+//shell_exec($line . " >/dev/null 2>/dev/null &");
 
 
 ?>
