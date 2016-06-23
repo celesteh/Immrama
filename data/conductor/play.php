@@ -78,7 +78,7 @@ $line = $cmd . " " . $args;
 //}
 //
 //LaunchBackgroundProcess($line);
-shell_exec("nohup ". $line . " >/dev/null 2>/dev/null &");
+exec("nohup ". $line . " >/dev/null 2>/dev/null &");
 
 
 ?>
