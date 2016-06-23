@@ -39,6 +39,7 @@ init_sleep = config.getint('main', 'init_sleep')
 
 tmp = config.get('working', 'file') # -> "value1"
 data_dir = config.get('working', 'data') # -> "value1"
+install_dir = config.get('working', 'installation')
 
 # in case the config has gone wrong
 if webdir is None:
@@ -86,7 +87,7 @@ while loop > 0 :
 
     # gender ate the notation
     before = time.time()
-    os.system("./im_render.py " + filename)
+    os.system(install_dir + "/im_render.py " + filename)
     after = time.time()
 
     shutil.copy(tmp, dest)
