@@ -78,6 +78,11 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 * `sudo pip install psutil`
 * `cd ~/Documents ; git clone https://github.com/celesteh/Immrama.git`
   * If you install this elsewhere, you will need to edit the `data/conductor/config.ini` file to have the full path to your chosen location. Do this before the next step.
+* `sudo chmod 777 /var/www/html/`
 * `cd Immrama ; sudo cp -r data/* /var/www/html/`
 * `sudo chmod 777 /var/www/html/conductor/`
 * `sudo chmod 666 /var/www/html/conductor/config.ini`
+
+## Troubleshooting
+
+* The first thing to check is file permissions. Re-run all the chmod commands above. Also, there are circumatsance where score.svg make have the wrong permissions. Either delete the file entirely or `sudo chmod 666 /var/www/html/score.svg`

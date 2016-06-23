@@ -69,6 +69,7 @@ if data_dir.endswith('/') == False:
 
 # get ready
 shutil.copy(data_dir + 'start.svg', dest)
+os.chmod(dest, 666)
 
 # pause just for a moment
 time.sleep(init_sleep)
@@ -85,13 +86,13 @@ prev = start_time
 
 while loop > 0 :
 
-    # gender ate the notation
+    # gen_dur ate the notation
     before = time.time()
     os.system(install_dir + "/im_render.py " + filename)
     after = time.time()
 
     shutil.copy(tmp, dest)
-
+    os.chmod(dest, 666)
 
     # calculate the timings
     if first == 1:
@@ -117,6 +118,8 @@ while loop > 0 :
 
 # finish
 shutil.copy(data_dir + 'end.svg' , dest)
+os.chmod(dest, 666)
 #reset
 time.sleep(slide_dur)
 shutil.copy(data_dir + 'ready.svg', dest)
+os.chmod(dest, 666)
