@@ -88,7 +88,7 @@ system("nohup ". $line . " >/dev/null 2>/dev/null &");
 <head>
   <link rel="stylesheet" href="/style.css" type="text/css" />
   <title>Playing</title>
-  <META http-equiv="refresh" content="2;URL=../piece.html">
+  <META http-equiv="refresh" content="2;URL=piece.html">
   </head>
   <body>
   <!--  <?php echo $cmd . ' ' . $args .' >/dev/null 2>/dev/null &'; ?> -->
