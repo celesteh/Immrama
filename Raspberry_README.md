@@ -12,8 +12,9 @@
 ## Making the captive portal
 * Go to https://frillip.com/using-your-raspberry-pi-3-as-a-wifi-access-point-with-hostapd/ and follow all the instructions until you get to the IP tables commands.  Do not use the rules on that page, but use these instead:
 
-`sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-sudo iptables -t nat -I POSTROUTING -p tcp --dport 80 -j MASQUERADE`
+`sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE`
+
+`sudo iptables -t nat -I POSTROUTING -p tcp --dport 80 -j MASQUERADE`
 
 `sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT`
 
