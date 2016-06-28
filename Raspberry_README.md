@@ -35,9 +35,68 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 `local=/local/`
 
 
+`address=/immrama.local/172.24.1.1`
+
+
+`address=/www.apple.com/104.71.189.174`
+
+`address=/gsp1.apple.com/62.24.201.58`
+
+`address=/www.appleiphonecell.com/23.4.220.116`
+
+`address=/www.itools.info/23.4.220.116`
+
+`address=/www.ibook.info/23.4.220.116`
+
+`address=/www.airport.us/23.4.220.116`
+
+`address=/www.thinkdifferent.us/23.4.220.116`
+
+`address=/akamaitechnologies.com/72.246.81.207`
+
+`address=/akamaiedge.net/104.67.49.251`
+
+
+`address=/msftncsi.com/62.24.131.144`
+
+`address=/msftncsi.com.edgesuite.net/62.24.131.144`
+
+
+`address=/google.com/62.24.208.147`
+
+`address=/clients3.google.com/216.58.198.238`
+
+
+
 * Add the following to the bottom of `/etc/hosts`
 
 `172.24.1.1      immrama immrama.local`
+
+
+`104.71.189.174  www.apple.com`
+
+`62.24.201.58    gsp1.apple.com`
+
+`23.4.220.116    www.appleiphonecell.com`
+
+`23.4.220.116    www.itools.info`
+
+`23.4.220.116    www.ibook.info`
+
+`23.4.220.116    www.airport.us`
+
+`23.4.220.116    www.thinkdifferent.us`
+
+
+`62.24.131.144   www.msftncsi.com`
+
+`62.24.131.144   www.msftncsi.com.edgesuite.net`
+
+
+`62.24.208.147   www.google.com`
+
+`216.58.198.238  clients3.google.com`
+
 
 * When you're done, reboot.
 

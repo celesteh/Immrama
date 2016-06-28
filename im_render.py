@@ -26,6 +26,7 @@ width =  config.getint('working', 'width')
 height = config.getint('working', 'height')
 filename = config.get('working', 'file') # -> "value1"
 data_dir = config.get('working', 'data') # -> "value1"
+install_dir = config.get('working', 'installation')
 #inkscape = config.get('working', 'inkscape')
 
 # check config
@@ -35,6 +36,8 @@ if height is None:
     height = 600
 if data_dir.endswith('/') == False:
     data_dir = data_dir +'/'
+if install_dir.endswith('/') == False:
+    install_dir = install_dir +'/'
 
 # seed
 random.seed()
@@ -65,7 +68,7 @@ def read_file(filename):
 
 def read_text():
     #pick some text from this very file?
-    texta = read_file('im_render.py')
+    texta = read_file(install_dir +'im_render.py')
 
     # and the config file, because why not?
     textb =  read_file(config_file)
