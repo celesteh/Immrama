@@ -121,5 +121,9 @@ shutil.copy(data_dir + 'end.svg' , dest)
 os.chmod(dest, 0666)
 #reset
 time.sleep(slide_dur)
+shutil.copy(data_dir + 'start.svg', dest)
+os.chmod(dest, 0666)
+
+time.sleep(slide_dur)
 shutil.copy(data_dir + 'ready.svg', dest)
 os.chmod(dest, 0666)
