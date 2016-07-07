@@ -357,9 +357,9 @@ xmlstr = xmlstr + dwg.tostring()
 xmlstr = xmlstr.encode('ascii', 'xmlcharrefreplace') # re-escape the glyphs
 
 #missing_glyphs =''
-#with open(data_dir + "Bravura.svg") as font:
+with open(data_dir + "Bravura.svg") as font:
     #missing_glyphs =font.read()
-    #xmlstr = xmlstr.replace('</style>', font.read() + '</style>' )
+    xmlstr = xmlstr.replace('</style>', font.read() + '</style>' )
 
 with open(filename, 'w') as fp:
     #fp.write('<?xml version="1.0" encoding="utf-8" ?>\n')
@@ -370,4 +370,4 @@ with open(filename, 'w') as fp:
 ## skip for demo
 #os.system('{0} -f {1} --verb EditSelectAll --verb SelectionUnGroup --verb EditSelectAll --verb ObjectToPath --verb FileSave --verb FileQuit'.format(inkscape, filename))
 
-os.system('{0} {1} --export-text-to-path --export-plain-svg {1}'.format(inkscape, filename))
+os.system('{0} {1} -z --export-text-to-path --export-plain-svg={1}'.format(inkscape, filename))

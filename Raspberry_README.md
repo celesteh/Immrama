@@ -70,7 +70,7 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 
 * Add the following to the bottom of `/etc/hosts`
 
-`172.24.1.1      immrama immrama.local`
+`172.24.1.1      immrama immrama.local www.immrama.local`
 
 
 `104.71.189.174  www.apple.com`
@@ -139,9 +139,11 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 * `cd ~/Documents ; git clone https://github.com/celesteh/Immrama.git`
   * If you install this elsewhere, you will need to edit the `data/conductor/config.ini` file to have the full path to your chosen location. Do this before the next step.
 * `sudo chmod 777 /var/www/html/`
-* `cd Immrama ; sudo cp -r data/* /var/www/html/`
+* `sudo mkdir /usr/share/fonts/truetype/bravura`
+* `cd Immrama ; sudo cp -r data/* /var/www/html/ ; cd data ; sudo cp Bravura.ttf /usr/share/fonts/truetype/bravura && sudo fc-cache -f -v`
 * `sudo chmod 777 /var/www/html/conductor/`
 * `sudo chmod 666 /var/www/html/conductor/config.ini`
+
 
 ## Troubleshooting
 
