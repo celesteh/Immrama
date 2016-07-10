@@ -81,9 +81,9 @@ fi
 
 if [ ! -e ~/Downloads/0.91.x/debian ]; then
 
-  if [ ! -e ./inskcape_0.91.orig.tar.xz ]; then
+  if [ ! -e ./inkscape_0.91.orig.tar.xz ]; then
     cd 0.91.x
-    nice dh_make --createorig -s -p inskcape_0.91 -y &
+    nice dh_make --createorig -s -p inkscape_0.91 -y &
     run_proc $!
     cd ..
   fi
