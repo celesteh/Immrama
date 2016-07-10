@@ -35,21 +35,23 @@ function run_proc {
   get_temp
   echo "$deg c " `date +%X`
 
-  while kill -0 "$1"; do #run this loop while the build is running
+  while kill -0 "$1"; do #run this loop while the process is running
 
     #cpu=$(</sys/class/thermal/thermal_zone0/temp)
     #deg=$((cpu/1000))
     get_temp
 
     if [ $deg -ge 49 ] ; then
-      if [ $stopped -eq 0 ]; then
+      #if [ $stopped -eq 0 ]; then
         echo "too hot! $deg c " `date +%X`
-      fi
+      #fi
 
       pause_proc $1
       stopped=1
       if [ $sleep -eq 5 ] ; then
         sleep=10
+      elif [ $sleep -eq 10 ] ; then
+        sleep=15
       elif [ $sleep -lt 5 ] ; then
         sleep=5
       fi

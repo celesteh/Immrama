@@ -154,11 +154,11 @@ Try `sudo apt-get install inkscape -y` then `inkscape --version` If it comes bac
 * `sudo pip install psutil`
 * `cd ~/Documents ; git clone https://github.com/celesteh/Immrama.git`
   * If you install this elsewhere, you will need to edit the `data/conductor/config.ini` file to have the full path to your chosen location. Do this before the next step.
-  * `sudo chmod 777 /var/www/html/`
-  * `sudo mkdir /usr/share/fonts/truetype/bravura`
-  * `cd Immrama ; sudo cp -r data/* /var/www/html/ ; cd data ; sudo cp Bravura.ttf /usr/share/fonts/truetype/bravura && sudo fc-cache -f -v`
-  * `sudo chmod 777 /var/www/html/conductor/`
-  * `sudo chmod 666 /var/www/html/conductor/config.ini`
+* `sudo chmod 777 /var/www/html/`
+* `sudo mkdir /usr/share/fonts/truetype/bravura`
+* `cd Immrama ; sudo cp -r data/* /var/www/html/ ; cd data ; sudo cp Bravura.ttf /usr/share/fonts/truetype/bravura && sudo fc-cache -f -v`
+* `sudo chmod 777 /var/www/html/conductor/`
+* `sudo chmod 666 /var/www/html/conductor/config.ini`
 
 ### Building Inkscape
 * First inkscape--version! If the number is at or ABOVE 0.91, stop. Otherwise, carry on.
