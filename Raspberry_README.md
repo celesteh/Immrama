@@ -1,10 +1,18 @@
 # Raspberry Pi 3 Setup
 
+## Physical Setup
+
+The Pi 3 sometimes has problems with overheating. I ran into this during the setup (compiling inkscape), but never during a performance, even with more than 20 performers on the network.
+
+To minimise the chances of overheating, set your computer so that it does not boot the desktop. All of the commands below are via the command line and can be executed via an ssh connection. Also, get a heat sink and put it over the processor.
+
+In steps that may cause the processor to overheat, I've used the nice command to run the process more slowly.
+
 ## Setting up the SD card
 * Get Raspbian onto an SD card, by downloading it or buying a pre-loaded card. https://www.raspberrypi.org/downloads/raspbian/
 * Re-size the card and change the name of the computer by running `sudo raspi-config`
   * Expanding the file system is on the main menu
-  * Renaming the card is under advanced options
+  * Renaming the computer is under advanced options
   * You won't be using a GUI, so change the boot options so you don't start a desktop
   * Reboot the computer when you exit the program
 * Do a software update `sudo apt-get update && sudo apt-get upgrade -y`
@@ -130,6 +138,14 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 `    cgi.assign = (".py" => "/usr/bin/python")`
 `}`
 
+## Installing inkscape
+
+Try `sudo apt-get install inkscape -y` then `inkscape --version` If it comes back with a number _below_ 0.91, you will have to build it
+
+
+
+
+
 ## Immrama setup
 
 * `sudo pip install svgwrite`
@@ -138,11 +154,24 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 * `sudo pip install psutil`
 * `cd ~/Documents ; git clone https://github.com/celesteh/Immrama.git`
   * If you install this elsewhere, you will need to edit the `data/conductor/config.ini` file to have the full path to your chosen location. Do this before the next step.
-* `sudo chmod 777 /var/www/html/`
-* `sudo mkdir /usr/share/fonts/truetype/bravura`
-* `cd Immrama ; sudo cp -r data/* /var/www/html/ ; cd data ; sudo cp Bravura.ttf /usr/share/fonts/truetype/bravura && sudo fc-cache -f -v`
-* `sudo chmod 777 /var/www/html/conductor/`
-* `sudo chmod 666 /var/www/html/conductor/config.ini`
+  * `sudo chmod 777 /var/www/html/`
+  * `sudo mkdir /usr/share/fonts/truetype/bravura`
+  * `cd Immrama ; sudo cp -r data/* /var/www/html/ ; cd data ; sudo cp Bravura.ttf /usr/share/fonts/truetype/bravura && sudo fc-cache -f -v`
+  * `sudo chmod 777 /var/www/html/conductor/`
+  * `sudo chmod 666 /var/www/html/conductor/config.ini`
+
+### Building Inkscape
+* First inkscape--version! If the number is at or ABOVE 0.91, stop. Otherwise, carry on.
+* `sudo nano /etc/apt/sources.list`
+  * Uncomment the line with deb-src in it
+* `sudo apt-get update && sudo nice apt-get upgrade -y`
+* `sudo apt-get build-dep inkscape -y`
+* `sudo apt-get install build-essential dpkg-dev fakeroot cmake bzr dh-make -y`
+* `sudo apt-get remove inkscape`
+* `sudo apt-get autoremove`
+* `cd ~/Documents/Imramma ; ./pi_build_inkscape.sh && cd ~Downloads/ && sudo dpkg -i inkscape*.deb `
+
+
 
 
 ## Troubleshooting
