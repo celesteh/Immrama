@@ -247,10 +247,15 @@ def circle():
 
     width = random.randint(2,10)
 
+    opaque = 1
     fill = random.choice(['white', 'white', 'white', 'white', 'black', 'black', 'yellow', 'red'])
 
     circle = dwg.circle(center=(rand_x(), rand_y()), r=random.randint(50,200), stroke_width =width, stroke='black')
-    circle.fill(fill, opacity=random.randint(0,1)) #0)
+
+    if fill == 'white':
+        opaque=random.randint(0,1)
+
+    circle.fill(fill, opacity=opaque) #0)
     dwg.add(circle)
 
 def draw_line() :
