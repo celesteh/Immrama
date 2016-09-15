@@ -359,10 +359,12 @@ xmlstr = xmlstr + dwg.tostring()
 
 xmlstr = xmlstr.encode('ascii', 'xmlcharrefreplace') # re-escape the glyphs
 
-#missing_glyphs =''
-with open(data_dir + "Bravura.svg") as font:
-    #missing_glyphs =font.read()
-    xmlstr = xmlstr.replace('</style>', font.read() + '</style>' )
+#skip missing glyphs -----
+##missing_glyphs =''
+#with open(data_dir + "Bravura.svg") as font:
+#    #missing_glyphs =font.read()
+#    xmlstr = xmlstr.replace('</style>', font.read() + '</style>' )
+#----
 
 with open(filename, 'w') as fp:
     #fp.write('<?xml version="1.0" encoding="utf-8" ?>\n')
