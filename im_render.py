@@ -31,8 +31,8 @@ data_dir = config.get('working', 'data') # -> "value1"
 install_dir = config.get('working', 'installation')
 inkscape = config.get('working', 'inkscape')
 
-filename = tmp + '/' + filename
-rendered = tmp + '/' + rendered
+
+
 
 # check config
 if width is None:
@@ -43,6 +43,14 @@ if data_dir.endswith('/') == False:
     data_dir = data_dir +'/'
 if install_dir.endswith('/') == False:
     install_dir = install_dir +'/'
+if tmp is None:
+    tmp = '/tmp/'
+
+if tmp.endswith('/') == False:
+    tmp = tmp +'/'
+
+filename = tmp + '/' + filename
+rendered = tmp + '/' + rendered
 
 # seed
 random.seed()
@@ -242,7 +250,7 @@ def circle():
     fill = random.choice(['white', 'white', 'white', 'white', 'black', 'black', 'yellow', 'red'])
 
     circle = dwg.circle(center=(rand_x(), rand_y()), r=random.randint(50,200), stroke_width =width, stroke='black')
-    circle.fill(fill, opacity=0)
+    circle.fill(fill, opacity=random.randint(0,1)) #0)
     dwg.add(circle)
 
 def draw_line() :

@@ -42,7 +42,10 @@ rendered = config.get('working', 'rendered')
 data_dir = config.get('working', 'data') # -> "value1"
 install_dir = config.get('working', 'installation')
 
-tmp = tmp_dir + '/' + rendered
+if tmp_dir.endswith('/') == False:
+    tmp_dir = tmp_dir +'/'
+
+tmp = tmp_dir + rendered
 
 # in case the config has gone wrong
 if webdir is None:
@@ -62,8 +65,8 @@ if slide_dur is None:
 if init_sleep is None:
     init_sleep = 5
 
-if tmp is None:
-    tmp = '/tmp/imramma.svg'
+#if tmp is None:
+#    tmp = '/tmp/imramma.svg'
 
 if data_dir.endswith('/') == False:
     data_dir = data_dir +'/'
