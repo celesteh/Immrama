@@ -48,7 +48,7 @@ function write_php_ini($array, $file)
                 $res[] = "$skey = ". $sval; //(is_numeric($sval) ? $sval : '"'.$sval.'"');
               }
           }
-          else $res[] = "$key = ".(is_numeric($val) ? $val : '"'.$val.'"');
+          else $res[] = "$key = ".(is_numeric($val) ? ceil($val) : '"'.$val.'"');
       }
     safefilerewrite($file, implode("\r\n", $res));
 }

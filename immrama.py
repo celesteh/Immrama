@@ -37,9 +37,12 @@ dur = config.getint('main', 'dur')
 slide_dur =  config.getint('main', 'slide_dur')
 init_sleep = config.getint('main', 'init_sleep')
 
-tmp = config.get('working', 'file') # -> "value1"
+tmp_dir = config.get('working', 'tmp')
+rendered = config.get('working', 'rendered')
 data_dir = config.get('working', 'data') # -> "value1"
 install_dir = config.get('working', 'installation')
+
+tmp = tmp_dir + '/' + rendered
 
 # in case the config has gone wrong
 if webdir is None:

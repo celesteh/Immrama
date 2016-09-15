@@ -24,10 +24,15 @@ config.read(config_file)
 
 width =  config.getint('working', 'width')
 height = config.getint('working', 'height')
+tmp = config.get('working', 'tmp')
 filename = config.get('working', 'file') # -> "value1"
+rendered = config.get('working', 'rendered')
 data_dir = config.get('working', 'data') # -> "value1"
 install_dir = config.get('working', 'installation')
 inkscape = config.get('working', 'inkscape')
+
+filename = tmp + '/' + filename
+rendered = tmp + '/' + rendered
 
 # check config
 if width is None:
@@ -375,4 +380,4 @@ with open(filename, 'w') as fp:
 ## skip for demo
 #os.system('{0} -f {1} --verb EditSelectAll --verb SelectionUnGroup --verb EditSelectAll --verb ObjectToPath --verb FileSave --verb FileQuit'.format(inkscape, filename))
 
-os.system('{0} {1} -z --export-text-to-path --export-plain-svg={1}'.format(inkscape, filename))
+os.system('{0} {1} -z --export-text-to-path --export-plain-svg={2}'.format(inkscape, filename, rendered))
