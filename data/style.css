@@ -3,11 +3,11 @@
   src: local("Bravura Regular"),
     local("BravuraRegular"),
     local("Bravura"),
-    url(Bravura.ttf) format("opentype");
+    url(Bravura.ttf) format("truetype");
 }
 
 html {
-  font-family: Bravura, Sonata, Opus, Petrucci, Seville, Ghent, Maestro, InkPen2, Reprise, sans-serif;
+  font-family: Bravura, Emmental, Emmentaller, Lato, Ubuntu, Roboto, Verdana, Helvetica, sans-serif;
 
 
 }
