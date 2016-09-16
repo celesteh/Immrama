@@ -336,7 +336,10 @@ if random.randrange(0,100) < 36:
     for line in t_arr:
         if len(line) > 0:
             rotate = (random.randrange(0, 100) < 30)
-            add_text(line, dwg, random.randint(35, 70), random.randint(100, 600), random.randint(100, 300), rotate)
+            add_text(line, dwg, random.randint(35, 70),
+            #random.randint(100, 600), random.randint(100, 300),
+            rand_x(), rand_y(),
+            rotate)
 
 
 
