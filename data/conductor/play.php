@@ -53,11 +53,11 @@ function write_php_ini($array, $file)
     safefilerewrite($file, implode("\r\n", $res));
 }
 
-function write_color_style($foreground, $background)
+function write_color_style($foreground, $background, $file)
 
   $css = "body {\n  background-color: ". $background .";\n  color: ".$foreground.";\n}\n";
 
-  safefilerewrite("../color.css", $css);
+  safefilerewrite($file, $css);
 }
 
 
@@ -69,7 +69,7 @@ $conf = parse_ini_file("config.ini", true);
 
 $fg = $conf['working']['foreground'];
 $bg = $conf['working']['background'];
-write_color_style($fg, $bg);
+write_color_style($fg, $bg, $conf['working']['data'] . '/color.css' );
 
 
 $cmd = $conf['working']['installation'] . '/immrama.py';
