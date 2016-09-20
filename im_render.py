@@ -30,6 +30,8 @@ rendered = config.get('working', 'rendered')
 data_dir = config.get('working', 'data') # -> "value1"
 install_dir = config.get('working', 'installation')
 inkscape = config.get('working', 'inkscape')
+bgcolor = config.get('working', 'background')
+fgcolor =config.get('working', 'foreground')
 
 
 
@@ -120,10 +122,11 @@ def add_text(text, drawing, size, x,y, rotate):
         tpath = drawing.textPath(path, text)
         text = ''
 
-    g = drawing.g(style=("font-size:{}px,font-family:Bravura;stroke:black;stroke-width:1".format(size)))
+    g = drawing.g(style=("font-size:{0}px,font-family:Bravura;stroke:{1};stroke-width:1".format(size, fgcolor)))
 
 
     gtext = drawing.text(text, insert=(x,y), font_size = size, font_family='Bravura');
+    gtext.fill(fgcolor)
 
     #gtext.add(drawing.tspan(text))
 
@@ -153,7 +156,9 @@ def make_dots(drawing, num, topx, topy, botx, boty, max_s, min_s):
         x = random.randint(topx, botx)
         y = random.randint(topy, boty)
         r = random.randint(max_s, min_s)
-        drawing.add(drawing.circle(center=(x, y), r=r))
+	circle = drawing.circle(center=(x, y), r=r, stroke=fgcolor)
+	circle.fill(fgcolor)
+        drawing.add(circle)
 
 #end dots
 
@@ -167,7 +172,8 @@ def make_dots(drawing, num, topx, topy, botx, boty, max_s, min_s):
 #dwg = svgwrite.Drawing(filename=filename, size = ("{}px".format(width), "{}px".format(height)))
 dwg = svgwrite.Drawing(size = ("{}px".format(width), "{}px".format(height)))
 dwg.viewbox(0, 0, width, height)
-dwg.stretch()
+#dwg.stretch()
+dwg.fit(horiz='center', vert='middle', scale='slice')
 
 dwg.defs.add(dwg.style('@font-face {\n  font-family: Bravura;\n'
 + '  src: local("Bravura Regular"),\n    local("BravuraRegular"), \n    local("Bravura"),\n'
@@ -250,11 +256,11 @@ def circle():
     width = random.randint(2,10)
 
     opaque = 1
-    fill = random.choice(['white', 'white', 'white', 'white', 'black', 'black', 'yellow', 'red'])
+    fill = random.choice([bgcolor, bgcolor, bgcolor, bgcolor, fgcolor, fgcolor, 'yellow', 'red'])
 
-    circle = dwg.circle(center=(rand_x(), rand_y()), r=random.randint(50,200), stroke_width =width, stroke='black')
+    circle = dwg.circle(center=(rand_x(), rand_y()), r=random.randint(50,200), stroke_width =width, stroke=fgcolor)
 
-    if fill == 'white':
+    if fill == bgcolor:
         opaque=random.randint(0,1)
 
     circle.fill(fill, opacity=opaque) #0)
@@ -262,7 +268,7 @@ def circle():
 
 def draw_line() :
 
-    dwg.add(dwg.line(start=(rand_x(), rand_y()), end=(rand_x(), rand_y()),stroke='black', stroke_width=random.randint(2,20)))
+    dwg.add(dwg.line(start=(rand_x(), rand_y()), end=(rand_x(), rand_y()),stroke=fgcolor, stroke_width=random.randint(2,20)))
 
 def squiggle():
 
@@ -299,7 +305,7 @@ def squiggle():
         x = newx
         y = newy
 
-    path = dwg.path(d=points, stroke='black', stroke_width = width, fill='white')
+    path = dwg.path(d=points, stroke=fgcolor, stroke_width = width, fill=bgcolor)
     dwg.add(path)
 #end squiggle
 
