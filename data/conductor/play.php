@@ -57,7 +57,7 @@ function write_color_style($foreground, $background)
 
   $css = "body {\n  background-color: ". $background .";\n  color: ".$foreground.";\n}\n";
 
-  safefilerewrite("color.css", $css);
+  safefilerewrite("../color.css", $css);
 }
 
 
