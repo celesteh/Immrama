@@ -6,7 +6,7 @@
     url(Bravura.ttf) format("truetype");
 }
 
-html {
+body {
   font-family: Bravura, Emmental, Emmentaller, Lato, Ubuntu, Roboto, Verdana, Helvetica, sans-serif;
 
 
@@ -15,7 +15,7 @@ html {
 @media only screen and (max-device-width: 480px) {
 /* define mobile specific styles come here */
 
-  body {
+  #words {
     font-size: 4em; /* 40px/16=2.5em */
   }
 
@@ -23,7 +23,7 @@ html {
 
 @media only screen and (min-device-width: 680px) {
 /* define bigger specific styles come here */
-  body {
+  #words {
     width: 80%;
     float: center;
     display: block;
@@ -33,7 +33,9 @@ html {
 
 }
 
-
+#score {
+  width: 100%
+}
 
 button, input, select, textarea {
   font-family : inherit;

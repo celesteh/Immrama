@@ -7,9 +7,11 @@ $conf = parse_ini_file("config.ini");
 <html>
 <head>
   <link rel="stylesheet" href="/style.css" type="text/css" />
+  <link rel="stylesheet" href="/color.css" type="text/css" />
   <title>Immrama</title>
 </head>
 <body>
+  <div id="words">
   <form action="play.php" method="post">
     <p>
 
@@ -51,4 +53,5 @@ $conf = parse_ini_file("config.ini");
 <BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
 </p>
   </form>
+</div>
 </body> </html>

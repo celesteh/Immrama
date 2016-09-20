@@ -53,8 +53,24 @@ function write_php_ini($array, $file)
     safefilerewrite($file, implode("\r\n", $res));
 }
 
+function write_color_style($foreground, $background)
+
+  $css = "body {\n  background-color: ". $background .";\n  color: ".$foreground.";\n}\n";
+
+  safefilerewrite("color.css", $css);
+}
+
+
+
 $conf = parse_ini_file("config.ini", true);
 write_php_ini($conf, "config.ini");
+$conf = parse_ini_file("config.ini", true);
+# surely parsing goes after writing?
+
+$fg = $conf['working']['foreground'];
+$bg = $conf['working']['background'];
+write_color_style($fg, $bg);
+
 
 $cmd = $conf['working']['installation'] . '/immrama.py';
 $args = $conf['working']['data'] . '/conductor/config.ini';
@@ -87,11 +103,14 @@ system("nohup ". $line . " >/dev/null 2>/dev/null &");
 <html>
 <head>
   <link rel="stylesheet" href="/style.css" type="text/css" />
+  <link rel="stylesheet" href="/color.css" type="text/css" />
   <title>Playing</title>
   <META http-equiv="refresh" content="0;URL=piece.html">
   </head>
   <body>
+    <div id="words">
   <!--  <?php echo $cmd . ' ' . $args .' >/dev/null 2>/dev/null &'; ?> -->
   <p>Redirecting to <a href="piece.html">piece</a></p>
+</div>
   </body>
   </html>
