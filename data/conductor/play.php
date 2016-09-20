@@ -69,7 +69,7 @@ $conf = parse_ini_file("config.ini", true);
 
 $fg = $conf['working']['foreground'];
 $bg = $conf['working']['background'];
-write_color_style($fg, $bg, $conf['working']['data'] . '/color.css' );
+#write_color_style($fg, $bg, $conf['working']['data'] . '/color.css' );
 
 
 $cmd = $conf['working']['installation'] . '/immrama.py';
