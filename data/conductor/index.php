@@ -17,8 +17,10 @@ function OnChange(form)
     if(val=="prev")
     {
       form.image_width.value = <?php echo $conf['image_width']; ?>
+
       form.image_width.disabled = true
       form.image_height.value = <?php echo $conf['image_height']; ?>
+
       form.image_height.disabled = true
 
     } else {
