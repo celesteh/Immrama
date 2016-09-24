@@ -34,17 +34,18 @@ $conf = parse_ini_file("config.ini");
       <p>
         <label for="score_size">Target Screen Geometry</label>
         <select name="score_size" onchange='OnChange(this.form);'>
-          <option value="prev">Same as last time (<?php echo $conf['width']; ?>x<?php echo $conf['height']; ?>)</option>
+          <option value="prev">Same as last time (<?php echo $conf['image_width']; ?>x<?php echo $conf['image_height']; ?>)</option>
           <option value="phone">Phones (2x3 ratio)</option>
           <option value="tablet">Tablets (4x3 ratio)</option>
+          <option value="custom">Custom</option>
         </select>
       </p>
       <p>
-  <label for ="width">Image width:</label>
-    <input type="number" name="width" value=<?php echo $conf['width']; ?>>
+  <label for ="image_width">Image width:</label>
+    <input type="number" name="image_width" value=<?php echo $conf['image_width']; ?>>
 
-  <label for ="height">Image height:</label>
-    <input type="number" name="height" value=<?php echo $conf['height']; ?>>
+  <label for ="image_height">Image height:</label>
+    <input type="number" name="image_height" value=<?php echo $conf['image_height']; ?>>
   </p>
   <p>
     <SCRIPT LANGUAGE="javascript">
@@ -54,18 +55,31 @@ $conf = parse_ini_file("config.ini");
       var val  = form.score_size.value
       if(val=="prev")
       {
-        form.width.value= <?php echo $conf['width']; ?>
-        form.height.value= <?php echo $conf['height']; ?>
+        form.image_width.value= <?php echo $conf['image_width']; ?>
+        form.image_width.disabled = true
+        form.image_height.value= <?php echo $conf['image_height']; ?>
+        form.image_height.disabled = true
 
       } else {
         if (val=="phone")
         {
-          form.width.value= 640
-          form.height.value= 960
+          form.image_width.value= 640
+          form.image_width.disabled = true
+          form.image_height.value= 960
+          form.image_height.disabled = true
 
-        } else { //must be tablet
-          form.width.value= 1024
-          form.height.value= 768
+        } else {
+          if (val =="tablet")
+          {
+            form.image_width.value= 1024
+            form.image_width.disabled = true
+            form.image_height.value= 768
+            form.image_height.disabled = true
+          } else {
+            //custom
+            form.image_width.disabled = false
+            form.image_height.disabled = false
+          }
         }
       }
 
