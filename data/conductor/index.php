@@ -8,6 +8,46 @@ $conf = parse_ini_file("config.ini");
 <head>
   <link rel="stylesheet" href="/style.css" type="text/css" />
   <link rel="stylesheet" href="/color.css" type="text/css" />
+  <SCRIPT LANGUAGE="javascript">
+<!--
+function OnChange(form)
+{
+  alert("change")
+    var val  = form.score_size.value
+    if(val=="prev")
+    {
+      form.image_width.value = <?php echo $conf['image_width']; ?>
+      form.image_width.disabled = true
+      form.image_height.value = <?php echo $conf['image_height']; ?>
+      form.image_height.disabled = true
+
+    } else {
+      if (val=="phone")
+      {
+        form.image_width.value = 640
+        form.image_width.disabled = true
+        form.image_height.value = 960
+        form.image_height.disabled = true
+
+      } else {
+        if (val =="tablet")
+        {
+          form.image_width.value = 1024
+          form.image_width.disabled = true
+          form.image_height.value = 768
+          form.image_height.disabled = true
+        } else {
+          //custom
+          form.image_width.disabled = false
+          form.image_height.disabled = false
+        }
+      }
+    }
+
+    return true;
+}
+//-->
+</SCRIPT>
   <title>Immrama</title>
 </head>
 <body>
@@ -48,45 +88,7 @@ $conf = parse_ini_file("config.ini");
     <input type="number" name="image_height" value=<?php echo $conf['image_height']; ?>>
   </p>
   <p>
-    <SCRIPT LANGUAGE="javascript">
-  <!--
-  function OnChange(form)
-  {
-      var val  = form.score_size.value
-      if(val=="prev")
-      {
-        form.image_width.value= <?php echo $conf['image_width']; ?>
-        form.image_width.disabled = true
-        form.image_height.value= <?php echo $conf['image_height']; ?>
-        form.image_height.disabled = true
 
-      } else {
-        if (val=="phone")
-        {
-          form.image_width.value= 640
-          form.image_width.disabled = true
-          form.image_height.value= 960
-          form.image_height.disabled = true
-
-        } else {
-          if (val =="tablet")
-          {
-            form.image_width.value= 1024
-            form.image_width.disabled = true
-            form.image_height.value= 768
-            form.image_height.disabled = true
-          } else {
-            //custom
-            form.image_width.disabled = false
-            form.image_height.disabled = false
-          }
-        }
-      }
-
-      return true;
-  }
-  //-->
-  </SCRIPT>
 
   <label for ="foreground">Foreground colour:</label>
     <input type="color" name="foreground" value=<?php echo $conf['foreground']; ?>>  </p>
