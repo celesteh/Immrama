@@ -55,7 +55,9 @@ function write_php_ini($array, $file)
 
 function write_color_style($foreground, $background, $file)
 {
-  $css = "body {\n  background-color: ". $background .";\n  color: ".$foreground.";\n}\n";
+  $css = "body {\n  background-color: ". $background .
+    ";\n  color: ".$foreground.";\n}\n\nsvg {\n  fill: " .
+    $foreground . "\n  path: " . $foreground . ";\n}\n" ;
 
   safefilerewrite($file, $css);
 }

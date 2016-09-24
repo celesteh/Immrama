@@ -77,6 +77,8 @@ if data_dir.endswith('/') == False:
 # get ready
 shutil.copy(data_dir + 'start.svg', dest)
 os.chmod(dest, 0666)
+shutil.copy(data_dir + 'style.css', tmp_dir)
+shutil.copy(data_dir + 'color.css', tmp_dir)
 
 # pause just for a moment
 time.sleep(init_sleep)

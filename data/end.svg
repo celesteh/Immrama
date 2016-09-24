@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet href="color.css" type="text/css"?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -10,6 +11,7 @@
    height="600px"
    version="1.1"
    width="800px"
+   viewBox="0 0 800 600" preserveAspectRatio="none"
    id="svg2"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="end.svg">
@@ -47,10 +49,6 @@
      inkscape:current-layer="svg2" />
   <defs
      id="defs4" />
-  <g
-     transform="translate(94.915254,6.779661)"
-     style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Bravura;-inkscape-font-specification:Bravura"
-     id="flowRoot2985">
     <path
        d="m 307.70312,244.43813 0,78.75 -13.00781,0 0,-68.69531 -35.50781,0 0,68.69531 -13.00781,0 0,-68.69531 -12.375,0 0,-10.05469 12.375,0 0,-5.48438 c -2e-5,-8.57803 2.0156,-14.90615 6.04687,-18.98437 4.0781,-4.12489 10.31247,-6.18739 18.70313,-6.1875 l 13.00781,0 0,10.75781 -12.375,0 c -4.64066,1e-4 -7.87503,0.9376 -9.70313,2.8125 -1.78127,1.8751 -2.6719,5.25009 -2.67187,10.125 l 0,6.96094 48.51562,0 m -13.00781,-30.51563 13.00781,0 0,16.38282 -13.00781,0 0,-16.38282"
        style=""
@@ -59,5 +57,4 @@
        d="m 400.375,275.65688 0,47.53125 -12.9375,0 0,-47.10938 c -7e-5,-7.45307 -1.45319,-13.03119 -4.35938,-16.73437 -2.9063,-3.70306 -7.26567,-5.55462 -13.07812,-5.55469 -6.98442,7e-5 -12.49222,2.22663 -16.52344,6.67969 -4.03128,4.45318 -6.0469,10.52349 -6.04687,18.21094 l 0,44.50781 -13.00782,0 0,-78.75 13.00782,0 0,12.23437 c 3.09372,-4.7343 6.72653,-8.27336 10.89843,-10.61718 4.21871,-2.34367 9.07027,-3.51555 14.55469,-3.51563 9.04682,8e-5 15.89056,2.81258 20.53125,8.4375 4.64055,5.57819 6.96086,13.80475 6.96094,24.67969"
        style=""
        id="path2988" />
-  </g>
 </svg>

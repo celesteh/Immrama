@@ -12,6 +12,7 @@ $conf = parse_ini_file("config.ini");
 </head>
 <body>
   <div id="words">
+    
   <form action="play.php" method="post">
     <p>
 

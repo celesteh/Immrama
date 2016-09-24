@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet href="color.css" type="text/css"?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -10,6 +11,7 @@
    height="600px"
    version="1.1"
    width="800px"
+   viewBox="0 0 800 600" preserveAspectRatio="none"
    id="svg2"
    inkscape:version="0.91 r13725"
    sodipodi:docname="ready.svg">
@@ -21,12 +23,11 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <sodipodi:namedview
-     pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1"
      objecttolerance="10"
@@ -40,7 +41,7 @@
      showgrid="false"
      showguides="false"
      inkscape:zoom="0.31125"
-     inkscape:cx="400"
+     inkscape:cx="-110.84337"
      inkscape:cy="300"
      inkscape:window-x="0"
      inkscape:window-y="27"
@@ -48,28 +49,24 @@
      inkscape:current-layer="svg2" />
   <defs
      id="defs4" />
-  <g
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:144px;line-height:125%;font-family:Monospace;-inkscape-font-specification:Monospace;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     id="text4136">
     <path
        d="m 198.85382,277.68887 q 4.57031,1.54688 8.85938,6.60938 4.35937,5.0625 8.71875,13.92187 l 14.41406,28.6875 -15.25781,0 -13.42969,-26.92968 q -5.20313,-10.54688 -10.125,-13.99219 -4.85156,-3.44531 -13.28906,-3.44531 l -15.46875,0 0,44.36718 -14.20313,0 0,-104.97656 32.0625,0 q 18,0 26.85938,7.52344 8.85937,7.52344 8.85937,22.71094 0,9.91406 -4.64062,16.45312 -4.57032,6.53906 -13.35938,9.07031 z m -35.57812,-44.08593 0,37.26562 17.85937,0 q 10.26563,0 15.46875,-4.71094 5.27344,-4.78125 5.27344,-13.99218 0,-9.21094 -5.27344,-13.85157 -5.20312,-4.71093 -15.46875,-4.71093 l -17.85937,0 z"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bravura Text';-inkscape-font-specification:'Bravura Text'"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bravura Text';-inkscape-font-specification:'Bravura Text';"
        id="path4141" />
     <path
        d="m 309.5257,284.29825 0,6.32812 -59.48438,0 q 0.84375,13.35938 8.01563,20.39063 7.24218,6.96094 20.10937,6.96094 7.45313,0 14.41406,-1.82813 7.03125,-1.82812 13.92188,-5.48437 l 0,12.23437 q -6.96094,2.95313 -14.27344,4.5 -7.3125,1.54688 -14.83594,1.54688 -18.84375,0 -29.88281,-10.96875 -10.96875,-10.96875 -10.96875,-29.67188 0,-19.33594 10.40625,-30.65625 10.47656,-11.39062 28.19531,-11.39062 15.89063,0 25.10157,10.26562 9.28125,10.19531 9.28125,27.77344 z m -12.9375,-3.79688 q -0.14063,-10.61718 -5.97657,-16.94531 -5.76562,-6.32812 -15.32812,-6.32812 -10.82813,0 -17.36719,6.11718 -6.46875,6.11719 -7.45312,17.22657 l 46.125,-0.0703 z"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bravura Text';-inkscape-font-specification:'Bravura Text'"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bravura Text';-inkscape-font-specification:'Bravura Text';"
        id="path4143" />
     <path
        d="m 366.54913,287.32169 q -15.67968,0 -21.72656,3.58593 -6.04687,3.58594 -6.04687,12.23438 0,6.89062 4.5,10.96875 4.57031,4.00781 12.375,4.00781 10.75781,0 17.22656,-7.59375 6.53906,-7.66406 6.53906,-20.32031 l 0,-2.88281 -12.86719,0 z m 25.80469,-5.34375 0,44.92968 -12.9375,0 0,-11.95312 q -4.42969,7.17187 -11.03906,10.61719 -6.60938,3.375 -16.17188,3.375 -12.09375,0 -19.26562,-6.75 -7.10156,-6.82032 -7.10156,-18.21094 0,-13.28906 8.85937,-20.03906 8.92969,-6.75 26.57813,-6.75 l 18.14062,0 0,-1.26563 q 0,-8.92969 -5.90625,-13.78125 -5.83594,-4.92187 -16.45312,-4.92187 -6.75,0 -13.14844,1.61718 -6.39844,1.61719 -12.30469,4.85157 l 0,-11.95313 q 7.10156,-2.74219 13.78125,-4.07812 6.67969,-1.40625 13.00781,-1.40625 17.08594,0 25.52344,8.85937 8.4375,8.85938 8.4375,26.85938 z"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bravura Text';-inkscape-font-specification:'Bravura Text'"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bravura Text';-inkscape-font-specification:'Bravura Text';"
        id="path4145" />
     <path
        d="m 470.89288,260.11075 0,-42.60938 12.9375,0 0,109.40625 -12.9375,0 0,-11.8125 q -4.07812,7.03125 -10.33593,10.47657 -6.1875,3.375 -14.90625,3.375 -14.27344,0 -23.27344,-11.39063 -8.92969,-11.39062 -8.92969,-29.95312 0,-18.5625 8.92969,-29.95313 9,-11.39062 23.27344,-11.39062 8.71875,0 14.90625,3.44531 6.25781,3.375 10.33593,10.40625 z m -44.08593,27.49219 q 0,14.27343 5.83593,22.42968 5.90625,8.08594 16.17188,8.08594 10.26562,0 16.17187,-8.08594 5.90625,-8.15625 5.90625,-22.42968 0,-14.27344 -5.90625,-22.35938 -5.90625,-8.15625 -16.17187,-8.15625 -10.26563,0 -16.17188,8.15625 -5.83593,8.08594 -5.83593,22.35938 z"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bravura Text';-inkscape-font-specification:'Bravura Text'"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bravura Text';-inkscape-font-specification:'Bravura Text';"
        id="path4147" />
     <path
        d="m 543.24445,334.22012 q -5.48438,14.0625 -10.6875,18.35157 -5.20313,4.28906 -13.92188,4.28906 l -10.33594,0 0,-10.82813 7.59375,0 q 5.34375,0 8.29688,-2.53125 2.95312,-2.53125 6.53906,-11.95312 l 2.32031,-5.90625 -31.85156,-77.48438 13.71094,0 24.60937,61.59375 24.60938,-61.59375 13.71094,0 -34.59375,86.0625 z"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bravura Text';-inkscape-font-specification:'Bravura Text'"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Bravura Text';-inkscape-font-specification:'Bravura Text';"
        id="path4149" />
-  </g>
 </svg>
