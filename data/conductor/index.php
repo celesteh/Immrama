@@ -8,11 +8,37 @@ $conf = parse_ini_file("config.ini");
 <head>
   <link rel="stylesheet" href="/style.css" type="text/css" />
   <link rel="stylesheet" href="/color.css" type="text/css" />
+  <SCRIPT LANGUAGE="javascript">
+<!--
+function OnChange(form)
+{
+    var val  = form.size.value
+    if(val=="prev")
+    {
+      form.width.value= <?php echo $conf['width']; ?>
+      form.height.value= <?php echo $conf['height']; ?>
+
+    } else {
+      if (val=="phone")
+      {
+        form.width.value= 640
+        form.height.value= 960
+
+      } else { //must be tablet
+        form.width.value= 1024
+        form.height.value= 768        
+      }
+    }
+
+    return true;
+}
+//-->
+</SCRIPT>
   <title>Immrama</title>
 </head>
 <body>
   <div id="words">
-    
+
   <form action="play.php" method="post">
     <p>
 
@@ -32,10 +58,14 @@ $conf = parse_ini_file("config.ini");
     <input type="number" name="init_sleep" value=<?php echo $conf['init_sleep']; ?>>
   </p>
       <p>
+        <label for="size">Target Screen Geometry</label>
+        <select name="size" onchange='OnChange(this.form);'>
+          <option value="prev">Same as last time (<?php echo $conf['width']; ?>x<?php echo $conf['height']; ?>)</option>
+          <option value="phone">Phones (2x3 ratio)</option>
+          <option value="tablet">Tablets (4x3 ratio)</option>
+        </select>
   <label for ="width">Image width:</label>
     <input type="number" name="width" value=<?php echo $conf['width']; ?>>
-  </p>
-  <p>
 
   <label for ="height">Image height:</label>
     <input type="number" name="height" value=<?php echo $conf['height']; ?>>
