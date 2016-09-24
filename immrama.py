@@ -129,6 +129,10 @@ while loop > 0 :
 shutil.copy(data_dir + 'end.svg' , dest)
 os.chmod(dest, 0666)
 #reset
+# give enough time for the finish
+if (slide_dur < 12):
+    slide_dur = 12
+
 time.sleep(slide_dur)
 shutil.copy(data_dir + 'start.svg', dest)
 os.chmod(dest, 0666)
