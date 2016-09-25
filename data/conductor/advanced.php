@@ -17,7 +17,7 @@ $filename = $conf['working']['data'] .'/conductor/advanced.php';
 
     <?php
     //if file_exists($filename) {
-    //echo "<p>$filename</p>"
+    echo "<p>$filename</p>"
     //  echo "<p><label for \"passwd\">Old Conductor password:</label>\n";
     //  echo "<input type=\"password\" name=\"passwd\"></p>\n";
     //}
