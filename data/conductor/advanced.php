@@ -12,10 +12,10 @@
   <form action="passwd.php" method="post">
 
     <?php
-    //if file_exists("password.txt") {
+    if file_exists("password.txt") {
       echo "<p><label for \"passwd\">Old Conductor password:</label>\n";
       echo "<input type=\"password\" name=\"passwd\"></p>\n";
-    //}
+    }
 
     ?>
     <p>
