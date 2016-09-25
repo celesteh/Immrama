@@ -22,8 +22,8 @@ config_file = args.config
 config = SafeConfigParser()
 config.read(config_file)
 
-width =  config.getint('working', 'image_width')
-height = config.getint('working', 'image_height')
+width =  config.getint('working', 'imagewidth')
+height = config.getint('working', 'imageheight')
 tmp = config.get('working', 'tmp')
 filename = config.get('working', 'file') # -> "value1"
 rendered = config.get('working', 'rendered')

@@ -16,32 +16,32 @@ function OnChange(form)
     var val  = form.score_size.value
     if(val=="prev")
     {
-      form.image_width.value = <?php echo $conf['image_width']; ?>
+      form.imagewidth.value = <?php echo $conf['imagewidth']; ?>
 
-      form.image_width.disabled = true
-      form.image_height.value = <?php echo $conf['image_height']; ?>
+      form.imagewidth.disabled = true
+      form.imageheight.value = <?php echo $conf['imageheight']; ?>
 
-      form.image_height.disabled = true
+      form.imageheight.disabled = true
 
     } else {
       if (val=="phone")
       {
-        form.image_width.value = 640
-        form.image_width.disabled = true
-        form.image_height.value = 960
-        form.image_height.disabled = true
+        form.imagewidth.value = 640
+        form.imagewidth.disabled = true
+        form.imageheight.value = 960
+        form.imageheight.disabled = true
 
       } else {
         if (val =="tablet")
         {
-          form.image_width.value = 1024
-          form.image_width.disabled = true
-          form.image_height.value = 768
-          form.image_height.disabled = true
+          form.imagewidth.value = 1024
+          form.imagewidth.disabled = true
+          form.imageheight.value = 768
+          form.imageheight.disabled = true
         } else {
           //custom
-          form.image_width.disabled = false
-          form.image_height.disabled = false
+          form.imagewidth.disabled = false
+          form.imageheight.disabled = false
         }
       }
     }
@@ -49,8 +49,8 @@ function OnChange(form)
     return true;
 }
 
-document.getElementById("image_width").disabled = true
-document.getElementById("image_height").disabled = true
+document.getElementById("imagewidth").disabled = true
+document.getElementById("imageheight").disabled = true
 
 //-->
 </SCRIPT>
@@ -80,18 +80,18 @@ document.getElementById("image_height").disabled = true
       <p>
         <label for="score_size">Target Screen Geometry</label>
         <select name="score_size" onchange='OnChange(this.form);'>
-          <option value="prev">Same as last time (<?php echo $conf['image_width']; ?>x<?php echo $conf['image_height']; ?>)</option>
+          <option value="prev">Same as last time (<?php echo $conf['imagewidth']; ?>x<?php echo $conf['imageheight']; ?>)</option>
           <option value="phone">Phones (2x3 ratio)</option>
           <option value="tablet">Tablets (4x3 ratio)</option>
           <option value="custom">Custom</option>
         </select>
       </p>
       <p>
-  <label for ="image_width">Image width:</label>
-    <input type="number" name="image_width"  value=<?php echo $conf['image_width']; ?>>
+  <label for ="imagewidth">Image width:</label>
+    <input type="number" name="imagewidth"  value=<?php echo $conf['imagewidth']; ?>>
 
-  <label for ="image_height">Image height:</label>
-    <input type="number" name="image_height" value=<?php echo $conf['image_height']; ?>>
+  <label for ="imageheight">Image height:</label>
+    <input type="number" name="imageheight" value=<?php echo $conf['imageheight']; ?>>
   </p>
   <p>
 
