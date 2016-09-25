@@ -12,7 +12,7 @@ $conf = parse_ini_file("config.ini");
 <!--
 function OnChange(form)
 {
-  alert("change")
+  //alert("change")
     var val  = form.score_size.value
     if(val=="prev")
     {
@@ -48,6 +48,10 @@ function OnChange(form)
 
     return true;
 }
+
+document.getElementById("image_width").disabled = true
+document.getElementById("image_height").disabled = true
+
 //-->
 </SCRIPT>
   <title>Immrama</title>
@@ -84,7 +88,7 @@ function OnChange(form)
       </p>
       <p>
   <label for ="image_width">Image width:</label>
-    <input type="number" name="image_width" value=<?php echo $conf['image_width']; ?>>
+    <input type="number" name="image_width"  value=<?php echo $conf['image_width']; ?>>
 
   <label for ="image_height">Image height:</label>
     <input type="number" name="image_height" value=<?php echo $conf['image_height']; ?>>
