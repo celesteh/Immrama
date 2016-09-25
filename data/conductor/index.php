@@ -18,30 +18,30 @@ function OnChange(form)
     {
       form.imagewidth.value = <?php echo $conf['imagewidth']; ?>
 
-      form.imagewidth.disabled = true
+      form.imagewidth.readonly="readonly"
       form.imageheight.value = <?php echo $conf['imageheight']; ?>
 
-      form.imageheight.disabled = true
+      form.imageheight.readonly="readonly"
 
     } else {
       if (val=="phone")
       {
         form.imagewidth.value = 640
-        form.imagewidth.disabled = true
+        form.imagewidth.readonly="readonly"
         form.imageheight.value = 960
-        form.imageheight.disabled = true
+        form.imageheight.readonly="readonly"
 
       } else {
         if (val =="tablet")
         {
           form.imagewidth.value = 1024
-          form.imagewidth.disabled = true
+          form.imagewidth.readonly="readonly"
           form.imageheight.value = 768
-          form.imageheight.disabled = true
+          form.imageheight.readonly="readonly"
         } else {
           //custom
-          form.imagewidth.disabled = false
-          form.imageheight.disabled = false
+          form.imagewidth.readonly = false
+          form.imageheight.readonly = false
         }
       }
     }
@@ -49,8 +49,8 @@ function OnChange(form)
     return true;
 }
 
-document.getElementById("imagewidth").disabled = true
-document.getElementById("imageheight").disabled = true
+document.getElementById("imagewidth").readonly = false
+document.getElementById("imageheight").readonly = false
 
 //-->
 </SCRIPT>
