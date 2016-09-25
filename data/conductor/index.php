@@ -18,26 +18,26 @@ function OnChange(form)
     {
       form.imagewidth.value = <?php echo $conf['imagewidth']; ?>
 
-      form.imagewidth.readonly="readonly"
+      form.imagewidth.readonly = true
       form.imageheight.value = <?php echo $conf['imageheight']; ?>
 
-      form.imageheight.readonly="readonly"
+      form.imageheight.readonly = true
 
     } else {
       if (val=="phone")
       {
         form.imagewidth.value = 640
-        form.imagewidth.readonly="readonly"
+        form.imagewidth.readonly = true
         form.imageheight.value = 960
-        form.imageheight.readonly="readonly"
+        form.imageheight.readonly = true
 
       } else {
         if (val =="tablet")
         {
           form.imagewidth.value = 1024
-          form.imagewidth.readonly="readonly"
+          form.imagewidth.readonly = true
           form.imageheight.value = 768
-          form.imageheight.readonly="readonly"
+          form.imageheight.readonly = true
         } else {
           //custom
           form.imagewidth.readonly = false
@@ -49,8 +49,8 @@ function OnChange(form)
     return true;
 }
 
-document.getElementById("imagewidth").readonly = false
-document.getElementById("imageheight").readonly = false
+document.getElementById("imagewidth").readonly = true
+document.getElementById("imageheight").readonly = true
 
 //-->
 </SCRIPT>
