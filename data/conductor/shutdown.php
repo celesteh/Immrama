@@ -2,7 +2,7 @@
 <?php
 $conf = parse_ini_file("config.ini", true);
 
-$success = system("sudo halt");
+$success = system("/sbin/halt");
 ?>
 <html>
 <head>
