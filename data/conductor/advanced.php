@@ -16,11 +16,12 @@ $filename = $conf['working']['data'] .'/conductor/advanced.php';
     <h2>Change Password</h2>
 
     <?php
-    //if file_exists($filename) {
     echo "<p>$filename</p>"
+    if file_exists($filename) {
+      echo "<p>exists</p>"
     //  echo "<p><label for \"passwd\">Old Conductor password:</label>\n";
     //  echo "<input type=\"password\" name=\"passwd\"></p>\n";
-    //}
+    }
 
     ?>
 
