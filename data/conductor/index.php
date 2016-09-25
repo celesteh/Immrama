@@ -58,7 +58,7 @@ document.getElementById("imageheight").readonly = true
 </head>
 <body>
   <div id="words">
-    <p><a href="advanced.php">Advanced options</a></p>
+
   <form action="play.php" method="post">
     <p>
 
