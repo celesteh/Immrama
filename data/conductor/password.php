@@ -14,6 +14,7 @@ $success = system($cmd . $args);
 <title><?php echo $sucess ?></title>
 </head>
 <body>
+  <div id="words">
 <h2><?php echo $sucess ?></h2>
 <ul>
 <li><a href="./">Return to piece settings</a></li>
@@ -21,5 +22,6 @@ $success = system($cmd . $args);
 <li><a href="piece.html">View piece as Conductor</a></li>
 <li><a href="../piece.html">View piece as performer</a></li>
 </ul>
+</div>
 </body>
 </html>

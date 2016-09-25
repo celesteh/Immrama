@@ -2,7 +2,7 @@
 <?php
 $conf = parse_ini_file("config.ini", true);
 
-$success = system("/sbin/halt");
+$success = system("sudo /sbin/halt");
 ?>
 <html>
 <head>
@@ -11,6 +11,7 @@ $success = system("/sbin/halt");
 <title>Failure</title>
 </head>
 <body>
+  <div id="words">
 <h2>Failed</h2>
 <p>You should not be able to see this page.</p>
 <p>Normally, there will be a short delay before the comuter turns off.
@@ -26,5 +27,6 @@ $success = system("/sbin/halt");
 <li><a href="piece.html">View piece as Conductor</a></li>
 <li><a href="../piece.html">View piece as performer</a></li>
 </ul>
+</div>
 </body>
 </html>
