@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 $conf = parse_ini_file("config.ini", true);
-$filename = $conf['working']['data'] .'/conductor/password.txt';
+$filename = $conf['working']['data'] .'/conductor/advanced.php';
  ?>
 <html>
 <head>
