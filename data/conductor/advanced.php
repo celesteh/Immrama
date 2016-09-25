@@ -13,8 +13,8 @@
 
     <?php
     //if file_exists("password.txt") {
-      echo "<p><label for \"passwd\">Old Conductor password:</label>\n"
-      echo "<input type=\"password\" name=\"passwd\"></p>\n"
+      echo "<p><label for \"passwd\">Old Conductor password:</label>\n";
+      echo "<input type=\"password\" name=\"passwd\"></p>\n";
     //}
 
     ?>
