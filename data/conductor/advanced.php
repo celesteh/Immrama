@@ -23,7 +23,7 @@ $filename = $conf['working']['data'] .'/conductor/advanced.php';
     //  echo "<input type=\"password\" name=\"passwd\"></p>\n";
     //}
 
-    if (file_exists($filename)) {
+    if (is_writable($filename)) {
     echo "The file $filename exists";
 } else {
     echo "The file $filename does not exist";
