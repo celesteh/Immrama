@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+  <link rel="stylesheet" href="/color.css" type="text/css" />
+  <title>Advanced Options</title>
+  </head>
+  <body>
+  <div id="words">
+
+  <form action="passwd.php" method="post">
+    <h2>Change Wifi Password</h2>
+    <p>
+      <label for="newpass">New Password</label>
+      <input type="password" name="newpass">
+    </p>
+    <p>
+      <label for="confirm">Confirm New Password</label>
+      <input type="password" name="confirm">
+    </p>
+    <p><button type="reset" value="Reset">Nevermind</button>
+    <p><BUTTON name="submit" value="submit" type="submit">Change</BUTTON></p>
+  </form>
+  <hr />
+  <form action "shutdown.php" method="post">
+    <h2>Shutdown the computer</h2>
+    <p>There will be a short delay before the comuter turns off.
+      Please wait a few moments before unplugging the power supply.
+      The shutdown computer may have a solid red light.
+      Some Pis may reboot instead of shutting down. If this happens,
+      try to unplug the machine while the red light is on.
+    </p>
+    <p>To Restart the machine after shutting down, unplug it and then plug it back in.</p>
+    <p><BUTTON name="submit" value="submit" type="submit">Shutdown</BUTTON></p>
+  </form>
+  </div>
+  </body>
+  </html>
