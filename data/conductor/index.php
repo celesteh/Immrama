@@ -66,10 +66,10 @@ document.getElementById("imageheight").readonly = true
 <BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
 </p>
   <?php
-  if file_exists("password.txt") {
-    echo "<p><label for \"passwd\">Conductor password:</label>\n"
-    echo "<input type=\"password\" name=\"passwd\"></p>\n"
-  }
+  //if file_exists("password.txt") {
+    echo "<p><label for \"passwd\">Conductor password:</label>\n";
+    echo "<input type=\"password\" name=\"passwd\"></p>\n";
+  //}
 
   ?>
     <p>
