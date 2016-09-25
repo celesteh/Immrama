@@ -14,7 +14,7 @@ $filename = $conf['working']['data'] .'/conductor/advanced.php';
 
   <h2>Change Password</h2>
   <form action="passwd.php" method="post">
-    <!--
+
     <?php
     //if file_exists($filename) {
     echo "<p>$filename</p>"
@@ -23,7 +23,7 @@ $filename = $conf['working']['data'] .'/conductor/advanced.php';
     //}
 
     ?>
-  -->
+  
     <p>
       <label for="newpass">New Password</label>
       <input type="password" name="newpass">
