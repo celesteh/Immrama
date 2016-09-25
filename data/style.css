@@ -506,9 +506,12 @@ button, input, select, textarea {
   font-size   : inherit; /*100%;*/
 }
 
-h1, h2, h3, h4 {
+h2 {
+  width: 90%;
   float: left;
-  font-family: inherit;
+  text-align: right;
+  margin-right: 0.5em;
+  display: block
 }
 
 form
