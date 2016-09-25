@@ -524,11 +524,3 @@ input
 {
 border: 1px solid #781351
 }
-
-h2 {
-  width: 90%;
-  float: left;
-  text-align: right;
-  margin-right: 0.5em;
-  display: block;
-}
