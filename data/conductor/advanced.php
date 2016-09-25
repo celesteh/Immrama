@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 $conf = parse_ini_file("config.ini", true);
-//$filename = $conf['working']['data'] .'/conductor/advanced.php';
+$filename = $conf['working']['data'] .'/conductor/advanced.php';
  ?>
 <html>
 <head>
@@ -12,8 +12,8 @@ $conf = parse_ini_file("config.ini", true);
   <body>
   <div id="words">
 
-  <h2>Change Password</h2>
   <form action="passwd.php" method="post">
+    <h2>Change Password</h2>
 
     <?php
     //if file_exists($filename) {
