@@ -60,7 +60,7 @@ document.getElementById("imageheight").readonly = true
   <div id="words">
 
   <form action="play.php" method="post">
-    <p>
+    <p><a href="advanced.html">Advanced Options</a></p>
 
 
 <BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
