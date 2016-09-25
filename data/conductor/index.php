@@ -58,13 +58,20 @@ document.getElementById("imageheight").readonly = true
 </head>
 <body>
   <div id="words">
-
+    <p><a href="advanced.php">Advanced options</a></p>
   <form action="play.php" method="post">
     <p>
 
 
 <BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
 </p>
+  <?php
+  if file_exists("password.txt") {
+    echo "<p><label for \"passwd\">Conductor password:</label>\n"
+    echo "<input type=\"password\" name=\"passwd\"></p>\n"
+  }
+
+  ?>
     <p>
   <label for="dur">Total Duration (in seconds):</label>
     <input type="number" name="dur" value=<?php echo $conf['dur']; ?>>
