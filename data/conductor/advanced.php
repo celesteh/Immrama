@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 $conf = parse_ini_file("config.ini", true);
-$filename = $conf['working']['data'] .'/conductor/advanced.php';
+//$filename = $conf['working']['data'] .'/conductor/advanced.php';
  ?>
 <html>
 <head>
@@ -17,13 +17,13 @@ $filename = $conf['working']['data'] .'/conductor/advanced.php';
 
     <?php
     //if file_exists($filename) {
-    echo "<p>$filename</p>"
-      echo "<p><label for \"passwd\">Old Conductor password:</label>\n";
-      echo "<input type=\"password\" name=\"passwd\"></p>\n";
+    //echo "<p>$filename</p>"
+    //  echo "<p><label for \"passwd\">Old Conductor password:</label>\n";
+    //  echo "<input type=\"password\" name=\"passwd\"></p>\n";
     //}
 
     ?>
-  
+
     <p>
       <label for="newpass">New Password</label>
       <input type="password" name="newpass">
