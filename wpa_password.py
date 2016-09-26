@@ -16,7 +16,7 @@ if pass1 == pass2:
     # read the file
     if pass1 != "":
         # if there is a password line, replace the first one with the new password
-        print ""
+        i=1
     # comment out subsequent password lines
     # save
     print "Success: Password Changed"
