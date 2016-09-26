@@ -33,12 +33,9 @@ if pass1 == pass2:
         searching=True
 
     pass_line = re.compile('$wpa_passphrase=\w+')
-    #copy the file
-    shutil.copy('/etc/hostapd/hostapd.conf','/tmp')
-    # open the file
-    # read the file
-    with open('/tmp/hostapd.conf.new', 'w') as result:
-        with open('/tmp/hostapd.conf') as conf: # change to real later
+
+    with open('/tmp/hostapd.conf', 'w') as result: #file to write
+        with open('/etc/hostapd/hostapd.conf') as conf: #original file
             for line in conf:
                 match = pass_line.match(line)
                 if match:
@@ -60,6 +57,7 @@ if pass1 == pass2:
             result.write("wpa_passphrase=" + pass1 +'\n')
     #end with
     # copy file to real location
+    #shutil.copy('/tmp/hostapd.conf', '/etc/hostapd/hostapd.conf')
     print "Success: Password Changed"
 else :
     print "Failure: Passwords do not match"
