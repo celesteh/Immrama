@@ -54,6 +54,8 @@ function updateIfChanged() {
         imgobj.data = "score.svg#" + mtime.toISOString();
         lasttime=mtime;
         console.log("changed: " + new Date().getTime());
+      } else {
+        console.log("unchanged: " + new Date().getTime());
       }
     } else {
       var imgobj = document.getElementById("svg");
