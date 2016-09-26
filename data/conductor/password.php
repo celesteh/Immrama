@@ -2,7 +2,7 @@
 <?php
 $conf = parse_ini_file("config.ini", true);
 
-$cmd = 'sudo ' . $conf['working']['installation'] . '/wpa_password.py';
+$cmd =  $conf['working']['installation'] . '/wpa_password.py';
 $args = ' '. $_POST['newpass'] . ' ' . $_POST['confirm'];
 
 $success = system($cmd . $args);
