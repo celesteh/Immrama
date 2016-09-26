@@ -516,6 +516,10 @@ input [type=password] {
   width: 12em;
 }
 
+input [type=color] {
+  width: 2em;
+}
+
 form
 {
 width: 90%;
