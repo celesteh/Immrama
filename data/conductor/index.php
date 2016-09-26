@@ -67,8 +67,9 @@ document.getElementById("imageheight").readonly = true;
 
 <BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
 </p>
+<h3>Durations</h3>
   <p>
-  <label for="dur">Total Duration: minutes</label>
+  <label for="dur">minutes</label>
     <input type="number" name="min" value=<?php echo floor($conf['dur'] / 60); ?>>
     <label for="dur">seconds</label>
       <input type="number" name="sec" value=<?php echo floor($conf['dur'] % 60); ?>>
@@ -83,6 +84,7 @@ document.getElementById("imageheight").readonly = true;
   <label for ="init_sleep">Initial pause (in seconds):</label>
     <input type="number" name="init_sleep" value=<?php echo $conf['init_sleep']; ?>>
   </p>
+  <h3>Geometry</h3>
       <p>
         <label for="score_size">Target Screen Geometry</label>
         <select name="score_size" onchange='OnChangeSize(this.form);'>
@@ -93,6 +95,7 @@ document.getElementById("imageheight").readonly = true;
         </select>
       </p>
       <p>
+
   <label for ="imagewidth">Image width:</label>
     <input type="number" name="imagewidth" id="imagewidth" value=<?php echo $conf['imagewidth']; ?>>
 
@@ -101,7 +104,7 @@ document.getElementById("imageheight").readonly = true;
   </p>
   <p>
 
-
+<h3>Colors</h3>
   <label for ="foreground">Foreground colour:</label>
     <input type="color" name="foreground" value=<?php echo $conf['foreground']; ?>>  </p>
       <p>
