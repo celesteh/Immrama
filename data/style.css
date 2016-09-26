@@ -508,8 +508,12 @@ button, input, select, textarea {
   font-size   : inherit; /*100%;*/
 }
 
-input {
+input [type=number]{
   width: 4em;
+}
+
+input [type=password] {
+  width: 12em;
 }
 
 form

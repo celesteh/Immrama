@@ -69,19 +69,19 @@ document.getElementById("imageheight").readonly = true;
 <h3>Durations</h3>
   <p>
   <label for="dur">Total duration: minutes</label>
-    <input type="number" name="min" size="4"  maxlength="4"  value=<?php echo floor($conf['dur'] / 60); ?>></p><p>
+    <input type="number" name="min"   maxlength="4"  value=<?php echo floor($conf['dur'] / 60); ?>></p><p>
     <label for="dur">seconds</label>
-      <input type="number" name="sec" size="4"  maxlength="4"  value=<?php echo floor($conf['dur'] % 60); ?>>
+      <input type="number" name="sec"   maxlength="4"  value=<?php echo floor($conf['dur'] % 60); ?>>
       <!-- Make sure there is a $_POST['dur'] -->
       <input type="hidden" name="dur" value=<?php echo $conf['dur']?>>
   </p>
   <p>
   <label for="slide_dur">Duration of each page (in seconds):</label>
-    <input type="number" name="slide_dur"  size="4"  maxlength="4"  value=<?php echo $conf['slide_dur']; ?>>
+    <input type="number" name="slide_dur"    maxlength="4"  value=<?php echo $conf['slide_dur']; ?>>
   </p>
   <p>
   <label for ="init_sleep">Initial pause (in seconds):</label>
-    <input type="number" name="init_sleep"  size="4"  maxlength="4"  value=<?php echo $conf['init_sleep']; ?>>
+    <input type="number" name="init_sleep"    maxlength="4"  value=<?php echo $conf['init_sleep']; ?>>
   </p>
   <h3>Geometry</h3>
       <p>
@@ -96,10 +96,10 @@ document.getElementById("imageheight").readonly = true;
       <p>
 
   <label for ="imagewidth">Image width:</label>
-    <input type="number" name="imagewidth"  size="4"  maxlength="4"  id="imagewidth" value=<?php echo $conf['imagewidth']; ?>>
+    <input type="number" name="imagewidth"    maxlength="4"  id="imagewidth" value=<?php echo $conf['imagewidth']; ?>>
 </p><p>
   <label for ="imageheight">Image height:</label>
-    <input type="number" name="imageheight"  size="4"  maxlength="4"  id="imageheight" value=<?php echo $conf['imageheight']; ?>>
+    <input type="number" name="imageheight"    maxlength="4"  id="imageheight" value=<?php echo $conf['imageheight']; ?>>
   </p>
   <p>
 
