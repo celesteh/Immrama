@@ -53,6 +53,22 @@ function clearJunk() {
   pass1.value="";
   pass2.value="";
 
+};
+
+
+function validate(form) {
+
+    if(form.pass1.value == form.pass2.value) {
+        alert('Passwords do not match');
+        return false;
+    }
+    else {
+        if(form.pass1.value== "") {
+          return confirm('Are you sure you want to have no wifi password?');
+        } else {
+          return true;
+        }
+    }
 }
 //-->
 </script>
