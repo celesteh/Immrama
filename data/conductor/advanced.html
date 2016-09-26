@@ -58,7 +58,7 @@ function clearJunk() {
 
 function validate(form) {
 
-    if(form.pass1.value == form.pass2.value) {
+    if(form.pass1.value != form.pass2.value) {
         alert('Passwords do not match');
         return false;
     }
