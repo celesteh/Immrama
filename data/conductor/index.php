@@ -62,7 +62,6 @@ document.getElementById("imageheight").readonly = true;
   <div id="words">
 
   <form action="play.php" method="post" id="configform">
-    <p><a href="advanced.html">Advanced Options</a></p>
 
 
 <BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
@@ -117,5 +116,6 @@ document.getElementById("imageheight").readonly = true;
 <BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
 </p>
   </form>
+  <p><a href="advanced.html">Advanced Options</a></p>
 </div>
 </body> </html>
