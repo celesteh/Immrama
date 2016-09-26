@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/style.css">
@@ -61,7 +62,12 @@ function updateIfChanged() {
     if (mtime) {
       if (lasttag != mtime){
         var imgobj = document.getElementById("svg");
-        imgobj.data = "../score.svg#" + mtime;//.toISOString();
+        try {
+          imgobj.data = "../score.svg#" + mtime;//.toISOString();
+        }
+        catch(err) {
+          imgobj.data = "../score.svg#" + mtime;
+        };
         lasttag=mtime;
         //console.log("changed: " + new Date().getTime());
       } else {
