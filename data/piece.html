@@ -53,11 +53,14 @@ function updateIfChanged() {
         var imgobj = document.getElementById("svg");
         imgobj.data = "score.svg#" + mtime.toISOString();
         lasttime=mtime;
+        console.log("changed: " + new Date().getTime());
       }
     } else {
       imgobj.data = "score.svg#" + new Date().getTime();
+      console.log("no time found: " + new Date().getTime());
     }
   });
+  window.setTimeout(delayer,1000);
 };
 
 function forceUpdate(){
@@ -68,7 +71,7 @@ function forceUpdate(){
 };
 
 function delayer(){
-  window.setTimeout(forceUpdate,1000);
+  window.setTimeout(updateIfChanged,1000);
 };
 
 delayer();
