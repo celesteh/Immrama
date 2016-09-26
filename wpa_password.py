@@ -5,6 +5,7 @@ import os
 import setproctitle
 import psutil
 import re
+import shutil
 
 # Make sure we're the only version of this running
 PROCNAME = "wpa_password.py"
