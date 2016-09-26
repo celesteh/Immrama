@@ -476,6 +476,12 @@ body {
 
 }
 
+#words {
+  margin-top: 1.5em;
+  font-family : inherit;
+  font-size   : inherit; /*100%;*/
+}
+
 @media only screen and (max-device-width: 480px) {
 /* define mobile specific styles come here */
 
