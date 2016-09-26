@@ -4,6 +4,7 @@ import argparse
 import os
 import setproctitle
 import psutil
+import re
 
 # Make sure we're the only version of this running
 PROCNAME = "wpa_password.py"
@@ -57,7 +58,7 @@ if pass1 == pass2:
             #we did not find a password line in the file
             result.write("wpa_passphrase=" + pass1 +'\n')
     #end with
-    # copy file to real location        
+    # copy file to real location
     print "Success: Password Changed"
 else :
     print "Failure: Passwords do not match"
