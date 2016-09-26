@@ -69,7 +69,7 @@ document.getElementById("imageheight").readonly = true;
 </p>
 <h3>Durations</h3>
   <p>
-  <label for="dur">minutes</label>
+  <label for="dur">Total duration: minutes</label>
     <input type="number" name="min" value=<?php echo floor($conf['dur'] / 60); ?>>
     <label for="dur">seconds</label>
       <input type="number" name="sec" value=<?php echo floor($conf['dur'] % 60); ?>>
@@ -106,8 +106,8 @@ document.getElementById("imageheight").readonly = true;
 
 <h3>Colors</h3>
   <label for ="foreground">Foreground colour:</label>
-    <input type="color" name="foreground" value=<?php echo $conf['foreground']; ?>>  </p>
-      <p>
+    <input type="color" name="foreground" value=<?php echo $conf['foreground']; ?>>
+    
 
   <label for ="background">Background clour:</label>
     <input type="color" name="background" value=<?php echo $conf['background']; ?>>  </p>
