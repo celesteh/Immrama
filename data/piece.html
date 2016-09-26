@@ -56,6 +56,7 @@ function updateIfChanged() {
         console.log("changed: " + new Date().getTime());
       }
     } else {
+      var imgobj = document.getElementById("svg");
       imgobj.data = "score.svg#" + new Date().getTime();
       console.log("no time found: " + new Date().getTime());
     }
