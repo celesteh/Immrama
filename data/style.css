@@ -549,3 +549,11 @@ p, ul {
   display: block
 
 }
+
+.passwdwrapper{
+      background-color: #ffc;
+      border: 1px solid #cc9;
+      padding: 10px;
+      font-family: inherit;
+      font-size: inherit;
+    }
