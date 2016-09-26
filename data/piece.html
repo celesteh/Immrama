@@ -44,13 +44,13 @@ getMTime('score.svg', function(mtime) {
   if (mtime) lasttime = mtime;
 });
 
-var imgobj = document.getElementById("svg");
 
 function updateIfChanged() {
 
   getMTime('score.svg', function(mtime) {
     if (mtime) {
       if (lasttime != mtime){
+        var imgobj = document.getElementById("svg");
         imgobj.data = "score.svg#" + mtime.toISOString();
         lasttime=mtime;
       }
@@ -61,6 +61,7 @@ function updateIfChanged() {
 };
 
 function forceUpdate(){
+  var imgobj = document.getElementById("svg");
   imgobj.data = "score.svg#" + new Date().getTime();
   console.log("update: " + new Date().getTime());
   window.setTimeout(delayer,1000);
