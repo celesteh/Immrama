@@ -69,7 +69,8 @@ function clear() {
     <h2>Change Wifi Password</h2>
     <p class="passwdwrapper">
       <label for="newpass">New Password</label>
-      <input type="password" name="newpass" id="pass1">
+      <input type="password" name="newpass"
+      onkeyup="clear(); return false;"id="pass1">
     </p>
     <p class="passwdwrapper">
       <span id="confirmMessage" class="confirmMessage">&nbsp;</span>
