@@ -10,7 +10,7 @@ $conf = parse_ini_file("config.ini");
   <link rel="stylesheet" href="/color.css" type="text/css" />
   <SCRIPT LANGUAGE="javascript">
 <!--
-function OnChange(form)
+function OnChangeSize(form)
 {
   //alert("change")
     var val  = form.score_size.value
@@ -52,6 +52,38 @@ function OnChange(form)
 document.getElementById("imagewidth").readonly = true
 document.getElementById("imageheight").readonly = true
 
+var dur = <?php echo $conf['dur']; ?>
+
+var form = document.getElementById("config")
+var input = document.createElement("input") //input element, text
+input.setAttribute('type',"hidden")
+input.setAttribute('name',"dur")
+input.setAttribute('value', dur)
+form.insertBefore(input)
+
+var input = document.createElement("input") //input element, text
+input.setAttribute('type',"number")
+input.setAttribute('name',"seconds")
+input.setAttribute('value', dur % 60)
+form.insertBefore(input)
+
+var label = document.createElement("label")
+label.setAttribute('for', "seconds")
+label.htmlFor = "Seconds"
+form.insertBefore(label)
+
+var input = document.createElement("input") //input element, text
+input.setAttribute('type',"number")
+input.setAttribute('name',"minutes")
+input.setAttribute('value', dur / 60)
+form.insertBefore(input)
+
+var label = document.createElement("label")
+label.setAttribute('for', "minutes")
+label.htmlFor = "Duration: Minutes"
+form.insertBefore(label)
+
+
 //-->
 </SCRIPT>
   <title>Immrama</title>
@@ -59,18 +91,20 @@ document.getElementById("imageheight").readonly = true
 <body>
   <div id="words">
 
-  <form action="play.php" method="post">
+  <form action="play.php" method="post" id="configform">
     <p><a href="advanced.html">Advanced Options</a></p>
 
 
 <BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
 </p>
-    <p>
+  <p>
+  <noscript>
   <label for="dur">Total Duration (in seconds):</label>
     <input type="number" name="dur" value=<?php echo $conf['dur']; ?>>
+  </noscript>
   </p>
   <p>
-  <label for="slide_dur">Duration of each page:</label>
+  <label for="slide_dur">Duration of each page (in seconds):</label>
     <input type="number" name="slide_dur" value=<?php echo $conf['slide_dur']; ?>>
   </p>
   <p>
@@ -79,7 +113,7 @@ document.getElementById("imageheight").readonly = true
   </p>
       <p>
         <label for="score_size">Target Screen Geometry</label>
-        <select name="score_size" onchange='OnChange(this.form);'>
+        <select name="score_size" onchange='OnChangeSize(this.form);'>
           <option value="prev">Same as last time (<?php echo $conf['imagewidth']; ?>x<?php echo $conf['imageheight']; ?>)</option>
           <option value="phone">Phones (2x3 ratio)</option>
           <option value="tablet">Tablets (4x3 ratio)</option>
@@ -88,10 +122,10 @@ document.getElementById("imageheight").readonly = true
       </p>
       <p>
   <label for ="imagewidth">Image width:</label>
-    <input type="number" name="imagewidth"  value=<?php echo $conf['imagewidth']; ?>>
+    <input type="number" name="imagewidth" id="imagewidth" value=<?php echo $conf['imagewidth']; ?>>
 
   <label for ="imageheight">Image height:</label>
-    <input type="number" name="imageheight" value=<?php echo $conf['imageheight']; ?>>
+    <input type="number" name="imageheight" id="imageheight" value=<?php echo $conf['imageheight']; ?>>
   </p>
   <p>
 
