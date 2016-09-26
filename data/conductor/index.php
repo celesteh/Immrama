@@ -47,41 +47,41 @@ function OnChangeSize(form)
     }
 
     return true;
-}
+};
 
-document.getElementById("imagewidth").readonly = true
-document.getElementById("imageheight").readonly = true
+document.getElementById("imagewidth").readonly = true;
+document.getElementById("imageheight").readonly = true;
 
-var dur = <?php echo $conf['dur']; ?>
+var dur = <?php echo $conf['dur']; ?>;
 
-var form = document.getElementById("config")
-var input = document.createElement("input") //input element, hidden
-input.setAttribute('type',"hidden")
-input.setAttribute('name',"dur")
-input.setAttribute('value', dur)
-form.insertBefore(input)
+var form = document.getElementById("config");
+var input = document.createElement("input"); //input element, hidden
+input.setAttribute('type',"hidden");
+input.setAttribute('name',"dur");
+input.setAttribute('value', dur);
+form.insertBefore(input);
 
-var input = document.createElement("input") //input element, number
-input.setAttribute('type',"number")
-input.setAttribute('name',"seconds")
-//input.setAttribute('value', dur % 60)
-form.appendChild(input)
+var input = document.createElement("input"); //input element, number
+input.setAttribute('type',"number");
+input.setAttribute('name',"seconds");
+//input.setAttribute('value', dur % 60);
+form.appendChild(input);
 
-var label = document.createElement("label")
-label.setAttribute('for', "seconds")
-label.htmlFor = "Seconds"
-form.insertBefore(label)
+var label = document.createElement("label");
+label.setAttribute('for', "seconds");
+label.htmlFor = "Seconds";
+form.insertBefore(label);
 
-var input = document.createElement("input") //input element, number
-input.setAttribute('type',"number")
-input.setAttribute('name',"minutes")
-//input.setAttribute('value', dur / 60)
-form.insertBefore(input)
+var input = document.createElement("input"); //input element, number
+input.setAttribute('type',"number");
+input.setAttribute('name',"minutes");
+//input.setAttribute('value', dur / 60);
+form.insertBefore(input);
 
-var label = document.createElement("label")
-label.setAttribute('for', "minutes")
-label.htmlFor = "Duration: Minutes"
-form.insertBefore(label)
+var label = document.createElement("label");
+label.setAttribute('for', "minutes");
+label.htmlFor = "Duration: Minutes";
+form.insertBefore(label);
 
 
 //-->
