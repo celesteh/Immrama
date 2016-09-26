@@ -557,3 +557,7 @@ p, ul {
       font-family: inherit;
       font-size: inherit;
     }
+
+#confirmMessage {
+  float:left;
+}
