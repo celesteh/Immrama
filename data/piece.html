@@ -52,7 +52,7 @@ function updateIfChanged() {
     if (mtime) {
       if (lasttag != mtime){
         var imgobj = document.getElementById("svg");
-        imgobj.data = "score.svg#" + mtime.toISOString();
+        imgobj.data = "score.svg#" + mtime;//.toISOString();
         lasttag=mtime;
         console.log("changed: " + new Date().getTime());
       } else {
