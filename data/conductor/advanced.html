@@ -32,6 +32,17 @@
         message.style.color = badColor;
         message.innerHTML = "Passwords Do Not Match!"
     }
+};
+
+function clear() {
+  //Store the password field objects into variables ...
+  var pass1 = document.getElementById('pass1');
+  var pass2 = document.getElementById('pass2');
+  //Store the Confimation Message Object ...
+  var message = document.getElementById('confirmMessage');
+  pass2.style.backgroundColor = pass1.style.backgroundColor;
+  message.innerHTML="&nbsp;";
+
 }
 //-->
 </script>
@@ -66,7 +77,7 @@
       <input type="password" name="confirm"
       onkeyup="checkPass(); return false;" id="pass2">
     </p>
-    <p><button type="reset" value="Reset">Nevermind</button>
+    <p><button type="reset" value="Reset" onclick="clear()">Nevermind</button>
     <BUTTON name="submit" value="submit" type="submit">Change</BUTTON></p>
   </form>
     <ul>
