@@ -58,8 +58,13 @@ function updateIfChanged() {
   });
 };
 
+function forceUpdate(){
+  imgobj.data = "score.svg#" + new Date().getTime();
+
+}
+
 while(true){
-  window.setTimeout(updateIfChanged,2000);
+  window.setTimeout(forceUpdate,2000);
 };
 
 </script>
