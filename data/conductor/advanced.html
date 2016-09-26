@@ -91,7 +91,7 @@ function validate(form) {
     <hr />
   </form>
 
-  <form action="passwd.php" method="post">
+  <form action="passwd.php" method="post" onsubmit="return validate(this);">
     <h2>Change Wifi Password</h2>
     <p class="passwdwrapper">
       <label for="newpass">New Password</label>
