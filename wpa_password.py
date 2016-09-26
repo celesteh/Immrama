@@ -7,6 +7,8 @@ parser = argparse.ArgumentParser(description='Change the wifi password.')
 parser.add_argument('pass1', nargs='?', default='', help='Password')
 parser.add_argument('pass2', nargs='?', default='', help='Confirm Password')
 args = parser.parse_args()
+pass1 = args.pass1
+pass2 = args.pass2
 
 if pass1 == pass2:
     # so far so good
