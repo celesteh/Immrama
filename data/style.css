@@ -516,6 +516,14 @@ margin-right: 0.5em;
 display: block
 }
 
+p {
+  width: 90%;
+  float: left;
+  margin-right: 0.5em;
+  display: block
+
+}
+
 .submit input
 {
 margin-left: 4.5em;
