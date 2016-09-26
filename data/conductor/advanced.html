@@ -34,7 +34,7 @@
     }
 };
 
-function clear() {
+function clearJunk() {
   //Store the password field objects into variables ...
   var pass1 = document.getElementById('pass1');
   var pass2 = document.getElementById('pass2');
@@ -70,7 +70,7 @@ function clear() {
     <p class="passwdwrapper">
       <label for="newpass">New Password</label>
       <input type="password" name="newpass"
-      onkeyup="clear(); return false;"id="pass1">
+      onkeyup="clearJunk(); return false;"id="pass1">
     </p>
     <p class="passwdwrapper">
       <span id="confirmMessage" class="confirmMessage">&nbsp;</span>
@@ -78,7 +78,7 @@ function clear() {
       <input type="password" name="confirm"
       onkeyup="checkPass(); return false;" id="pass2">
     </p>
-    <p><button type="reset" value="Reset" onclick="clear()">Nevermind</button>
+    <p><button type="reset" value="Reset" onclick="clearJunk(); return false;">Nevermind</button>
     <BUTTON name="submit" value="submit" type="submit">Change</BUTTON></p>
   </form>
     <ul>
