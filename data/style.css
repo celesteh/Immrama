@@ -523,13 +523,7 @@ margin-right: 0.5em;
 display: block
 }
 
-p {
-  width: 100%;
-  float: left;
-  margin-right: 0.5em;
-  display: block
 
-}
 
 .submit input
 {
@@ -538,4 +532,12 @@ margin-left: 4.5em;
 input
 {
 border: 1px solid #781351
+}
+
+p, ul {
+  width: 100%;
+  float: left;
+  margin-right: 0.5em;
+  display: block
+
 }
