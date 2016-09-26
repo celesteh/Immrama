@@ -70,7 +70,7 @@ document.getElementById("imageheight").readonly = true;
 <h3>Durations</h3>
   <p>
   <label for="dur">Total duration: minutes</label>
-    <input type="number" name="min" value=<?php echo floor($conf['dur'] / 60); ?>>
+    <input type="number" name="min" value=<?php echo floor($conf['dur'] / 60); ?>></p><p>
     <label for="dur">seconds</label>
       <input type="number" name="sec" value=<?php echo floor($conf['dur'] % 60); ?>>
       <!-- Make sure there is a $_POST['dur'] -->
@@ -98,18 +98,18 @@ document.getElementById("imageheight").readonly = true;
 
   <label for ="imagewidth">Image width:</label>
     <input type="number" name="imagewidth" id="imagewidth" value=<?php echo $conf['imagewidth']; ?>>
-
+</p><p>
   <label for ="imageheight">Image height:</label>
     <input type="number" name="imageheight" id="imageheight" value=<?php echo $conf['imageheight']; ?>>
   </p>
   <p>
 
 <h3>Colors</h3>
-  <label for ="foreground">Foreground colour:</label>
+  <label for ="foreground">Foreground color:</label>
     <input type="color" name="foreground" value=<?php echo $conf['foreground']; ?>>
-    
 
-  <label for ="background">Background clour:</label>
+
+  <label for ="background">Background color:</label>
     <input type="color" name="background" value=<?php echo $conf['background']; ?>>  </p>
       <p>
 
