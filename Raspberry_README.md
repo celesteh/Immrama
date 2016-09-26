@@ -140,7 +140,7 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 
 ## Installing inkscape
 
-Try `sudo apt-get install inkscape -y` then `inkscape --version` If it comes back with a number _below_ 0.91, you will have to build it
+Try `sudo apt-get install inkscape -y` then `inkscape --version` If it comes back with a number _below_ 0.91, you will have to build it (see below)
 
 
 
@@ -171,8 +171,24 @@ Try `sudo apt-get install inkscape -y` then `inkscape --version` If it comes bac
 * `sudo apt-get autoremove`
 * `cd ~/Documents/Imramma ; ./pi_build_inkscape.sh && cd ~Downloads/ && sudo dpkg -i inkscape*.deb `
 
+I was unable to build inkscape on a Pi3, as it kept shutting down during the build, but a Pi 2 was able to do it.
 
+## Allow the shutdown via the web interface
 
+Users need to be able to turn the computer off without actually logging into it.
+However, if you do not set a WPA password, any audience member can also use
+their smart phone to turn off your computer, possibly cutting your performance
+short.
+
+* Set a WPA password for your wifi network. Write it down
+(maybe on your computer)
+* Use the web interface to start running Immrama
+* Log into the computer via ssh or keyboard, mouse & monitor
+* `ls -las /var/www/html/color.css` This will tell you what user the
+webserver runs as. For me, it was `www-data`
+* `sudo visudo`
+* append to the file: `www-data immrama= NOPASSWD: /sbin/halt`
+but use whatever name was in the 4th column of output from the ls -las
 
 ## Troubleshooting
 
