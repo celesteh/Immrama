@@ -481,6 +481,7 @@ body {
 
   #words {
     font-size: 4em; /* 40px/16=2.5em */
+    margin-top: 1em;
   }
 
 }
