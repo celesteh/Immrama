@@ -63,11 +63,16 @@ function updateIfChanged() {
 function forceUpdate(){
   imgobj.data = "score.svg#" + new Date().getTime();
   console.log("update: " + new Date().getTime());
-}
-
-while(true){
-  window.setTimeout(forceUpdate,2000);
+  window.setTimeout(delayer,1000);
 };
+
+funtion delayer(){
+  window.setTimeout(forceUpdate,1000);
+};
+
+delayer();
+
+
 
 </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
