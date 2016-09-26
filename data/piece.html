@@ -2,7 +2,6 @@
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="color.css" type="text/css" />
-<script src="modernizr.min.js"></script>
 <script>
 // Find the right method, call on correct element
 function launchIntoFullscreen(element) {
@@ -21,11 +20,47 @@ function launchIntoFullscreen(element) {
 launchIntoFullscreen(document.documentElement); // the whole page
 launchIntoFullscreen(document.getElementById("score")); // any individual element
 
-if (Modernizr.filereader) {
-  // supported
-} else {
-  window.location.href="refreshing.html"
-}
+var getMTime = function(url, callback) {
+  var xhr = XMLHttpRequest();
+  xhr.open('HEAD', "score.svg", true); // use HEAD - we only need the headers
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      var mtime = new Date(xhr.getResponseHeader('Last-Modified'));
+      if (mtime.toString() === 'Invalid Date') {
+        callback(); // dont want to return a bad date
+      } else {
+        callback(mtime);
+      }
+    }
+  }
+  xhr.send();
+};
+
+var lasttime;
+
+getMTime('score.svg', function(mtime) {
+  if (mtime) lasttime = mtime;
+});
+
+var imgobj = document.getElementById("svg");
+
+function updateIfChanged() {
+
+  getMTime('score.svg', function(mtime) {
+    if (mtime) {
+      if (lasttime != mtime){
+        imgobj.data = "score.svg#" + mtime.toISOString();
+        lasttime=mtime;
+      }
+    } else {
+      imgobj.data = "score.svg#" + new Date().getTime();
+    }
+  });
+};
+
+while(true){
+  window.setTimeout(updateIfChanged,2000);
+};
 
 </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +73,7 @@ if (Modernizr.filereader) {
 <body>
   <div id="score">
 <!-- <img src="score.svg" /> -->
-<object type="image/svg+xml" width="100%" height="100%" data="score.svg">This is incompatible with your  device.</object>
+<object type="image/svg+xml" width="100%" height="100%" data="score.svg" id="svg">This is incompatible with your  device.</object>
 </div>
 </body>
 </html>
