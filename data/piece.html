@@ -23,7 +23,7 @@ function launchIntoFullscreen(element) {
 //launchIntoFullscreen(document.getElementById("score")); // any individual element
 
 var getMTime = function(url, callback) {
-  var xhr = XMLHttpRequest();
+  var xhr = new XMLHttpRequest();
   xhr.open('HEAD', "score.svg", true); // use HEAD - we only need the headers
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
