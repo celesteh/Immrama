@@ -551,6 +551,7 @@ p, ul {
 }
 
 .passwdwrapper{
+      color: #000;
       background-color: #ffc;
       border: 1px solid #cc9;
       padding: 10px;
