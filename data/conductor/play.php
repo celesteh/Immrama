@@ -65,6 +65,9 @@ function write_color_style($foreground, $background, $file)
 
 
 $conf = parse_ini_file("config.ini", true);
+// deal with duration maths
+$_POST['dur'] = (($_POST['min'] * 60) + $_POST['sec']);
+
 write_php_ini($conf, "config.ini");
 $conf = parse_ini_file("config.ini", true);
 # surely parsing goes after writing?

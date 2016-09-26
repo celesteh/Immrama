@@ -52,36 +52,6 @@ function OnChangeSize(form)
 document.getElementById("imagewidth").readonly = true;
 document.getElementById("imageheight").readonly = true;
 
-var dur = <?php echo $conf['dur']; ?>;
-
-var form = document.getElementById("config");
-var input = document.createElement("input"); //input element, hidden
-input.setAttribute('type',"hidden");
-input.setAttribute('name',"dur");
-input.setAttribute('value', dur);
-form.insertBefore(input);
-
-var input = document.createElement("input"); //input element, number
-input.setAttribute('type',"number");
-input.setAttribute('name',"seconds");
-//input.setAttribute('value', dur % 60);
-form.appendChild(input);
-
-var label = document.createElement("label");
-label.setAttribute('for', "seconds");
-label.htmlFor = "Seconds";
-form.insertBefore(label);
-
-var input = document.createElement("input"); //input element, number
-input.setAttribute('type',"number");
-input.setAttribute('name',"minutes");
-//input.setAttribute('value', dur / 60);
-form.insertBefore(input);
-
-var label = document.createElement("label");
-label.setAttribute('for', "minutes");
-label.htmlFor = "Duration: Minutes";
-form.insertBefore(label);
 
 
 //-->
@@ -98,10 +68,12 @@ form.insertBefore(label);
 <BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
 </p>
   <p>
-  <noscript>
-  <label for="dur">Total Duration (in seconds):</label>
-    <input type="number" name="dur" value=<?php echo $conf['dur']; ?>>
-  </noscript>
+  <label for="dur">Total Duration: minutes</label>
+    <input type="number" name="min" value=<?php echo floor($conf['dur'] / 60); ?>>
+    <label for="dur">seconds</label>
+      <input type="number" name="sec" value=<?php echo floor($conf['dur'] % 60); ?>>
+      <!-- Make sure there is a $_POST['dur'] -->
+      <input type="hidden" name="dur" value=<?php echo $conf['dur']?>>
   </p>
   <p>
   <label for="slide_dur">Duration of each page (in seconds):</label>
