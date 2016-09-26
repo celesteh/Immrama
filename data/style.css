@@ -510,7 +510,7 @@ button, input, select, textarea {
 
 
 input [type=number]{
-  width: 4em;
+  width: 2em;
 }
 
 input [type=password] {
