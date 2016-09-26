@@ -2,13 +2,110 @@
 <head>
 <link rel="stylesheet" type="text/css" href="/style.css">
 <link rel="stylesheet" href="/color.css" type="text/css" />
-<meta http-equiv="refresh" content="2">
+<noscript>
+  <meta http-equiv="refresh" content="2">
+</noscript>
+<script>
+// <!--
+//console.log("loading: " + new Date().getTime());
+// Find the right method, call on correct element
+function launchIntoFullscreen(element) {
+  if(element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if(element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
+}
+
+// Launch fullscreen for browsers that support it!
+try {
+launchIntoFullscreen(document.documentElement); // the whole page
+} catch (err) {};
+
+try {
+  launchIntoFullscreen(document.getElementById("score")); // any individual element
+} catch (err){};
+
+
+var getMTime = function(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('HEAD', "../score.svg", true); // use HEAD - we only need the headers
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      //var mtime = new Date(xhr.getResponseHeader('Last-Modified')); //ETag
+      var mtime = xhr.getResponseHeader('ETag');
+      if (mtime.toString() === 'Invalid Date') {
+        callback(); // dont want to return a bad date
+      } else {
+        callback(mtime);
+      }
+    }
+  }
+  xhr.send();
+};
+
+var lasttag;
+
+getMTime('../score.svg', function(mtime) {
+  if (mtime) lasttag = mtime;
+});
+
+
+function updateIfChanged() {
+
+  getMTime('../score.svg', function(mtime) {
+    if (mtime) {
+      if (lasttag != mtime){
+        var imgobj = document.getElementById("svg");
+        imgobj.data = "../score.svg#" + mtime;//.toISOString();
+        lasttag=mtime;
+        //console.log("changed: " + new Date().getTime());
+      } else {
+        //console.log("unchanged: " + new Date().getTime());
+      }
+    } else {
+      var imgobj = document.getElementById("svg");
+      try {
+        imgobj.data = "../score.svg#" + new Date().getTime();
+      }
+      catch (err) {
+        // try again
+        imgobj.data = "../score.svg#" + new Date().getTime();
+      };
+      //console.log("no time found: " + new Date().getTime());
+    }
+  });
+  window.setTimeout(delayer,1000);
+};
+/*
+function forceUpdate(){
+  var imgobj = document.getElementById("svg");
+  imgobj.data = "score.svg#" + new Date().getTime();
+  console.log("update: " + new Date().getTime());
+  window.setTimeout(delayer,1000);
+};
+*/
+function delayer(){
+  window.setTimeout(updateIfChanged,1000);
+};
+
+delayer();
+
+//console.log("/scripts: " + new Date().getTime());
+
+//-->
+
+</script>
 <title>Immrama</title>
 </head>
 <body>
   <div id="score">
 <!-- <img src="score.svg" /> -->
-<object type="image/svg+xml" width="100%" height="95%" data="../score.svg">This is incompatible with your  device.</object>
+<object type="image/svg+xml" width="100%" height="95%" data="../score.svg" id="svg">This is incompatible with your  device.</object>
 <p><a href="./">Restart</a></p>
 </div>
 </body>
