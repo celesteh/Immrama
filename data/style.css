@@ -490,7 +490,7 @@ body {
 /* define bigger specific styles come here */
   #words {
     /*width: 80%;*/
-    width: 100em;
+    width: 40em;
     float: center;
     display: block;
     margin-left: 4.5em;
