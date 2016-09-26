@@ -11,11 +11,11 @@ $success = system($cmd . $args);
 <head>
 <link rel="stylesheet" type="text/css" href="/style.css">
 <link rel="stylesheet" href="/color.css" type="text/css" />
-<title><?php echo $sucess ?></title>
+<title><?php echo $success ?></title>
 </head>
 <body>
   <div id="words">
-<h2><?php echo $sucess ?></h2>
+<h2><?php echo $success ?></h2>
 <ul>
 <li><a href="./">Return to piece settings</a></li>
 <li><a href="advanced.html">Return to Advanced settings</a></li>
