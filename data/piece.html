@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="color.css" type="text/css" />
 <script>
-
+// <!--
 console.log("loading: " + new Date().getTime());
 // Find the right method, call on correct element
 function launchIntoFullscreen(element) {
@@ -19,8 +19,14 @@ function launchIntoFullscreen(element) {
 }
 
 // Launch fullscreen for browsers that support it!
-//launchIntoFullscreen(document.documentElement); // the whole page
-//launchIntoFullscreen(document.getElementById("score")); // any individual element
+try {
+launchIntoFullscreen(document.documentElement); // the whole page
+} catch (err) {};
+
+try {
+  launchIntoFullscreen(document.getElementById("score")); // any individual element
+} catch (err){};
+
 
 var getMTime = function(url, callback) {
   var xhr = new XMLHttpRequest();
@@ -54,14 +60,20 @@ function updateIfChanged() {
         var imgobj = document.getElementById("svg");
         imgobj.data = "score.svg#" + mtime;//.toISOString();
         lasttag=mtime;
-        console.log("changed: " + new Date().getTime());
+        //console.log("changed: " + new Date().getTime());
       } else {
-        console.log("unchanged: " + new Date().getTime());
+        //console.log("unchanged: " + new Date().getTime());
       }
     } else {
       var imgobj = document.getElementById("svg");
-      imgobj.data = "score.svg#" + new Date().getTime();
-      console.log("no time found: " + new Date().getTime());
+      try {
+        imgobj.data = "score.svg#" + new Date().getTime();
+      }
+      catch (err) {
+        // try again
+        imgobj.data = "score.svg#" + new Date().getTime();
+      };
+      //console.log("no time found: " + new Date().getTime());
     }
   });
   window.setTimeout(delayer,1000);
@@ -80,8 +92,9 @@ function delayer(){
 
 delayer();
 
-console.log("</scripts>: " + new Date().getTime());
+//console.log("/scripts: " + new Date().getTime());
 
+//-->
 
 </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
