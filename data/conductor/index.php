@@ -65,7 +65,7 @@ var input = document.createElement("input") //input element, text
 input.setAttribute('type',"number")
 input.setAttribute('name',"seconds")
 input.setAttribute('value', dur % 60)
-form.insertBefore(input)
+form.appendChild(input)
 
 var label = document.createElement("label")
 label.setAttribute('for', "seconds")
