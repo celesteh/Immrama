@@ -11,7 +11,7 @@ args = parser.parse_args()
 if pass1 == pass2:
     # so far so good
 
-    // read the file
+    # read the file
     if pass1 != "":
         # if there is a password line, replace the first one with the new password
         print ""
