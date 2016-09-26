@@ -2,7 +2,6 @@
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="color.css" type="text/css" />
-<script src="modernizr.min.js"></script>
 <script>
 // Find the right method, call on correct element
 function launchIntoFullscreen(element) {
@@ -20,19 +19,10 @@ function launchIntoFullscreen(element) {
 // Launch fullscreen for browsers that support it!
 launchIntoFullscreen(document.documentElement); // the whole page
 launchIntoFullscreen(document.getElementById("score")); // any individual element
-
-if (Modernizr.filereader) {
-  // supported
-} else {
-  window.location.href="refreshing.html"
-}
-
 </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<noscript>
 <meta http-equiv="refresh" content="2">
-</noscript>
 <title>Immrama</title>
 </head>
 <body>
