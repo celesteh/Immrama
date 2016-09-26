@@ -19,8 +19,8 @@ function launchIntoFullscreen(element) {
 }
 
 // Launch fullscreen for browsers that support it!
-launchIntoFullscreen(document.documentElement); // the whole page
-launchIntoFullscreen(document.getElementById("score")); // any individual element
+//launchIntoFullscreen(document.documentElement); // the whole page
+//launchIntoFullscreen(document.getElementById("score")); // any individual element
 
 var getMTime = function(url, callback) {
   var xhr = XMLHttpRequest();
@@ -72,6 +72,7 @@ function delayer(){
 
 delayer();
 
+console.log("</scripts>: " + new Date().getTime());
 
 
 </script>
