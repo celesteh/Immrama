@@ -28,7 +28,7 @@ var getMTime = function(url, callback) {
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
       //var mtime = new Date(xhr.getResponseHeader('Last-Modified')); //ETag
-      var mtime = new Date(xhr.getResponseHeader('ETag'));
+      var mtime = xhr.getResponseHeader('ETag');
       if (mtime.toString() === 'Invalid Date') {
         callback(); // dont want to return a bad date
       } else {
