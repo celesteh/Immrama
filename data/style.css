@@ -539,6 +539,7 @@ p, ul {
   width: 100%;
   float: left;
   margin-right: 0.5em;
+  margin-left: 0.5em;
   display: block
 
 }
