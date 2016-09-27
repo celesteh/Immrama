@@ -29,18 +29,19 @@
     if (!re.test(pass1.value)) {
       pass1.style.backgroundColor = badColor;
       pass.style.color = badColor;
-      pass.innerHTML = "Use numbers and letters only"
+      pass.innerHTML = "Use numbers and letters only";
     } else {
       if (pass1.value.length < 8) {
-        pass1.style.backgroundColor = goodColor; // they're on the way
+        //pass1.style.backgroundColor = badColor;
+        clearColors(pass1);// they're on the way
         pass.style.color = badColor;
-        pass.innerHTML = "Too Short"
+        pass.innerHTML = "Too Short";
 
       } else {
         if (pass1.value.length > 63) {
           pass1.style.backgroundColor = badColor;
           pass.style.color = badColor;
-          pass.innerHTML = "Too Long"
+          pass.innerHTML = "Too Long";
 
         } else {
 
@@ -51,14 +52,14 @@
               //the user that they have entered the correct password
               pass2.style.backgroundColor = goodColor;
               message.style.color = goodColor;
-              message.innerHTML = "Passwords Match!"
+              message.innerHTML = "Passwords Match!";
             }else{
               //The passwords do not match.
               //Set the color to the bad color and
               //notify the user.
               pass2.style.backgroundColor = badColor;
               message.style.color = badColor;
-              message.innerHTML = "Passwords Do Not Match!"
+              message.innerHTML = "Passwords Do Not Match!";
             }
           } else {
             clearColors(pass1, pass2, message);
