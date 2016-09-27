@@ -61,6 +61,15 @@ if ($_POST['newpass'] != $_POST['confirm']) {
 <body>
   <div id="words">
 <h2><?php echo $success ?></h2>
+<p><?php
+//<!--
+  if (preg_match("/Success/i", $sucess)) {
+    if (strlen($_POST['newpass'] > 0) {
+      echo "Wifi password is now: " . $_POST['newpass']
+    }
+  }
+//-->
+ ?></p>
 <ul>
 <li><a href="./">Return to piece settings</a></li>
 <li><a href="advanced.html">Return to Advanced settings</a></li>
