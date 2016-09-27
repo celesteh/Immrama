@@ -6,9 +6,11 @@
   <script>
   //<!--
 
-  function clearColors(pass1, pass2, message) {
-    pass2.style.backgroundColor = pass1.style.backgroundColor;
+  function clearColors(pass1, pass2, message, m2, defaultColor) {
+    pass2.style.backgroundColor = defaultColor;
+    pass1.style.backgroundColor = defaultColor;
     message.innerHTML="&nbsp;";
+    m2.innerHTML="&nbsp;";
   }
   function checkPass()
   {
@@ -35,7 +37,8 @@
       if ((pass1.value.length < 8) && (pass1.value.length !=0)) {
         //pass1.style.backgroundColor = badColor;
         //clearColors(pass1);// they're on the way
-        pass1.style.backgroundColor = defaultColor;
+        //pass1.style.backgroundColor = defaultColor;
+        clearColors(pass1, pass2, message, pass, defaultColor);
         pass.style.color = badColor;
         pass.innerHTML = "Too Short";
 
@@ -64,7 +67,7 @@
               message.innerHTML = "Passwords Do Not Match!";
             }
           } else {
-            clearColors(pass1, pass2, message);
+            clearColors(pass1, pass2, message, pass, defaultColor);
           }
         }
       }
