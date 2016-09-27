@@ -6,6 +6,8 @@ import setproctitle
 import psutil
 import re
 import shutil
+from ConfigParser import SafeConfigParser
+
 
 # Make sure we're the only version of this running
 PROCNAME = "wpa_password.py"
