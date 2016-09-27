@@ -63,9 +63,12 @@ if ($_POST['newpass'] != $_POST['confirm']) {
 <h2><?php echo $success ?></h2>
 <p><?php
 //<!--
-  if (preg_match("/Success/i", $sucess)) {
+  if (preg_match("/success/i", $sucess)) {
     if (strlen($_POST['newpass'] > 0)) {
       echo "Wifi password is now: " . $_POST['newpass'];
+    } else {
+      echo "Wifi is now passwordless. Note this means any audience member" .
+      "now has access to all Conductor actions, including (re)starting the" . "piece, shutting down the computer and setting a wifi password."
     }
   }
 //-->
