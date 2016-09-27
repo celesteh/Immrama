@@ -30,7 +30,7 @@ class lineMangler:
         self.newline = newline
         self.found = False
 
-    def findreplace(line, shouldReplace):
+    def findreplace(self, line, shouldReplace):
         if self.regex.match(line):
             if (shouldReplace and (not self.found)):
                 line = self.newline
@@ -40,7 +40,7 @@ class lineMangler:
 
         return line
 
-    def missingLine():
+    def missingLine(self):
         if not self.found:
             self.found = True
             return self.newline
