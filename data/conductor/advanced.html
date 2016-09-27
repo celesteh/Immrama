@@ -23,24 +23,25 @@
     var badColor = "#ff6666";
     //Compare the values in the password field
     //and the confirmation field
-    if (pass1.value.length < 8) {
+
+    // check bad chars first
+    re = /[a-zA-Z0-9]/;
+    if (!re.test(pass1.value)) {
       pass1.style.backgroundColor = badColor;
       pass.style.color = badColor;
-      pass.innerHTML = "Too Short"
-
+      pass.innerHTML = "Use numbers and letters only"
     } else {
-      if (pass1.value.length > 63) {
-        pass1.style.backgroundColor = badColor;
+      if (pass1.value.length < 8) {
+        pass1.style.backgroundColor = goodColor; // they're on the way
         pass.style.color = badColor;
-        pass.innerHTML = "Too Long"
+        pass.innerHTML = "Too Short"
 
       } else {
-        // if bad chars
-        re = /[a-zA-Z0-9]/;
-        if (!re.test(pass1.value)) {
+        if (pass1.value.length > 63) {
           pass1.style.backgroundColor = badColor;
           pass.style.color = badColor;
-          pass.innerHTML = "Use numbers and letters only"
+          pass.innerHTML = "Too Long"
+
         } else {
 
           if (pass2.value != ""){
