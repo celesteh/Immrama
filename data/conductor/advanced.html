@@ -26,8 +26,8 @@
     //and the confirmation field
 
     // check bad chars first
-    re = /[a-zA-Z0-9]/;
-    if ((!re.test(pass1.value)) && (pass1.value !="")) {
+    re = /[^a-zA-Z0-9]/;
+    if ((re.test(pass1.value)) && (pass1.value !="")) {
       pass1.style.backgroundColor = badColor;
       pass.style.color = badColor;
       pass.innerHTML = "Use numbers and letters only";
@@ -103,8 +103,8 @@ function validate(form) {
               alert('Password is too long');
               return false;
             } else {
-              re = /[a-zA-Z0-9]/;
-              if (!re.test(pass1.value)) {
+              re = /[^a-zA-Z0-9]/;
+              if (re.test(pass1.value)) {
                 alert('Only numbers and letters allowed');
                 return false;
               } else {
