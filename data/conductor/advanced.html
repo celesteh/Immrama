@@ -21,6 +21,7 @@
     //Set the colors we will be using ...
     var goodColor = "#66cc66";
     var badColor = "#ff6666";
+    var defaultColor = pass1.style.backgroundColor;
     //Compare the values in the password field
     //and the confirmation field
 
@@ -31,9 +32,10 @@
       pass.style.color = badColor;
       pass.innerHTML = "Use numbers and letters only";
     } else {
-      if (pass1.value.length < 8) {
+      if ((pass1.value.length < 8) && (pass1.value.length !=0)) {
         //pass1.style.backgroundColor = badColor;
         //clearColors(pass1);// they're on the way
+        pass1.style.backgroundColor = defaultColor;
         pass.style.color = badColor;
         pass.innerHTML = "Too Short";
 
@@ -101,7 +103,7 @@ function validate(form) {
               alert('Password is too long');
               return false;
             } else {
-              re = /\W/;
+              re = /[a-zA-Z0-9]/;
               if (!re.test(pass1.value)) {
                 alert('Only numbers and letters allowed');
                 return false;
