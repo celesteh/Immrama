@@ -80,7 +80,7 @@ length = len(passwd)
 
 
 
-if (length == 0 || ((length >=8) && (length <=63) )):
+if ((length == 0) or ((length >=8) && (length <=63) )):
     # adequate length
     check = re.compile('\w+') #letters and numbers
     if check.match(passwd):
