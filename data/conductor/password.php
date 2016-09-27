@@ -2,36 +2,25 @@
 <?php
 $conf = parse_ini_file("config.ini", true);
 
-function write_php_ini($array, $file)
-{
-    $res = array();
-    //foreach ($array as $title => $section)
-    //  $res[] = "[$title]";
-    //  foreach($array[$title] as $key => $val)
-    foreach($array as $key => $val)
-      {
-          if (empty($_POST[$key])) {
-            //$val = $val;
-          } else {
-            $val = $_POST[$key];
-          }
-          if(is_array($val))
-          {
-              $res[] = "[$key]";
-              foreach($val as $skey => $sval) {
-                if (empty($_POST[$skey])) {
-                  //$val = $val;
-                } else {
-                  $sval = $_POST[$skey];
-                }
-                $res[] = "$skey = ". $sval; //(is_numeric($sval) ? $sval : '"'.$sval.'"');
-              }
-          }
-          else $res[] = "$key = ".(is_numeric($val) ? ceil($val) : '"'.$val.'"');
-      }
-    safefilerewrite($file, implode("\r\n", $res));
-}
+function safefilerewrite($fileName, $dataToSave)
+{    if ($fp = fopen($fileName, 'w'))
+    {
+        $startTime = microtime(TRUE);
+        do
+        {            $canWrite = flock($fp, LOCK_EX);
+           // If lock not obtained sleep for 0 - 100 milliseconds, to avoid collision and CPU load
+           if(!$canWrite) usleep(round(rand(0, 100)*1000));
+        } while ((!$canWrite)and((microtime(TRUE)-$startTime) < 5));
 
+        //file was locked so now we can store information
+        if ($canWrite)
+        {            fwrite($fp, $dataToSave);
+            flock($fp, LOCK_UN);
+        }
+        fclose($fp);
+    }
+
+}
 
 if ($_POST['newpass'] != $_POST['confirm']) {
   $success = "Failure: Passwords don't match";
