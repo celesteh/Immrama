@@ -2,10 +2,66 @@
 <?php
 $conf = parse_ini_file("config.ini", true);
 
-$cmd =  $conf['working']['installation'] . '/wpa_password.py';
-$args = ' '. $_POST['newpass'] . ' ' . $_POST['confirm'];
+function write_php_ini($array, $file)
+{
+    $res = array();
+    //foreach ($array as $title => $section)
+    //  $res[] = "[$title]";
+    //  foreach($array[$title] as $key => $val)
+    foreach($array as $key => $val)
+      {
+          if (empty($_POST[$key])) {
+            //$val = $val;
+          } else {
+            $val = $_POST[$key];
+          }
+          if(is_array($val))
+          {
+              $res[] = "[$key]";
+              foreach($val as $skey => $sval) {
+                if (empty($_POST[$skey])) {
+                  //$val = $val;
+                } else {
+                  $sval = $_POST[$skey];
+                }
+                $res[] = "$skey = ". $sval; //(is_numeric($sval) ? $sval : '"'.$sval.'"');
+              }
+          }
+          else $res[] = "$key = ".(is_numeric($val) ? ceil($val) : '"'.$val.'"');
+      }
+    safefilerewrite($file, implode("\r\n", $res));
+}
 
-$success = system($cmd . $args);
+
+if ($_POST['newpass'] != $_POST['confirm']) {
+  $success = "Failure: Passwords don't match";
+} else {
+  $length = strlen($_POST['newpass']);
+  if (($length < 8) && ($length != 0)) {
+    $success = "Failure: Password too short";
+  } else {
+    if ($length > 63 ) {
+      $success = "Failure: Password too long";
+    } else {
+      if (preg_match("/\W/", $_POST['newpass'])) {
+        $success = "Failure: Password may only contain numbers and letters";
+      } else {
+
+
+        // ok, that was all of the tests
+        // put the password into a temporary file
+        $file = $conf['working']['tmp'] . 'newpass.txt';
+        safefilerewrite($file, $_POST['newpass'] . '\n');
+
+        // put in sudo later
+        $cmd =  $conf['working']['installation'] . '/wpa_password.py ';
+        $args = $conf['working']['data'] . '/conductor/config.ini';
+
+        $success = system($cmd . $args);
+      }
+    }
+  }
+}
 ?>
 <html>
 <head>

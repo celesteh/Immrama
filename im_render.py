@@ -312,7 +312,7 @@ def squiggle():
 def glyph():
     #def add_text(text, drawing, size, x,y):
     #get the glyph's path from Bravura.svg in the data dir
-    #path = dwg.path(d=pathdata, stroke='black', target=(rand_x(), rand_y()), rotation=(random.randrange(0,100) < 80), transform='scale({0})'.format(random.randrang(0.5, 50)))
+    #path = dwg.path(d=pathdata, stroke='black', target=(rand_x(), rand_y()), rotation=(random.randrange(0,100) < 80), transform='scale({0})'.format(random.randrange(0.5, 50)))
     add_text(unescape(random.choice(glyphs)), dwg, random.randint(50,400), rand_x(), rand_y(), (random.randrange(0,100) < 80))
 
 options = { 0: dots,

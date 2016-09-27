@@ -190,6 +190,20 @@ webserver runs as. For me, it was `www-data`
 * append to the file: `www-data immrama= NOPASSWD: /sbin/halt`
 but use whatever name was in the 4th column of output from the ls -las
 
+## Allow chaning the WPA password via the web interface
+* Use the web interface to start running Immrama
+* Log into the computer via ssh or keyboard, mouse & monitor
+* `ls -las /var/www/html/color.css` This will tell you what user the
+webserver runs as. For me, it was `www-data`
+* `sudo visudo`
+* append to the file:
+`www-data immrama= NOPASSWD: /home/pi/Documents/Immrama/wpa_password.py`
+but use whatever name was in the 4th column of output from the ls -las
+
+
 ## Troubleshooting
 
 * The first thing to check is file permissions. Re-run all the chmod commands above. Also, there are circumatsance where score.svg make have the wrong permissions. Either delete the file entirely or `sudo chmod 666 /var/www/html/score.svg`
+
+* If you forget the wifi password, use a computer to connect to the Pi via
+an ethernet cable and use the web form to reset the password
