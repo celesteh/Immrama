@@ -36,7 +36,7 @@
 
       } else {
         // if bad chars
-        re = /[^a-zA-Z0-9]/;
+        re = /[a-zA-Z0-9]/;
         if (!re.test(pass1.value)) {
           pass1.style.backgroundColor = badColor;
           pass.style.color = badColor;
