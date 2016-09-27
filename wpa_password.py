@@ -72,7 +72,7 @@ if tmp_dir.endswith('/') == False:
 
 pass_file = tmp_dir + 'newpass.txt'
 
-with open pass_file as f:
+with open (pass_file) as f:
     passwd = f.readline()
 
 passwd = passwd.rstrip()
