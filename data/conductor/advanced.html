@@ -145,13 +145,13 @@ function validate(form) {
     <p class="passwdwrapper">
     <span id="testPass" class="confirmMessage">&nbsp;</span>
       <label for="newpass">New Password</label>
-      <input type="password" name="newpass"
+      <input type="text" name="newpass"
       onkeyup="checkPass(); return false;"id="pass1">
     </p>
     <p class="passwdwrapper">
       <span id="confirmMessage" class="confirmMessage">&nbsp;</span>
       <label for="confirm">Confirm New Password</label>
-      <input type="password" name="confirm"
+      <input type="text" name="confirm"
       onkeyup="checkPass(); return false;" id="pass2">
     </p>
     <p><button type="reset" value="Reset" onclick="clearJunk(); return false;">Nevermind</button>
