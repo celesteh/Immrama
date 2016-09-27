@@ -39,7 +39,7 @@ if ($_POST['newpass'] != $_POST['confirm']) {
 
         // ok, that was all of the tests
         // put the password into a temporary file
-        $file = $conf['working']['tmp'] . 'newpass.txt';
+        $file = $conf['working']['tmp'] . '/newpass.txt';
         safefilerewrite($file, $_POST['newpass'] . '\n');
 
         // put in sudo later
