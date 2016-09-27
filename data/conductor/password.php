@@ -67,8 +67,9 @@ if ($_POST['newpass'] != $_POST['confirm']) {
     if (strlen($_POST['newpass'] > 0)) {
       echo "Wifi password is now: " . $_POST['newpass'];
     } else {
-      echo "Wifi is now passwordless. Note this means any audience member" .
-      "now has access to all Conductor actions, including (re)starting the" . "piece, shutting down the computer and setting a wifi password.";
+      echo "Wifi is now passwordless. Note this means any audience member " .
+      "now has access to all Conductor actions, including (re)starting the" .
+      " piece, shutting down the computer and setting a wifi password.";
     }
   }
 //-->
