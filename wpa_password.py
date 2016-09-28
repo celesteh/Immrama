@@ -24,9 +24,9 @@ class lineMangler:
     """Hold stuff for doing pattern matching"""
 
     def __init__(self, regex, newline):
-        if isinstance(regex, basestring):
-            regex = re.compile(regex)
-        self.regex = regex
+        #if isinstance(regex, basestring):
+        #    regex = re.compile(regex)
+        self.regex = re.compile(regex)
         self.newline = newline
         self.found = False
 
