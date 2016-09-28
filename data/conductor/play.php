@@ -62,6 +62,21 @@ function write_color_style($foreground, $background, $file)
   safefilerewrite($file, $css);
 }
 
+// This is for phone ratios on laptops, basically
+function write_geometry_css($dowrite, $width, $file)
+{
+  if ($dowrite){
+    $css = "@media only screen and (min-device-width: 801px) {\n" .
+    "/* define bigger specific styles come here */\n" .
+    "  #score {\n" .
+    "  width: " . $width . "px;\n".
+    "}\n";
+  } else {
+    $css = "";
+  };
+
+  safefilerewrite($file, $css);
+}
 
 
 $conf = parse_ini_file("config.ini", true);
@@ -75,7 +90,10 @@ $conf = parse_ini_file("config.ini", true);
 $fg = $conf['working']['foreground'];
 $bg = $conf['working']['background'];
 write_color_style($fg, $bg, $conf['working']['data'] . '/color.css' );
-
+$width = $conf['working']['imagewidth'];
+$height = $conf['working']['imageheight'];
+write_geometry_css(($height > $width), $width,
+  $conf['working']['data'] . '/geometry.css')
 
 $cmd = $conf['working']['installation'] . '/immrama.py';
 $args = $conf['working']['data'] . '/conductor/config.ini';
