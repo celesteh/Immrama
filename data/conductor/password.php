@@ -43,7 +43,7 @@ if ($_POST['newpass'] != $_POST['confirm']) {
         safefilerewrite($file, $_POST['newpass'] . "\n");
 
         // put in sudo later
-        $cmd =  $conf['working']['installation'] . '/wpa_password.py ';
+        $cmd =  'sudo ' . $conf['working']['installation'] . '/wpa_password.py ';
         $args = $conf['working']['data'] . '/conductor/config.ini';
 
         $success = system($cmd . $args);
