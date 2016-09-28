@@ -109,7 +109,7 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
         geom = """
 @media all and (orientation:landscape) and (min-device-width: """ + str(width+1) + """px){
     #score {
-        width: """ + str(ceil(height/width)) + """vh;
+        width: """ + str(ceil(height/width * 100)) + """vh;
         float: center;
         display: block;
         margin-top: 0;
