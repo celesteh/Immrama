@@ -22,7 +22,7 @@ fclose($myfile);
   <div id="words">
 <?php if (strlen($password) > 0) {
     echo "<h1>" . $password . "</h1>\n";
-    echo "<p>Wifi password is " . $password . "</p>\n"
+    echo "<p>Wifi password is " . $password . "</p>\n";
   } else {
     echo "<p>No Wifi password set.</p>\n";
     echo ""<p><a href=\"advanced.html\">Set a password!</a></p>\n";
