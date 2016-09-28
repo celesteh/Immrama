@@ -8,6 +8,7 @@ import os
 import setproctitle
 import psutil
 import argparse
+from math import ceil
 
 # Make sure we're the only version of this running
 PROCNAME = "immrama"
@@ -108,7 +109,7 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
         geom = """
 @media all and (orientation:landscape) and (min-device-width: """ + str(width+1) + """px){
     #score {
-        width: """ + str(ciel(height/width)) + """vh;
+        width: """ + str(ceil(height/width)) + """vh;
         float: center;
         display: block;
         margin-top: 0;
