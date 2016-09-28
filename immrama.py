@@ -106,9 +106,9 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
     geom = ""
     if width > height:
         geom = """
-        @media all and (orientation:landscape) and (min-device-width: """ + (width+1) + """px){
+        @media all and (orientation:landscape) and (min-device-width: """ + str(width+1) + """px){
             #score {
-                width: """ + width + """px;
+                width: """ + str(width) + """px;
                 float: center;
                 display: block;
                 margin-top: 0;
