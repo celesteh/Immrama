@@ -5,7 +5,7 @@ $myfile = fopen("/etc/hostapd/hostapd.conf", "r") or die("Unable to open file!")
 // Output one line until end-of-file
 while(!feof($myfile)) {
  $line =  fgets($myfile);
- if (preg_match("/^wpa\s?=/i", $line)) {
+ if (preg_match("/^wpa_passphrase\s?=/i", $line)) {
    list($wpa, $password) = explode('=', $line); //text mangling
    $password = trim($password);
  }
