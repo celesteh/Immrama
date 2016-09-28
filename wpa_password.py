@@ -19,6 +19,7 @@ for proc in psutil.process_iter():
 
 setproctitle.setproctitle(PROCNAME)
 
+re.UNICODE
 
 class lineMangler:
     """Hold stuff for doing pattern matching"""
