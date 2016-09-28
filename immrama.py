@@ -112,6 +112,7 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
         float: center;
         display: block;
         margin-top: 0;
+        height: 100vh;
     }
 }
 
