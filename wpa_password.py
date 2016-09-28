@@ -129,6 +129,6 @@ if ((length == 0) or ((length >=8) and (length <=63) )):
         else:
             print "Success: Wifi is passwordless"
     else:
-        print "Failure: Password not set"
+        print "Failure: Password not set. Use only letters and numbers."
 else :
-    print "Failure: Password not set"
+    print "Failure: Password not set. Must be between 8-63 characters."

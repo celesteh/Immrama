@@ -53,6 +53,7 @@ function write_php_ini($array, $file)
     safefilerewrite($file, implode("\r\n", $res));
 }
 
+/*
 function write_color_style($foreground, $background, $file)
 {
   $css = "body {\n  background-color: ". $background .
@@ -67,7 +68,6 @@ function write_geometry_css($dowrite, $width, $file)
 {
   if ($dowrite){
     $css = "@media only screen and (min-device-width: 801px) {\n" .
-    "/* define bigger specific styles come here */\n" .
     "  #score {\n" .
     "  width: " . $width . "px;\n".
     "}\n";
@@ -77,7 +77,7 @@ function write_geometry_css($dowrite, $width, $file)
 
   safefilerewrite($file, $css);
 }
-
+*/
 
 $conf = parse_ini_file("config.ini", true);
 // deal with duration maths
@@ -87,6 +87,7 @@ write_php_ini($conf, "config.ini");
 $conf = parse_ini_file("config.ini", true);
 # surely parsing goes after writing?
 
+/*
 $fg = $conf['working']['foreground'];
 $bg = $conf['working']['background'];
 write_color_style($fg, $bg, $conf['working']['data'] . '/color.css' );
@@ -94,6 +95,7 @@ $width = $conf['working']['imagewidth'];
 $height = $conf['working']['imageheight'];
 write_geometry_css(($height > $width), $width,
   $conf['working']['data'] . '/geometry.css')
+*/
 
 $cmd = $conf['working']['installation'] . '/immrama.py';
 $args = $conf['working']['data'] . '/conductor/config.ini';

@@ -42,6 +42,13 @@ rendered = config.get('working', 'rendered')
 data_dir = config.get('working', 'data') # -> "value1"
 install_dir = config.get('working', 'installation')
 
+# stuff for css
+bgcolor = config.get('working', 'background')
+fgcolor =config.get('working', 'foreground')
+width =  config.getint('working', 'imagewidth')
+height = config.getint('working', 'imageheight')
+
+
 if tmp_dir is None:
     tmp_dir = '/tmp/'
 
@@ -68,9 +75,48 @@ if slide_dur is None:
 if init_sleep is None:
     init_sleep = 5
 
-
 if data_dir.endswith('/') == False:
     data_dir = data_dir +'/'
+
+if bgcolor is None:
+    bgcolor = "#000000"
+if fgcolor is None:
+    fgcolor = "#FFFFFF"
+
+
+# create color.css and geometry.css
+
+with open (data_dir + 'color.css', 'w') as css:
+    css.write(
+    """
+    body {
+        background-color: """ + bgcolor + """;
+        color: """ + fgcolor + """;
+    }
+
+    svg {
+        fill: """ + fgcolor + """;
+        path: """ + fgcolor + """;
+    }
+    """
+    )
+
+
+with open (data_dir + 'geometry.css', 'w') as geometry:
+    geom = ""
+    if width > height:
+        geom = """
+        @media all and (orientation:landscape) and (min-device-width: """ + (width+1) + """px){
+            #score {
+                width: """ + width + """px;
+                float: center;
+                display: block;
+                margin-top: 0;
+            }
+        }
+
+        """
+    geometry.write(geom)
 
 
 
