@@ -110,11 +110,11 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
 @media all and (orientation:landscape) and (min-device-width: """ + str(width+1) + """px){
     svg {
         /*width: """ + str(int(ceil(float(width)/height * 100))) + """vh;*/
-        width: """ + str(width) + """px;
+        /*width: """ + str(width) + """px;*/
         float: center;
         display: block;
         margin-top: 0;
-        /*height: 100%;*/
+        height: 100%;
     }
 }
 
