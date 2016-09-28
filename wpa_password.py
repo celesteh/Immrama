@@ -85,7 +85,8 @@ length = len(passwd)
 if ((length == 0) or ((length >=8) and (length <=63) )):
     # adequate length
     check = re.compile('\W+') #not letters and numbers
-    if ((check.match(passwd) is None) or (length == 0)):
+    match = check.match(passwd)
+    if ((match is None) or (len(match) == 0) (or (length == 0)):
         # so far so good
 
         havePass = False
@@ -119,8 +120,8 @@ if ((length == 0) or ((length >=8) and (length <=63) )):
                 result.write(rsn_obj.missingLine() + '\n')
         #end with
         # copy file to real location
-        shutil.copy('/tmp/hostapd.conf', '/etc/hostapd/hostapd.conf')
-        os.system('/etc/init.d/hostapd restart')
+        #shutil.copy('/tmp/hostapd.conf', '/etc/hostapd/hostapd.conf')
+        #os.system('/etc/init.d/hostapd restart')
         if havePass:
             print "Success: Password Changed"
         else:
