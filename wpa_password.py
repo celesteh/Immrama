@@ -86,8 +86,8 @@ if ((length == 0) or ((length >=8) and (length <=63) )):
     # adequate length
     check = re.compile('\w+') #not letters and numbers
     match = check.match(passwd)
-    print match
-    if ((match is None) or (len(match) == 0) or (length == 0)):
+    #print match
+    if ((match is None) or (length == 0)):
         # so far so good
 
         havePass = False
