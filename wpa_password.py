@@ -117,7 +117,7 @@ if ((length == 0) or ((length >=8) and (length <=63) )):
         #end with
         # copy file to real location
         shutil.copy('/tmp/hostapd.conf', '/etc/hostapd/hostapd.conf')
-        os.system('etc/init.d/hostapd restart')
+        os.system('/etc/init.d/hostapd restart')
         if havePass:
             print "Success: Password Changed"
         else:
