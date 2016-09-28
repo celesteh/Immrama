@@ -89,15 +89,15 @@ if fgcolor is None:
 with open (data_dir + 'color.css', 'w') as css:
     css.write(
     """
-    body {
-        background-color: """ + bgcolor + """;
-        color: """ + fgcolor + """;
-    }
+body {
+    background-color: """ + bgcolor + """;
+    color: """ + fgcolor + """;
+}
 
-    svg {
-        fill: """ + fgcolor + """;
-        path: """ + fgcolor + """;
-    }
+svg {
+    fill: """ + fgcolor + """;
+    path: """ + fgcolor + """;
+}
     """
     )
 
@@ -106,14 +106,14 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
     geom = ""
     if width > height:
         geom = """
-        @media all and (orientation:landscape) and (min-device-width: """ + str(width+1) + """px){
-            #score {
-                width: """ + str(width) + """px;
-                float: center;
-                display: block;
-                margin-top: 0;
-            }
-        }
+@media all and (orientation:landscape) and (min-device-width: """ + str(width+1) + """px){
+    #score {
+        width: """ + str(width) + """px;
+        float: center;
+        display: block;
+        margin-top: 0;
+    }
+}
 
         """
     geometry.write(geom)
