@@ -116,6 +116,7 @@ if ((length == 0) or ((length >=8) and (length <=63) )):
                 result.write(pass_obj.missingLine() + '\n')
                 result.write(wpa2_obj.missingLine() + '\n')
                 result.write(key_obj.missingLine() + '\n')
+                result.write(rsn_obj.missingLine() + '\n')
         #end with
         # copy file to real location
         shutil.copy('/tmp/hostapd.conf', '/etc/hostapd/hostapd.conf')
