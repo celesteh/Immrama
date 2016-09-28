@@ -104,7 +104,7 @@ svg {
 
 with open (data_dir + 'geometry.css', 'w') as geometry:
     geom = ""
-    if width > height:
+    if height > width:
         geom = """
 @media all and (orientation:landscape) and (min-device-width: """ + str(width+1) + """px){
     #score {
