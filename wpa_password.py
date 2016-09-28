@@ -95,11 +95,11 @@ if ((length == 0) or ((length >=8) and (length <=63) )):
         if passwd != "": #Non blank password
             havePass=True
 
-        pass_obj = lineMangler('$wpa_passphrase\s*=.*',
+        pass_obj = lineMangler('^wpa_passphrase\s*=.*',
         'wpa_passphrase='+passwd)
-        wpa2_obj = lineMangler('$wpa\s*=\s*[0-9]+', 'wpa=2')
-        key_obj = lineMangler('$wpa_key_mgmt\s*=\s*.*','wpa_key_mgmt=WPA-PSK')
-        rsn_obj = lineMangler('$rsn_pairwise\s*=\s*.*','rsn_pairwise=CCMP')
+        wpa2_obj = lineMangler('^wpa\s*=\s*[0-9]+', 'wpa=2')
+        key_obj = lineMangler('^wpa_key_mgmt\s*=\s*.*','wpa_key_mgmt=WPA-PSK')
+        rsn_obj = lineMangler('^rsn_pairwise\s*=\s*.*','rsn_pairwise=CCMP')
 
         with open('/tmp/hostapd.conf', 'w') as result: #file to write
             with open('/etc/hostapd/hostapd.conf') as conf: #original file
