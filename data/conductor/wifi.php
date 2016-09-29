@@ -14,8 +14,8 @@ fclose($myfile);
 ?>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="/style.css">
-<link rel="stylesheet" href="/color.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="stylesheet" href="../color.css" type="text/css" />
 <title>Wifi Password</title>
 </head>
 <body>

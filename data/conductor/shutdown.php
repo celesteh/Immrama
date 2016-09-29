@@ -6,8 +6,8 @@ $success = system("sudo /sbin/halt");
 ?>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="/style.css">
-<link rel="stylesheet" href="/color.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="stylesheet" href="../color.css" type="text/css" />
 <title>Failure</title>
 </head>
 <body>

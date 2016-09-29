@@ -39,9 +39,17 @@ function OnChangeSize(form)
           form.imageheight.value = 768
           form.imageheight.readonly = true
         } else {
-          //custom
-          form.imagewidth.readonly = false
-          form.imageheight.readonly = false
+          if (val == "portrait")
+          {
+            form.imagewidth.value = 768
+            form.imagewidth.readonly = true
+            form.imageheight.value = 1024
+            form.imageheight.readonly = true
+          } else {
+            //custom
+            form.imagewidth.readonly = false
+            form.imageheight.readonly = false
+          }
         }
       }
     }
@@ -49,9 +57,15 @@ function OnChangeSize(form)
     return true;
 };
 
-document.getElementById("imagewidth").readonly = true;
-document.getElementById("imageheight").readonly = true;
+function readOnly() {
+  document.getElementById("imagewidth").readonly = true;
+  document.getElementById("imageheight").readonly = true;
+};
 
+readOnly();
+
+// render the window before trying to make elements readonly
+window.setTimeout(readOnly,700);
 
 
 //-->
@@ -90,6 +104,7 @@ document.getElementById("imageheight").readonly = true;
           <option value="prev">Same as last time (<?php echo $conf['imagewidth']; ?>x<?php echo $conf['imageheight']; ?>)</option>
           <option value="phone">Phones (2x3 ratio)</option>
           <option value="tablet">Tablets (4x3 ratio)</option>
+          <option value="portrait">Potrait (3x4 ratio)</option>
           <option value="custom">Custom</option>
         </select>
       </p>

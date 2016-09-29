@@ -108,9 +108,10 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
     if height > width:
         geom = """
 @media all and (orientation:landscape) and (min-device-width: """ + str(width+1) + """px){
-    svg {
+    svg.resize {
         /*width: """ + str(int(ceil(float(width)/height * 100))) + """vh;*/
         /*width: """ + str(width) + """px;*/
+        width: auto;
         float: center;
         display: block;
         margin-top: 0;
