@@ -173,7 +173,14 @@ def make_dots(drawing, num, topx, topy, botx, boty, max_s, min_s):
 dwg = svgwrite.Drawing(size = ("{}px".format(width), "{}px".format(height)))
 dwg.viewbox(0, 0, width, height)
 #dwg.stretch()
-dwg.fit(horiz='center', vert='middle', scale='slice')
+
+# display very narrow images properly
+if (float(width) / height) > 0.69:
+    scale = 'slice'
+else :
+    scale = 'meet'
+
+dwg.fit(horiz='center', vert='middle', scale=scale)
 
 dwg.defs.add(dwg.style('@font-face {\n  font-family: Bravura;\n'
 + '  src: local("Bravura Regular"),\n    local("BravuraRegular"), \n    local("Bravura"),\n'

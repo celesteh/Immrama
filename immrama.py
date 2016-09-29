@@ -112,6 +112,7 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
         /*width: """ + str(int(ceil(float(width)/height * 100))) + """vh;*/
         /*width: """ + str(width) + """px;*/
         width: auto;
+        /*width: """ + str(int(ceil(float(width)/height * 100))) + """%;*/
         float: center;
         display: block;
         margin-top: 0;
