@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-$conf = parse_ini_file("config.ini", true);
+//$conf = parse_ini_file("config.ini", true);
 
 $success = system("sudo /sbin/halt");
 ?>
