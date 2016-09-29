@@ -2,9 +2,8 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../style.css">
-<link rel="stylesheet" href="../color.css" type="text/css" />
-<link rel="stylesheet" media="orientation:landscape, min-width:801px"
-href="/geometry.css" type="text/css" />
+<link rel="stylesheet" id="color" href="../color.css" type="text/css" />
+<link rel="stylesheet" id="geom" href="../geometry.css" type="text/css" />
 <noscript>
   <meta http-equiv="refresh" content="2">
 </noscript>
@@ -52,39 +51,65 @@ var getMTime = function(url, callback) {
 };
 
 var lasttag;
+var lastcolor;
+var lastgeom;
 
 getMTime('../score.svg', function(mtime) {
   if (mtime) lasttag = mtime;
 });
 
+getMTime('../color.css', function(mtime) {
+  if (mtime) lastcolor = mtime;
+});
+
+getMTime('../geometry.css', function(mtime) {
+  if (mtime) lastgeom = mtime;
+});
+
+//function doUpdate(url, tag, id){
+//
+//}
+
+function doUpdate (id, url) {
+  var obj = document.getElementById(id);
+  var newurl = url + "?" + + new Date().getTime();
+  try {
+    obj.data = newurl;
+  }
+  catch(err) {
+    obj.data = newurl;
+  };
+};
 
 function updateIfChanged() {
-
   getMTime('../score.svg', function(mtime) {
     if (mtime) {
       if (lasttag != mtime){
-        var imgobj = document.getElementById("svg");
-        try {
-          imgobj.data = "../score.svg#" + mtime;//.toISOString();
-        }
-        catch(err) {
-          imgobj.data = "../score.svg#" + mtime;
-        };
+        doUpdate("svg", '../score.svg');
         lasttag=mtime;
-        //console.log("changed: " + new Date().getTime());
-      } else {
-        //console.log("unchanged: " + new Date().getTime());
       }
     } else {
-      var imgobj = document.getElementById("svg");
-      try {
-        imgobj.data = "../score.svg#" + new Date().getTime();
+      doUpdate("svg", '../score.svg');
+    }
+  });
+  getMTime('../color.css', function(mtime) {
+    if (mtime) {
+      if (lastcolor != mtime){
+        doUpdate("color", '../color.css');
+        lastcolor=mtime;
       }
-      catch (err) {
-        // try again
-        imgobj.data = "../score.svg#" + new Date().getTime();
-      };
-      //console.log("no time found: " + new Date().getTime());
+    } else {
+      doUpdate("color", '../color.css');
+    }
+  });
+  getMTime('../geometry.css', function(mtime) {
+    if (mtime) {
+      if (lastgeom != mtime){
+        doUpdate("geom", '../geometry.css');
+        lastgeom=mtime;
+      }
+    } else {
+      doUpdate("geom", '../geometry.css');
     }
   });
   window.setTimeout(delayer,1000);
