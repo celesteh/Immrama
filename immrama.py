@@ -111,14 +111,16 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
     #score {
         /*width: """ + str(int(ceil(float(width)/height * 100))) + """vh;*/
         /*width: """ + str(width) + """px;*/
-        /*width: auto;*/
         /*width: """ + str(int(ceil(float(width)/height * 100))) + """%;*/
         float: center;
         display: block;
         margin-top: 0;
+        /* width: """ + str(width) + """px;
+        height: """ + str(height) + """px; */
         /*height: 100%;*/
-        width: """ + str(width) + """px;
-        height: """ + str(height) + """px;
+        /*width: auto;*/
+        height: vmin;
+        width: """ + str(float(width)/height) + """vmin;
     }
 }
 
