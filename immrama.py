@@ -120,11 +120,11 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
         /*height: 100%;*/
         /*width: auto;*/
         height: 1vmin;
-        width: """ + str(float(width)/height) + """vmin;
+        width: {0:.2f}vmin;
     }
 }
 
-        """
+        """.format(float(width)/height)
     geometry.write(geom)
 
 
