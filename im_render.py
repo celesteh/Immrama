@@ -175,7 +175,7 @@ dwg.viewbox(0, 0, width, height)
 #dwg.stretch()
 
 # display very narrow images properly
-if (float(width) / height) < 0.69:
+if (float(width) / height) > 0.69:
     scale = 'slice'
 else :
     scale = 'meet'
