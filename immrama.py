@@ -119,7 +119,7 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
         height: """ + str(height) + """px; */
         /*height: 100%;*/
         /*width: auto;*/
-        height: vmin;
+        height: 1vmin;
         width: """ + str(float(width)/height) + """vmin;
     }
 }
