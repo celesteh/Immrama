@@ -60,7 +60,7 @@ getMTime('../score.svg', function(mtime) {
 
 
 function do_load(url, id){
-  var imgobj = document.getElementById(id);
+  var obj = document.getElementById(id);
   var newurl = url + "?" + + new Date().getTime();
 
   try{
