@@ -3,7 +3,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../style.css">
 <link rel="stylesheet" id="color" href="../color.css" type="text/css" />
-<link rel="stylesheet" id="geom" href="../geometry.css" type="text/css" />
+<!--link rel="stylesheet" id="geom" href="../geometry.css" type="text/css" /-->
 <noscript>
   <meta http-equiv="refresh" content="2">
 </noscript>
@@ -59,24 +59,39 @@ getMTime('../score.svg', function(mtime) {
 });
 
 
+function do_load(url, id){
+  var imgobj = document.getElementById(id);
+  var newurl = url + "?" + + new Date().getTime();
+
+  try{
+    obj.data = newurl;
+  } catch (err){
+    obj.data = newurl;
+  }
+};
+
 function updateIfChanged() {
 
   getMTime('../score.svg', function(mtime) {
     if (mtime) {
       if (lasttag != mtime){
+        /*
         var imgobj = document.getElementById("svg");
         try {
           imgobj.data = "../score.svg#" + mtime;//.toISOString();
         }
         catch (err){
           imgobj.data = "../score.svg#" + mtime;//.toISOString();
-        };
+        };*/
+        do_load('../score.svg', "svg")
+        do_load('../color.css', "color")
         lasttag=mtime;
         //console.log("changed: " + new Date().getTime());
       } else {
         //console.log("unchanged: " + new Date().getTime());
       }
     } else {
+      /*
       var imgobj = document.getElementById("svg");
       try {
         imgobj.data = "../score.svg#" + new Date().getTime();
@@ -86,6 +101,10 @@ function updateIfChanged() {
         imgobj.data = "../score.svg#" + new Date().getTime();
       };
       //console.log("no time found: " + new Date().getTime());
+      */
+      do_load('../score.svg', "svg")
+      do_load('../color.css', "color")
+
     }
   });
   window.setTimeout(delayer,1000);
