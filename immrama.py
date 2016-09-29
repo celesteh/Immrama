@@ -124,7 +124,8 @@ with open (data_dir + 'geometry.css', 'w') as geometry:
     }
 }
 
-        """.format(float(width)/height)
+        """
+        geom = geom.format(float(width)/height)
     geometry.write(geom)
 
 
