@@ -58,58 +58,34 @@ getMTime('../score.svg', function(mtime) {
   if (mtime) lasttag = mtime;
 });
 
-getMTime('../color.css', function(mtime) {
-  if (mtime) lastcolor = mtime;
-});
-
-getMTime('../geometry.css', function(mtime) {
-  if (mtime) lastgeom = mtime;
-});
-
-//function doUpdate(url, tag, id){
-//
-//}
-
-function doUpdate (id, url) {
-  var obj = document.getElementById(id);
-  var newurl = url + "?" + + new Date().getTime();
-  try {
-    obj.data = newurl;
-  }
-  catch(err) {
-    obj.data = newurl;
-  };
-};
 
 function updateIfChanged() {
+
   getMTime('../score.svg', function(mtime) {
     if (mtime) {
       if (lasttag != mtime){
-        doUpdate("svg", '../score.svg');
+        var imgobj = document.getElementById("svg");
+        try {
+          imgobj.data = "../score.svg#" + mtime;//.toISOString();
+        }
+        catch (err){
+          imgobj.data = "../score.svg#" + mtime;//.toISOString();
+        };
         lasttag=mtime;
+        //console.log("changed: " + new Date().getTime());
+      } else {
+        //console.log("unchanged: " + new Date().getTime());
       }
     } else {
-      doUpdate("svg", '../score.svg');
-    }
-  });
-  getMTime('../color.css', function(mtime) {
-    if (mtime) {
-      if (lastcolor != mtime){
-        doUpdate("color", '../color.css');
-        lastcolor=mtime;
+      var imgobj = document.getElementById("svg");
+      try {
+        imgobj.data = "../score.svg#" + new Date().getTime();
       }
-    } else {
-      doUpdate("color", '../color.css');
-    }
-  });
-  getMTime('../geometry.css', function(mtime) {
-    if (mtime) {
-      if (lastgeom != mtime){
-        doUpdate("geom", '../geometry.css');
-        lastgeom=mtime;
-      }
-    } else {
-      doUpdate("geom", '../geometry.css');
+      catch (err) {
+        // try again
+        imgobj.data = "../score.svg#" + new Date().getTime();
+      };
+      //console.log("no time found: " + new Date().getTime());
     }
   });
   window.setTimeout(delayer,1000);
