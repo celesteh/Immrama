@@ -468,7 +468,6 @@ Menu stuff
 source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navigation.html
 **/
 
-/* first hide the menu */
 .header {
   background-color: #fff;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
@@ -492,7 +491,8 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
   text-decoration: none;
 }
 
-.header li a:hover {
+.header li a:hover,
+.header .menu-btn:hover {
   background-color: #f4f4f4;
 }
 
@@ -504,13 +504,16 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
   text-decoration: none;
 }
 
+/* menu */
+
 .header .menu {
   clear: both;
   max-height: 0;
   transition: max-height .2s ease-out;
 }
 
-/* Then make the icon thingee look right */
+/* menu icon */
+
 .header .menu-icon {
   cursor: pointer;
   display: inline-block;
@@ -548,7 +551,8 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
   top: -5px;
 }
 
-/* animation */
+/* menu btn */
+
 .header .menu-btn {
   display: none;
 }
@@ -573,6 +577,27 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+
 
 /*
 End of menu stuff
