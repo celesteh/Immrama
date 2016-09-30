@@ -488,11 +488,7 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
   list-style: none;
   overflow: hidden;
   background-color: inherit;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
   color: inherit;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
 }
 
 .header li a {
@@ -538,11 +534,7 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
   transition: background .2s ease-out;
   width: 18px;
   background-color: inherit;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
   color: inherit;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
 
 }
 
