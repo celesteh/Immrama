@@ -462,6 +462,64 @@ body {
 
 /** END set heights */
 
+/**
+Menu stuff
+
+source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navigation.html
+**/
+
+.header {
+  background-color: inherit;
+  color: inherit;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: inherit;
+  color: inherit;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+ 
+.header li a:hover {
+  background-color: inherit;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+
+/*
+End of menu stuff
+**/
+
 @font-face {
   font-family: Bravura;
   src: local("Bravura Regular"),
