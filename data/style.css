@@ -597,6 +597,19 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
   }
 }
 
+/* section */
+
+.section {
+  overflow: hidden;
+  margin: auto;
+  max-width: 1400px;
+}
+
+.section a {
+  position: relative;
+  float: left;
+  width: 100%;
+}
 
 
 /*
