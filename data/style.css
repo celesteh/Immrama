@@ -470,12 +470,7 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
 
 /* first hide the menu */
 .header {
-  background-color: inherit;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
-  color: inherit;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
+  background-color: #fff;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
   position: fixed;
   width: 100%;
@@ -487,8 +482,7 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
   padding: 0;
   list-style: none;
   overflow: hidden;
-  background-color: inherit;
-  color: inherit;
+  background-color: #fff;
 }
 
 .header li a {
@@ -499,7 +493,7 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
 }
 
 .header li a:hover {
-  background-color: inherit;
+  background-color: #f4f4f4;
 }
 
 .header .logo {
@@ -527,32 +521,23 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
 }
 
 .header .menu-icon .navicon {
-  /*background: #333;*/
+  background: #333;
   display: block;
   height: 2px;
   position: relative;
   transition: background .2s ease-out;
   width: 18px;
-  background-color: inherit;
-  color: inherit;
-
 }
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-  /*background: #333;*/
+  background: #333;
   content: '';
   display: block;
   height: 100%;
   position: absolute;
   transition: all .2s ease-out;
   width: 100%;
-  background-color: inherit;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
-  color: inherit;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
 }
 
 .header .menu-icon .navicon:before {
