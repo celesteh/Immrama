@@ -103,30 +103,30 @@ svg {
     )
 
 
-with open (data_dir + 'geometry.css', 'w') as geometry:
-    geom = ""
-    if height > width:
-        geom = """
-@media all and (orientation:landscape) and (min-device-width:""" + str(width+1) + """px){
-    #score {
-        /*width: """ + str(int(ceil(float(width)/height * 100))) + """vh;*/
-        /*width: """ + str(width) + """px;*/
-        /*width: """ + str(int(ceil(float(width)/height * 100))) + """%;*/
-        float: center;
-        display: block;
-        margin-top: 0;
-        /* width: """ + str(width) + """px;
-        height: """ + str(height) + """px; */
-        /*height: 100%;*/
-        /*width: auto;*/
-        height: 1vmin;
-        width: """ + '{0:.2f}'.format(float(width)/height) + """vmin;
-    }
-}
-
-        """
-        #geom = geom.format(float(width)/height)
-    geometry.write(geom)
+#with open (data_dir + 'geometry.css', 'w') as geometry:
+#    geom = ""
+#    if height > width:
+#        geom = """
+#@media all and (orientation:landscape) and (min-device-width:""" + str(width+1) + """px){
+#    #score {
+#        /*width: """ + str(int(ceil(float(width)/height * 100))) + """vh;*/
+#        /*width: """ + str(width) + """px;*/
+#        /*width: """ + str(int(ceil(float(width)/height * 100))) + """%;*/
+#        float: center;
+#        display: block;
+#        margin-top: 0;
+#        /* width: """ + str(width) + """px;
+#        height: """ + str(height) + """px; */
+#        /*height: 100%;*/
+#        /*width: auto;*/
+#        height: 1vmin;
+#        width: """ + '{0:.2f}'.format(float(width)/height) + """vmin;
+#    }
+#}
+#
+#        """
+#        #geom = geom.format(float(width)/height)
+#    geometry.write(geom)
 
 
 
