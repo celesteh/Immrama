@@ -62,10 +62,11 @@ function readOnly() {
   document.getElementById("imageheight").readonly = true;
 };
 
-readOnly();
-
+try {
+  readOnly();
+} catch (err){}
 // render the window before trying to make elements readonly
-window.setTimeout(readOnly,700);
+window.setTimeout(readOnly,300);
 
 
 //-->
