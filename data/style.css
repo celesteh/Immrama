@@ -592,7 +592,7 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
     font-size: 16px;*/
     padding: 1em;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 2em;
     border: solid 1px;
     cursor: pointer;
 }
