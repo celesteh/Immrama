@@ -81,7 +81,9 @@ function clearJunk() {
   var pass2 = document.getElementById('pass2');
   //Store the Confimation Message Object ...
   var message = document.getElementById('confirmMessage');
-  clearColors(pass1, pass2, message);
+  var pass = document.getElementById('testPass');
+  //clearColors(pass1, pass2, message);
+  function clearColors(pass1, pass2, message, pass, "#FFF")
   pass1.value="";
   pass2.value="";
 
