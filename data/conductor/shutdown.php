@@ -8,7 +8,7 @@ $timestamp=date_timestamp_get($date);
 if ($_POST['timestamp']){
   if (($timestamp - $_POST['timestamp']) <= 60000) {
     // 1 minute
-    $success = system("sudo /sbin/halt");
+    //$success = system("sudo /sbin/halt");
   }
 }
 ?>
@@ -37,6 +37,9 @@ if ($_POST['timestamp']){
 <p>The computer did not shut down. This may be because you
   waited too long on the previous page.</p>
 <p>You should <a href="requestshutdown.php">Try shutting down again</a>.
+  <p>time stamp now: <?php echo $timestamp ?></p>
+  <p>time at request: <?php echo $_POST['timestamp'] ?></p>
+  <p>diff: <?php echo ($timestamp - _POST['timestamp'])?></p>
   <!--
 <ul>
 <li><a href="./">Return to piece settings</a></li>
