@@ -6,7 +6,7 @@ $date=date_create();
 $timestamp=date_timestamp_get($date);
 
 if ($_POST['timestamp']){
-  if (($timestamp - $_POST['timestamp']) <= 60000) {
+  if (($timestamp - $_POST['timestamp']) <= 60) {
     // 1 minute
     //$success = system("sudo /sbin/halt");
   }
@@ -40,7 +40,7 @@ if ($_POST['timestamp']){
   <p>time at request: <?php echo $_POST['timestamp'] ?></p>
   <p>diff: <?php echo ($timestamp - $_POST['timestamp'])?></p>
   <p><?php
-  if (($timestamp - $_POST['timestamp']) <= 60000) {
+  if (($timestamp - $_POST['timestamp']) <= 60) {
       // 1 minute
       //$success = system("sudo /sbin/halt");
       echo "should shut down";
