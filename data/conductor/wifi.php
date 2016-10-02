@@ -20,7 +20,6 @@ fclose($myfile);
 </head>
 <body>
   <div id="words">
-    <div id="words">
       <div class="dropdown">
         <button class="dropbtn">&#x1D118;</button>
        <div class="dropdown-content">
