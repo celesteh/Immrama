@@ -20,6 +20,20 @@ fclose($myfile);
 </head>
 <body>
   <div id="words">
+    <div id="words">
+      <div class="dropdown">
+        <button class="dropbtn">&#x1D118;</button>
+       <div class="dropdown-content">
+         <a href="../">Home</a>
+         <a href="./">Conductor</a>
+         <a href="./advanced.html">Change WiFi Password</a>
+         <a href="piece.html">View piece as Conductor</a>
+         <a href="../piece.html">View piece as performer</a>
+       </div>
+     </div>
+     <main class="main">
+
+
 <?php if (strlen($password) > 0) {
     echo "<h1>" . $password . "</h1>\n";
     echo "<p>Wifi password is " . $password . "</p>\n";
@@ -28,12 +42,7 @@ fclose($myfile);
     echo "<p><a href=\"advanced.html\">Set a password!</a></p>\n";
   }
  ?>
-<ul>
-<li><a href="./">Go to piece settings</a></li>
-<li><a href="advanced.html">Go to Advanced settings</a></li>
-<li><a href="piece.html">View piece as Conductor</a></li>
-<li><a href="../piece.html">View piece as performer</a></li>
-</ul>
+</main>
 </div>
 </body>
 </html>
