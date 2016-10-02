@@ -481,6 +481,7 @@ body {
   margin-top: 1.5em;
   font-family : inherit;
   font-size   : inherit; /*100%;*/
+  width: 90%;
 }
 
 @media only screen and (max-device-width: 480px) {
@@ -489,6 +490,7 @@ body {
   #words {
     font-size: 4em; /* 40px/16=2.5em */
     margin-top: 1em;
+    width: 95%;
   }
 
 }
