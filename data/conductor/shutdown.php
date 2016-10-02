@@ -38,7 +38,7 @@ if ($_POST['timestamp']){
 <p>You should <a href="requestshutdown.php">Try shutting down again</a>.
   <p>time stamp now: <?php echo $timestamp ?></p>
   <p>time at request: <?php echo $_POST['timestamp'] ?></p>
-  <p>diff: <?php echo ($timestamp - _POST['timestamp'])?></p>
+  <p>diff: <?php echo ($timestamp - $_POST['timestamp'])?></p>
   <p><?php
   if (($timestamp - $_POST['timestamp']) <= 60000) {
       // 1 minute
