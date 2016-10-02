@@ -629,16 +629,14 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
 }
 
 
-#score
-{
-  .dropdown {
+#score.dropdown {
     position: fixed;
     left: 0px;
     top: 0px;
     /*z-index: 2;*/
     width: 6em;
     float: left;
-  }
+  
 }
 
 
