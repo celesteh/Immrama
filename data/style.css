@@ -520,6 +520,7 @@ body {
   background-color: inherit;
 }
 
+/*
 #svg {
   position: fixed;
   left: 0px;
@@ -527,6 +528,7 @@ body {
   z-index: -1;
   height: 100vh;
 }
+*/
 
 button, input, select, textarea {
   font-family : inherit;
@@ -582,6 +584,9 @@ p, ul {
 }
 
 #notation {
+  position: fixed;
+  left: 0px;
+  top: 0px;
   height: 100vh;
   z-index: -1;
 }
