@@ -591,6 +591,7 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
     /*padding: 16px;
     font-size: 16px;*/
     padding: 1em;
+    font-family: inherit;
     font-size: inherit;
     border: solid 1px;
     cursor: pointer;
