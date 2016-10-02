@@ -78,11 +78,11 @@ window.setTimeout(readOnly,300);
     <div class="dropdown">
       <button class="dropbtn">&#x1D118;</button>
      <div class="dropdown-content">
-       <a href="./">Home</a>
-      <a href="conductor/">Conductor</a>
-      <a href="conductor/wifi.php">Show WiFi Password</a>
-      <a href="advanced.html">Change WiFi Password</a>
-      <a href="requestshutdown.php">Shut down computer</a>
+       <a href="../">Home</a>
+      <a href="./">Conductor</a>
+      <a href="./wifi.php">Show WiFi Password</a>
+      <a href="./advanced.html">Change WiFi Password</a>
+      <a href="./requestshutdown.php">Shut down computer</a>
     </div>
   </div>
   <main class="main">
