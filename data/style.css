@@ -612,7 +612,7 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
 .dropbtn {
     /*background-color: #4CAF50;
     color: white;*/
-    background-color: inherit;
+    /*background-color: inherit;*/
     /* -webkit-filter: invert(100%);
     filter: invert(100%); */
 
