@@ -76,10 +76,10 @@ window.setTimeout(readOnly,300);
 <body>
   <div id="words">
     <div class="dropdown">
-      <button class="dropbtn">&#x1D118;</button>
+      <button class="dropbtn">&#x1D118; &nbsp; </button>
      <div class="dropdown-content">
        <a href="../">Home</a>
-      <a href="./">Conductor</a>
+      <a href="./piece.html">Show Piece</a>
       <a href="./wifi.php">Show WiFi Password</a>
       <a href="./advanced.html">Change WiFi Password</a>
       <a href="./requestshutdown.php">Shut down computer</a>
