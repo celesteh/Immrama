@@ -75,7 +75,17 @@ window.setTimeout(readOnly,300);
 </head>
 <body>
   <div id="words">
-
+    <div class="dropdown">
+      <button class="dropbtn">&#x1D118;</button>
+     <div class="dropdown-content">
+       <a href="./">Home</a>
+      <a href="conductor/">Conductor</a>
+      <a href="conductor/wifi.php">Show WiFi Password</a>
+      <a href="advanced.html">Change WiFi Password</a>
+      <a href="requestshutdown.php">Shut down computer</a>
+    </div>
+  </div>
+  <main class="main">
   <form action="play.php" method="post" id="configform">
 
 
@@ -88,7 +98,7 @@ window.setTimeout(readOnly,300);
     <label for="dur">seconds</label>
       <input type="number" name="sec"   maxlength="4"  value=<?php echo floor($conf['dur'] % 60); ?>>
       <!-- Make sure there is a $_POST['dur'] -->
-      <input type="hidden" name="dur" value=<?php echo $conf['dur']?>>
+      <input type="hidden" name="dur" value=<?php echo $conf['dur']?> />
   </p>
   <p>
   <label for="slide_dur">Duration of each page (in seconds):</label>
@@ -132,6 +142,6 @@ window.setTimeout(readOnly,300);
 <BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
 </p>
   </form>
-  <p><a href="advanced.html">Advanced Options</a></p>
+</main>
 </div>
 </body> </html>

@@ -2,7 +2,15 @@
 <?php
 //$conf = parse_ini_file("config.ini", true);
 
-$success = system("sudo /sbin/halt");
+$date=date_create();
+$timestamp=date_timestamp_get($date);
+
+if ($_POST['timestamp']){
+  if (($timestamp - $_POST['timestamp']) <= 60000) {
+    // 1 minute
+    $success = system("sudo /sbin/halt");
+  }
+}
 ?>
 <html>
 <head>
@@ -13,14 +21,9 @@ $success = system("sudo /sbin/halt");
 <body>
   <div id="words">
 <h2>Failed</h2>
-<p>You should not be able to see this page.</p>
-<p>Normally, there will be a short delay before the comuter turns off.
-  Please wait a few moments before unplugging the power supply.
-  The shutdown computer should have a solid red light.
-  Some Pis may reboot instead of shutting down. If this happens,
-  try to unplug the machine while the red light is on.
-</p>
-<p>You should <a href="advanced.html">Try shutting down again</a>.
+<p>The computer did not shut down. This may be because you
+  waited too long on the previous page.</p>
+<p>You should <a href="requestshutdown.php">Try shutting down again</a>.
 <ul>
 <li><a href="./">Return to piece settings</a></li>
 <li><a href="advanced.html">Return to Advanced settings</a></li>
