@@ -583,15 +583,15 @@ p, ul {
   float:left;
 }
 
-/*
+
 #notation {
-  position: fixed;
+/*  position: fixed;
   left: 0px;
   top: 0px;
-  height: 100%;
-  z-index: -1;
+  z-index: -1;*/
+  height: 10vh;
 }
-*/
+
 
 /**
 Menu stuff
