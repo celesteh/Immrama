@@ -518,6 +518,10 @@ body {
   height: 100vh;
   color:inherit;
   background-color: inherit;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1
 }
 
 button, input, select, textarea {
