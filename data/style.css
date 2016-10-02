@@ -522,15 +522,16 @@ body {
 
 
 #svg {
-  position: fixed;
+/*  position: fixed;
   left: 0px;
-  top: 0px;
+  top: 0px;*/
   /*z-index: -1;*/
   height: 100vh;
   color: inherit;
   background-color: inherit;
 }
 
+/*
 object {
   position: fixed;
   left: 0px;
@@ -538,6 +539,7 @@ object {
   z-index: -1;
   height: 100vh;
 }
+*/
 
 
 
