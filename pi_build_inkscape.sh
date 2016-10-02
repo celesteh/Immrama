@@ -47,13 +47,15 @@ function run_proc {
       #fi
 
       pause_proc $1
+      sleep 1
+      pause_proc $1
       stopped=1
       if [ $sleep -eq 5 ] ; then
         sleep=10
       elif [ $sleep -eq 10 ] ; then
         sleep=15
-      elif [ $sleep -lt 5 ] ; then
-        sleep=5
+      elif [ $sleep -lt 10 ] ; then
+        sleep=10
       fi
     fi
     if [ $stopped -eq 1 ] ;then

@@ -125,7 +125,18 @@ function validate(form) {
   </head>
   <body>
   <div id="words">
-  </form>
+    <div class="dropdown">
+      <button class="dropbtn">&#x1D118; &nbsp; </button>
+     <div class="dropdown-content">
+       <a href="../">Home</a>
+       <a href="./">(Re)Start Piece</a>
+      <a href="./piece.html">Show Piece as Conductor</a>
+      <a href="../piece.html">Show piece as Player</a>
+      <a href="./wifi.php">Show WiFi Password</a>
+      <a href="./advanced.html">Set WiFi Password</a>
+      <a href="./setintro.php">Set introductory text</a>
+    </div>
+  </div>
   <form action="shutdown.php" method="post">
     <h2>Shutdown the computer</h2>
     <p>After you hit submit, your browser should fail to load the next page.</p>

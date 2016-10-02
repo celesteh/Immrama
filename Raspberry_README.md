@@ -176,11 +176,11 @@ I was unable to build inkscape on a Pi3, as it kept shutting down during the bui
 ## Allow the shutdown via the web interface
 
 Users need to be able to turn the computer off without actually logging into it.
-However, if you do not set a WPA password, any audience member can also use
+(Note: if you do not set a WPA password or conductor password, any audience member can also use
 their smart phone to turn off your computer, possibly cutting your performance
-short.
+short).
 
-* Set a WPA password for your wifi network. Write it down
+* Set a WPA password for your wifi network or a conductor password via the web interface. Write it down
 (maybe on your computer)
 * Use the web interface to start running Immrama
 * Log into the computer via ssh or keyboard, mouse & monitor

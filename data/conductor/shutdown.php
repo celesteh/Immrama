@@ -20,16 +20,31 @@ if ($_POST['timestamp']){
 </head>
 <body>
   <div id="words">
+    <div id="words">
+      <div class="dropdown">
+        <button class="dropbtn">&#x1D118; &nbsp; </button>
+       <div class="dropdown-content">
+         <a href="../">Home</a>
+         <a href="./">(Re)Start Piece</a>
+        <a href="./piece.html">Show Piece as Conductor</a>
+        <a href="../piece.html">Show piece as Player</a>
+        <a href="./wifi.php">Show WiFi Password</a>
+        <a href="./advanced.html">Set WiFi Password</a>
+        <a href="./setintro.php">Set introductory text</a>
+      </div>
+    </div>
 <h2>Failed</h2>
 <p>The computer did not shut down. This may be because you
   waited too long on the previous page.</p>
 <p>You should <a href="requestshutdown.php">Try shutting down again</a>.
+  <!--
 <ul>
 <li><a href="./">Return to piece settings</a></li>
 <li><a href="advanced.html">Return to Advanced settings</a></li>
 <li><a href="piece.html">View piece as Conductor</a></li>
 <li><a href="../piece.html">View piece as performer</a></li>
 </ul>
+-->
 </div>
 </body>
 </html>

@@ -79,13 +79,21 @@ window.setTimeout(readOnly,300);
       <button class="dropbtn">&#x1D118; &nbsp; </button>
      <div class="dropdown-content">
        <a href="../">Home</a>
-      <a href="./piece.html">Show&nbsp;Piece</a>
-      <a href="./wifi.php">Show&nbsp;WiFi&nbsp;Password</a>
-      <a href="./advanced.html">Change&nbsp;WiFi&nbsp;Password</a>
-      <a href="./requestshutdown.php">Shut&nbsp;down&nbsp;computer</a>
+      <a href="./piece.html">Show Piece</a>
+      <a href="./wifi.php">Show WiFi Password</a>
+      <a href="./advanced.html">Change WiFi Password</a>
+      <a href="./requestshutdown.php">Shut down computer</a>
+      <a href="./setintro.php">Set introductory text</a>
     </div>
   </div>
   <main class="main">
+    <noscript>
+      <h1>Error</h1>
+      <p>This device does not understand javascript.</p>
+      <p>You may use this device to view the score, using the
+        'old devices' link on the previous page. But this
+        device may have problems with some of the Conductor pages.</p>
+      </noscript>
   <form action="play.php" method="post" id="configform">
 
 
