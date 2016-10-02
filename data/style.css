@@ -620,9 +620,18 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
     cursor: pointer;
 }
 
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
 #score
 {
-  .dropbtn {
+  .dropdown {
     position: fixed;
     left: 0px;
     top: 0px;
@@ -632,11 +641,6 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
   }
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
