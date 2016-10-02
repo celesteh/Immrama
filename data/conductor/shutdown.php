@@ -8,7 +8,7 @@ $timestamp=date_timestamp_get($date);
 if ($_POST['timestamp']){
   if (($timestamp - $_POST['timestamp']) <= 60000) {
     // 1 minute
-    //$success = system("sudo /sbin/halt");
+    $success = system("sudo /sbin/halt");
   }
 }
 ?>
@@ -20,7 +20,6 @@ if ($_POST['timestamp']){
 </head>
 <body>
   <div id="words">
-    <div id="words">
       <div class="dropdown">
         <button class="dropbtn">&#x1D118; &nbsp; </button>
        <div class="dropdown-content">
