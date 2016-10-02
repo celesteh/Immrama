@@ -518,10 +518,13 @@ body {
   height: 100vh;
   color:inherit;
   background-color: inherit;
+}
+
+#svg {
   position: fixed;
-  left: 0px;
   top: 0px;
   z-index: 1
+  height: 100vh;
 }
 
 button, input, select, textarea {
