@@ -580,17 +580,19 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
     /*background-color: #4CAF50;
     color: white;*/
     background-color: inherit;
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+    /* -webkit-filter: invert(100%);
+    filter: invert(100%); */
 
 
     color: inherit;
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+    /* -webkit-filter: invert(100%);
+    filter: invert(100%); */
 
-    padding: 16px;
-    font-size: 16px;
-    border: none;
+    /*padding: 16px;
+    font-size: 16px;*/
+    padding: 1em;
+    font-size: inherit;
+    border: solid 1px;
     cursor: pointer;
 }
 
