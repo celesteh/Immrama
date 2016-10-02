@@ -34,7 +34,7 @@ try {
 
 function fullScreen() {
   try {
-    launchIntoFullscreen(document.getElementById("fs")); // any individual element
+    launchIntoFullscreen(document.getElementById("body")); // any individual element
   } catch (err){};
 };
 
@@ -135,7 +135,7 @@ delayer();
 </script>
 <title>Immrama</title>
 </head>
-<body>
+<body id="body">
   <div id="score">
     <div class="dropdown">
       <button class="dropbtn">&#x1D118;</button>
