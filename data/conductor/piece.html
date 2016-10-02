@@ -34,7 +34,7 @@ try {
 
 function fullScreen() {
   try {
-    launchIntoFullscreen(document.getElementById("score")); // any individual element
+    launchIntoFullscreen(document.getElementById(document.documentElement)); // any individual element
   } catch (err){};
 };
 
