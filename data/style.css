@@ -524,7 +524,7 @@ body {
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 1;
+  z-index: -1;
   height: 100vh;
 }
 
@@ -581,8 +581,9 @@ p, ul {
   float:left;
 }
 
-#conductor {
-  height: 95%;
+#notation {
+  height: 100vh;
+  z-index: -1;
 }
 
 
@@ -616,11 +617,11 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
 #score
 {
   .dropbtn {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 2;
-}
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    /*z-index: 2;*/
+  }
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -636,7 +637,7 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 2;
+    /*z-index: 2;*/
 }
 
 /* Links inside the dropdown */
