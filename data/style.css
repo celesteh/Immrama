@@ -527,6 +527,8 @@ body {
   top: 0px;
   z-index: -1;
   height: 100vh;
+  color: inherit;
+  background-color: inherit;
 }
 
 object {
@@ -655,7 +657,7 @@ source: https://kmturley.blogspot.co.uk/2014/06/responsive-mobile-dropdown-navig
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 30em; /*160px;*/
+    min-width: 15em; /*160px;*/
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     /*z-index: 2;*/
 }
