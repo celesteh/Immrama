@@ -8,7 +8,7 @@ $failed = true;
 if ($_POST['timestamp']){
   if (($timestamp - $_POST['timestamp']) <= 60) {
     // 1 minute
-    $success = system("nohup `sleep 1; sudo /sbin/halt` &");
+    $success = system("sleep 2 && sudo /sbin/halt &");
     $failed = false;
   }
 }
