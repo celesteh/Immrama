@@ -1,0 +1,78 @@
+<html>
+<head>
+  <link rel="stylesheet" href="../style.css" type="text/css" />
+  <link rel="stylesheet" href="../color.css" type="text/css" />
+<title>Unauthorised</title>
+</head>
+<body>
+  <div id="words">
+    <div class="dropdown">
+      <button class="dropbtn">&#x1D118;</button>
+     <div class="dropdown-content">
+      <a href="../conductor/">Conductor</a>
+      <a href="../piece.html">Performers</a>
+      <a href="../refreshing.html">Old Devices</a>
+      <a href="../wifi.php">Show WiFi Password</a>
+    </div>
+  </div>
+  <main class="main">
+    <h1>Unauthorised</h1>
+    <p>You have entered an incorrect user name or password. <a href="../conductor/">Try Again?</a></p>
+    <p>If you have forgotten your username, see <a href="listusers.php">this list</a>.</p>
+    <h2>Forgotten Password</h2>
+    <p>If you have forgotten your password, anyone else who has a
+      conductor password or who is logged in as a conductor can <a href="../conductor/users.php">reset it for you.</a></p>
+      <h3>SSH</h3>
+    <p>If no one is able to reset your password, you can use an ssh
+      connection to reset passwords.</p>
+      <ul>
+        <li>On another computer, make an ssh connection to
+          ssh pi@immrama.local. </li>
+          <ul>
+            <li>If your computer can't find immrama.local:</li>
+            <ul>
+              <li>Make sure your computer is connected to the immrama
+                WiFi network and Try again.</li>
+              <li>If that doesn't help, try pi@immrama.home,
+              pi@immrama.localnet, pi@172.24.1.1, and pi@immrama</li>
+            </ul>
+            <li>If you cannot remember the ssh password, consult
+                the written documentation to find the default
+                password.</li>
+          </ul>
+        <li>Type: sudo cp /boot/htpasswd/lighttpd-htdigest.default /boot/htpasswd/lighttpd-htdigest.user</li>
+        <li>Type: sudo service lighttpd restart</li>
+        <li>Type: exit</li>
+        <li>Your ssh connection should now be over.</li>
+        <li>You can now connect with username: conductor
+          password: defaultpass</li>
+        <li><a href="../conductor/users.php">Please change your
+          password.</a></li>
+      </ul>
+      <h3>SD Card</h3>
+      <p>You can also change your password via an SD card reader.
+        This method requires crashing the computer by pulling the
+        plug witout first doing a proper shutdown.  Ocassionally,
+        doing this may corrupt the SD card and so it should be
+        avoided as muh as possible.</p>
+      <ul>
+        <li>If the computer is on, pull the plug</li>
+        <li>Take out the SD card</li>
+        <li>Using another computer with an SD card reader, go
+          to the /boot partition.</p>
+        <li>There will be a folder in there called 'htpasswd'</li>
+        <li>In the htpasswd folder, throw away the file
+          '/boot/htpasswd/lighttpd-htdigest.user'</li>
+        <li>Make a new copy of '/boot/htpasswd/lighttpd-htdigest.default'
+          called /boot/htpasswd/lighttpd-htdigest.user</li>
+        <li>Properly unmount the SC card.</li>
+        <li>Return the SD card to the Raspberry Pi computer</li>
+        <li>Plug in the computer to boot it.</li>
+        <li>You can now connect with username: conductor
+          password: defaultpass</li>
+        <li><a href="../conductor/users.php">Please change your
+          password.</a></li>
+      </ul>
+    </main>
+  </body>
+</html>
