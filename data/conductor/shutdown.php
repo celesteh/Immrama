@@ -35,19 +35,19 @@ if ($_POST['timestamp']){
     </div>
     <?php
       if ($failed) {
-        echo """
+        echo "
 <h2>Failed</h2>
 <p>The computer did not shut down. This may be because you
   waited too long on the previous page.</p>
 <p>You should <a href=\"requestshutdown.php\">Try shutting down again</a>.
-        """;
+        ";
       } else {
-        echo """
+        echo "
 <h2>Success</h2>
 <p>The computer will shut down in a moment.  Please wait a few
 seconds before unplugging it. If you want to restart the computer,
 wait a few seconds, unplug it, then plug it back in.</p>
-          """;
+          ";
       };
 ?>
 </div>
