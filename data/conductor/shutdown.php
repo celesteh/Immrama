@@ -39,7 +39,7 @@ if ($_POST['timestamp']){
 <h2>Failed</h2>
 <p>The computer did not shut down. This may be because you
   waited too long on the previous page.</p>
-<p>You should <a href="requestshutdown.php">Try shutting down again</a>.
+<p>You should <a href=\"requestshutdown.php\">Try shutting down again</a>.
         """;
       } else {
         echo """
