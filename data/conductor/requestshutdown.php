@@ -14,7 +14,7 @@
        <a href="./">(Re)Start Piece</a>
       <a href="./piece.html">Show Piece as Conductor</a>
       <a href="../piece.html">Show piece as Player</a>
-      <a href="./wifi.php">Show WiFi Password</a>
+      <a href="../wifi.php">Show WiFi Password</a>
       <a href="./advanced.html">Set WiFi Password</a>
       <a href="./setintro.php">Set introductory text</a>
     </div>

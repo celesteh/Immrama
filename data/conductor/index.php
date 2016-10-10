@@ -80,7 +80,7 @@ window.setTimeout(readOnly,300);
      <div class="dropdown-content">
        <a href="../">Home</a>
       <a href="./piece.html">Show Piece</a>
-      <a href="./wifi.php">Show WiFi Password</a>
+      <a href="../wifi.php">Show WiFi Password</a>
       <a href="./advanced.html">Change WiFi Password</a>
       <a href="./requestshutdown.php">Shut down computer</a>
       <a href="./setintro.php">Set introductory text</a>
