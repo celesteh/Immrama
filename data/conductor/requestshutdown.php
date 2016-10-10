@@ -8,7 +8,7 @@
   <body>
   <div id="words">
     <div class="dropdown">
-      <button class="dropbtn">&#x1D118;</button>
+      <button class="dropbtn">&#9776;</button>
      <div class="dropdown-content">
        <a href="../">Home</a>
        <a href="./">(Re)Start Piece</a>
