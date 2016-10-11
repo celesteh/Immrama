@@ -33,6 +33,8 @@ parser.add_argument("--check", help="Remove password requirement if there are no
 
 args = parser.parse_args()
 
+#print args
+
 filename = args.config
 
 # read config
@@ -73,6 +75,7 @@ passfile = config.get('web', 'htpasswd')
 
 # needed functions: remove user from file
 def remove_user(user):
+    #print "remove_user"
     lines=0 # keep track of it new file is empty
     regex = re.compile('^{}\s*\:.*'.format(user))
     tmpfile= tmp_dir + 'htdigest.user'
@@ -111,9 +114,9 @@ def disable_passwords():
     if os.path.isfile(passfile):
         os.remove(passfile)
     shutil.copy(homedir+'config/lighttpd.conf.no_auth', confdir + 'lighttpd.conf')
-    print 'Disabling passwords'
+    #print 'Disabling passwords'
     restart()
-#end enable_passwords
+#end disable_passwords
 
 
 def check_pass_file():
@@ -133,83 +136,70 @@ def check_pass_file():
         disable_passwords()
 #end check_pass_file
 
+def legal_input(text, short, thing):
+    text = str(text)
+    text = text.rstrip()
+    length = len(text)
+
+    if ((length >= short) and (length <=20)): #arbitrary!
+        check = re.compile('.*[^a-zA-Z0-9]+.*') #not letters and numbers
+        match = check.match(text)
+        #print match
+        if (match is not None): #none is good
+            text = None
+            print "Failure: {} may only contain letters and numbers".format(thing)
+    else:
+        text = None
+        print "Failure: {} must be between {}-20 characters long".format(thing, short)
+    return text
 
 
 clear=False
 remove=False
 user=None
-#check=args.check
+check=False
 
-if args.password:
-    print 'password: ' + args.password
+#if args.password:
+#    print 'password: ' + args.password
 
 if args.clear:
-    print "clear"
+    #print "clear"
     clear = True
 
 if args.remove:
-    print "remove"
+    #print "remove"
     remove=True
 
 if args.check:
-    print "check"
+    #print "check"
     check=True
 
 if args.username:
-    print "user: " + args.username
-    user = args.username.rstrip()
-    length = len(user)
-
-    if ((length >= 2) and (length <=20)): #arbitrary!
-        check = re.compile('.*[^a-zA-Z0-9]+.*') #not letters and numbers
-        match = check.match(user)
-        #print match
-        if (match is not None): #none is good
-            user = None
-            print "Failure: Username can be made up of letter and numbers only"
-    else:
-        print "Failure: Username must be 2-20 characters long"
-
-    if user:
-        print "user: " + user
+    #print "user: " + args.username
+    user = legal_input(args.username, 2, "Username")
+    #if user:
+    #    print "user: " + user
     #else :
     #    print "Failure"
 
 if args.password and (not (clear or remove or check)):
-    print "password: " + args.password
+    #print "password: " + args.password
 
-    if user:
-        passwd = args.password.rstrip()
-        length = len(passwd)
+    if user is not None:
+        passwd= legal_input(args.password, 3, "Password")
+        if passwd is not None:
+            # if the user is already in there, get rid of them
+            remove_user(user)
 
+            # append the user
+            with open(passfile, 'a') as pfile:
+                #hash=`echo -n "$user:$realm:$pass" | md5sum | cut -b -32`
+                tohash = '{}:conductor:{}'.format(user,passwd)
+                hashed= md5.new(tohash).hexdigest()
+                pfile.write(hashed+ '\n')
 
-
-        if ((length >=4) and (length <=63) ):
-            # adequate length
-            check = re.compile('.*[^a-zA-Z0-9]+.*') #not letters and numbers
-            match = check.match(passwd)
-            #print match
-            if (match is None):
-                # so far so good
-
-                # if the user is already in there, get rid of them
-                remove_user(user)
-
-                # append the user
-                with open(passfile, 'a') as pfile:
-                    #hash=`echo -n "$user:$realm:$pass" | md5sum | cut -b -32`
-                    tohash = '{}:conductor:{}'.format(user,password)
-                    hashed= md5.new(tohash).hexdigest()
-                    pfile.write(hashed+ '\n')
-
-                enable_passwords()
-                print "Success: Password Changed"
-            else:
-                print "Failure: Password not set. Use only letters and numbers."
-        else :
-            print "Failure: Password not set. Must be between 4-63 characters."
-    else:
-        print "bad user name"
+            enable_passwords()
+            print "Success: Password Changed"
 
 elif remove:
     if user:
