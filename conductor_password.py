@@ -138,7 +138,7 @@ def check_pass_file():
 clear=False
 remove=False
 user=None
-check=args.check
+#check=args.check
 
 if args.clear:
     print "clear"
@@ -147,6 +147,10 @@ if args.clear:
 if args.remove:
     print "remove"
     remove=True
+
+if args.check:
+    print "check"
+    check=True
 
 if args.username:
     print "user: " + args.username
