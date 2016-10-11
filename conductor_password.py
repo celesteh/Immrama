@@ -111,6 +111,7 @@ def disable_passwords():
     if os.path.isfile(passfile):
         os.remove(passfile)
     shutil.copy(homedir+'config/lighttpd.conf.no_auth', confdir + 'lighttpd.conf')
+    print 'Disabling passwords'
     restart()
 #end enable_passwords
 
