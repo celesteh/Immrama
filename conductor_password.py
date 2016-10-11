@@ -140,6 +140,9 @@ remove=False
 user=None
 #check=args.check
 
+if args.password:
+    print 'password: ' + args.password
+
 if args.clear:
     print "clear"
     clear = True
