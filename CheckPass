@@ -12,7 +12,7 @@
 
 eval cd /home/pi/Documents/Immrama
 
-sleep 30
+sleep 20
 ./conductor_password.py /var/www/html/conductor/config.ini --check
-esac
+
 exit 0
