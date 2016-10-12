@@ -201,6 +201,22 @@ webserver runs as. For me, it was `www-data`
 but use whatever name was in the 4th column of output from the ls -las
 
 
+## Allow changing the Conductor password via the web interface
+* Use the web interface to start running Immrama
+* Log into the computer via ssh or keyboard, mouse & monitor
+* `ls -las /var/www/html/color.css` This will tell you what user the
+webserver runs as. For me, it was `www-data`
+* `sudo visudo`
+* append to the file:
+`www-data immrama= NOPASSWD: /home/pi/Documents/Immrama/conductor_password.py`
+but use whatever name was in the 4th column of output from the ls -las
+* Edit CheckPass so the paths in it point to where you have put the files
+* `cp CheckPass /etc/init.d/CheckPass`
+* Make script executable `sudo chmod 755 /etc/init.d/CheckPass`
+* Test the program `sudo /etc/init.d/CheckPass`
+* To register your script to be run at start-up and shutdown, `sudo update-rc.d CheckPass defaults`
+* If you ever want to remove the script from start-up, `sudo update-rc.d -f CheckPass remove`
+
 ## Troubleshooting
 
 * The first thing to check is file permissions. Re-run all the chmod commands above. Also, there are circumatsance where score.svg make have the wrong permissions. Either delete the file entirely or `sudo chmod 666 /var/www/html/score.svg`
