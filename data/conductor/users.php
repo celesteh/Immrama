@@ -39,7 +39,7 @@ $passwdfile = $conf['htpasswd'];
       pass.style.color = badColor;
       pass.innerHTML = "Use numbers and letters only";
     } else {
-      if ((pass1.value.length < 8) && (pass1.value.length !=0)) {
+      if ((pass1.value.length < 4) && (pass1.value.length !=0)) {
         //pass1.style.backgroundColor = badColor;
         //clearColors(pass1);// they're on the way
         //pass1.style.backgroundColor = defaultColor;
@@ -181,6 +181,7 @@ function userfunc(form) {
            fclose($myfile);
         }
         ?>
+        <option value="clear">Clear All Users</option>
       </select>
     </p>
     <p id="newuserp">
@@ -199,7 +200,7 @@ function userfunc(form) {
       <input type="password" name="confirm"
       onkeyup="checkPass(); return false;" id="pass2">
     </p>
-    <p><button type="reset" value="Reset" onclick="clearJunk(); return false;">Nevermind</button>
+    <p><button type="reset" value="Reset" onclick="clearJunk();">Nevermind</button>
     <BUTTON name="submit" value="submit" type="submit">Change</BUTTON></p>
   </form>
 </main>
