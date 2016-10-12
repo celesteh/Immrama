@@ -197,7 +197,7 @@ if args.password and (not (clear or remove or check)):
                 #hash=`echo -n "$user:$realm:$pass" | md5sum | cut -b -32`
                 tohash = '{}:conductor:{}'.format(user,passwd)
                 hashed= md5.new(tohash).hexdigest()
-                pfile.write(hashed+ '\n')
+                pfile.write('{}:conductor:{}\n'.format(user,hashed))
 
             enable_passwords()
             print "Success: Password Changed"
