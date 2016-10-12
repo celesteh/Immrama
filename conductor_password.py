@@ -8,6 +8,7 @@ import re
 import shutil
 from ConfigParser import SafeConfigParser
 import subprocess
+import md5
 
 
 # Make sure we're the only version of this running
