@@ -606,6 +606,9 @@ p, ul {
   height: 100vh;
 }
 
+#newuserp {
+  height: auto;
+}
 
 /**
 Menu stuff
