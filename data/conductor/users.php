@@ -134,9 +134,14 @@ function userfunc(form) {
   if(val=="new"){
     userp.height = "auto";
     userp.display = "block";
+    userp.opacity = 1;
+    userp.visibility = "visible";
   } else {
     userp.height = 0;
     userp.display="none";
+    userp.opacity = 0;
+    userp.visibility = "hidden";
+
   }
 
 
