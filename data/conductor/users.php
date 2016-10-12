@@ -102,7 +102,7 @@ function validate(form) {
     }
     else {
         if(form.pass1.value== "") {
-          return confirm('Are you sure you want to have no password?');
+          return confirm('Are you sure you want to remove this user?');
         } else {
           if (form.pass1.value.length < 4) {
             alert('Password is too short');
@@ -176,7 +176,7 @@ function userfunc(form) {
            $user = trim($user);
            echo "<option value=\"" . $user . "\">" . $user . "</option>\n";
          }
-        }
+        
         fclose($myfile);
         ?>
       </select>
