@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-$conf = parse_ini_file("config.ini", true);
+//$conf = parse_ini_file("config.ini", true);
+$conf = parse_ini_file("config.ini");
 $passwdfile = $conf['htpasswd'];
 ?>
 <html>
@@ -168,16 +169,17 @@ function userfunc(form) {
       <select name="user" onchange="userfunc(this.form)">
         <option value="new">Create New User</option>
         <?php
-        $myfile = fopen($passwdfile, "r") or die("Unable to open file!");
-        // Output one line until end-of-file
-        while(!feof($myfile)) {
-         $line =  fgets($myfile);
-           list($user, $realm, $hash) = explode(':', $line); //text mangling
-           $user = trim($user);
-           echo "<option value=\"" . $user . "\">" . $user . "</option>\n";
-         }
-        
-        fclose($myfile);
+        if (file_exists($passwdfile)) {
+          $myfile = fopen($passwdfile, "r") or die("Unable to open file!");
+          // Output one line until end-of-file
+          while(!feof($myfile)) {
+           $line =  fgets($myfile);
+             list($user, $realm, $hash) = explode(':', $line); //text mangling
+             $user = trim($user);
+             echo "<option value=\"" . $user . "\">" . $user . "</option>\n";
+           }
+           fclose($myfile);
+        }
         ?>
       </select>
     </p>
