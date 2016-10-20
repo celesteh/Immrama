@@ -3,11 +3,26 @@
   <link rel="stylesheet" href="./style.css" type="text/css" />
   <link rel="stylesheet" href="./color.css" type="text/css" />
 <title>Immrama</title>
+<script>
+function showMenu(but){
+  var element = getElementById('dropdown');
+  if (isElementHidden(element)) {
+    element.style.display = '';
+
+      // If the element is still hidden after removing the inline display
+      if (isElementHidden(element)) {
+        element.style.display = 'block';
+      }
+    } else {
+      element.style.display = 'none';
+    }
+}
+</script>
 </head>
 <body>
   <div id="words">
     <div class="dropdown">
-      <button class="dropbtn">&#9776; &nbsp; Immrama</button>
+      <button class="dropbtn" onclick="showMenu(this)">&#9776; &nbsp; Immrama</button>
      <div class="dropdown-content">
       <a href="conductor/">Conductor</a>
       <a href="piece.html">Performers</a>

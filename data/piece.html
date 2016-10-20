@@ -23,13 +23,13 @@ function launchIntoFullscreen(element) {
 }
 
 // Launch fullscreen for browsers that support it!
-try {
-launchIntoFullscreen(document.documentElement); // the whole page
-} catch (err) {};
 
-try {
-  launchIntoFullscreen(document.getElementById("score")); // any individual element
-} catch (err){};
+launchIntoFullscreen(document.documentElement); // the whole page
+
+
+
+launchIntoFullscreen(document.getElementById("score")); // any individual element
+
 
 function fullScreen() {
   try {
