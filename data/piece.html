@@ -9,15 +9,17 @@
 //console.log("loading: " + new Date().getTime());
 // Find the right method, call on correct element
 function launchIntoFullscreen(element) {
-  if(element.requestFullscreen) {
-    element.requestFullscreen();
-  } else if(element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if(element.webkitRequestFullscreen) {
-    element.webkitRequestFullscreen();
-  } else if(element.msRequestFullscreen) {
-    element.msRequestFullscreen();
-  }
+  try{
+    if(element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if(element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if(element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen();
+    } else if(element.msRequestFullscreen) {
+      element.msRequestFullscreen();
+    }
+  } catch (err) {};
 }
 
 // Launch fullscreen for browsers that support it!
@@ -60,18 +62,38 @@ getMTime('score.svg', function(mtime) {
 });
 
 
+function do_load(url, id){
+  var obj = document.getElementById(id);
+  var newurl = url + "?" + + new Date().getMilliseconds();
+
+  try{
+    obj.data = newurl;
+    obj.href = newurl;
+  } catch (err){
+    try {
+      obj.href = newurl;
+      obj.data = newurl;
+    } catch (err) {};
+  }
+};
+
+
+
 function updateIfChanged() {
 
   getMTime('score.svg', function(mtime) {
     if (mtime) {
       if (lasttag != mtime){
+        /*
         var imgobj = document.getElementById("svg");
         try {
           imgobj.data = "score.svg#" + mtime;//.toISOString();
         }
         catch (err){
           imgobj.data = "score.svg#" + mtime;//.toISOString();
-        };
+        }; */
+        do_load('../score.svg', "svg")
+        do_load('../color.css', "color")
         lasttag=mtime;
         //console.log("changed: " + new Date().getTime());
       } else {
