@@ -1,0 +1,85 @@
+/*
+Stripped down for score viewing only
+*/
+
+@font-face {
+  font-family: Bravura;
+  src: local("Bravura Regular"),
+    local("BravuraRegular"),
+    local("Bravura"),
+    url(Bravura.ttf) format("truetype");
+}
+
+
+html {
+  font-family: Bravura, Emmental, Emmentaller, Lato, Ubuntu, Roboto, Verdana, Helvetica, sans-serif;
+  /*font-family: sans-serif; *//* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+
+  /* body will set it's height based on its parent, which is html */
+  height: 100%;
+
+  /* set full width as well */
+  width: 100%;
+
+}
+
+body {
+  /* min-height is needed for pages that might scroll, ie they may contain _more_ than 100% of viewport height */
+  min-height: 100%;
+
+  /* needed to prevent unwanted scroll-bars */
+  margin: 0;
+  padding: 0;
+
+  /* This is just so we can tell the body block apart from the app container */
+  /*background-color: gray; nooo */
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+html,body {
+  box-sizing: border-box;
+}
+*, *:before, *:after { box-sizing: inherit; }
+
+@media only screen and (max-device-width: 480px) {
+/* define mobile specific styles come here */
+#score {
+  font-size: 1.1em;
+}
+
+}
+
+#score {
+  width: 100vw;
+  height: 100vh;
+  color:inherit;
+  background-color: inherit;
+}
+
+
+#svg {
+/*  position: fixed;
+  left: 0px;
+  top: 0px;*/
+  /*z-index: -1;*/
+  height: 100vh;
+  color: inherit;
+  background-color: inherit;
+}
+
+#notation {
+/*  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: -1;*/
+  height: 100vh;
+}
