@@ -4,30 +4,30 @@
   <link rel="stylesheet" href="./color.css" type="text/css" />
 <title>Immrama</title>
 <script>
-function showMenu(but){
-  var element = getElementById('dropdown');
-  if (isElementHidden(element)) {
-    element.style.display = '';
+//function showMenu(but){
+//  var element = getElementById('dropdown');
+//  if (isElementHidden(element)) {
+//    element.style.display = '';
 
       // If the element is still hidden after removing the inline display
-      if (isElementHidden(element)) {
-        element.style.display = 'block';
-      }
-    } else {
-      element.style.display = 'none';
-    }
-}
+//      if (isElementHidden(element)) {
+//        element.style.display = 'block';
+//      }
+//    } else {
+//      element.style.display = 'none';
+//    }
+//}
 </script>
 </head>
 <body>
   <div id="words">
     <div class="dropdown">
-      <button class="dropbtn" onclick="showMenu(this)">&#9776; &nbsp; Immrama</button>
+      <button class="dropbtn">&#9776; &nbsp; Immrama</button>
      <div class="dropdown-content">
-      <a href="conductor/">Conductor</a>
-      <a href="piece.html">Performers</a>
-      <a href="refreshing.html">Old Devices</a>
-      <a href="wifi.php">Show WiFi Password</a>
+      <a href="/conductor/">Conductor</a>
+      <a href="/piece.html">Performers</a>
+      <a href="/refreshing.html">Old Devices</a>
+      <a href="/wifi.php">Show WiFi Password</a>
     </div>
   </div>
   <main class="main">
@@ -37,6 +37,9 @@ function showMenu(but){
     <h2>Welcome, Audience!</h2>
     <p>Hello, and welcome to our performance. This network is required for one of our pieces and must be available to performers. Please turn off your mobile phone or other internet-enabled device now and keep it turned off for the duration of this event.</p>
     <p>Thank you for your understanding and cooperation</p>
+<h2>Windows Phone users</h2>
+      <a href="piece.html">Performers</a>
+      <a href="refreshing.html">Old Devices</a>
   </main>
   </div>
 </body>
