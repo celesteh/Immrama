@@ -44,12 +44,12 @@ function change_size(){
 
 
 function fullScreen() {
-  //var element = document.getElementById('dropdown');
+  var element = document.getElementById('dropdown');
   try {
     launchIntoFullscreen(document.getElementById("score")); // any individual element
   } catch (err){};
-  //element.style.display = "none";
-  change_size();
+  element.style.display = "none";
+  //change_size();
 };
 
 
