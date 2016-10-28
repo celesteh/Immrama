@@ -130,6 +130,12 @@ function delayer(){
 
 delayer();
 
+// hide nav icon if full screen
+if( (screen.availHeight || screen.height-30) <= window.innerHeight) {
+  // browser is almost certainly fullscreen
+  var element = document.getElementById('dropdown');
+  element.style.display = "none";
+}
 //console.log("/scripts: " + new Date().getTime());
 
 //-->
