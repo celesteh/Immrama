@@ -152,12 +152,17 @@ document.addEventListener("webkitfullscreenchange", change_size, false);
 document.addEventListener("mozfullscreenchange", change_size, false);
 document.addEventListener("MSFullscreenChanges", change_size, false);
 
-var userAgent = window.navigator.userAgent.toLowerCase(),
-ios = /iphone|ipod|ipad/.test( userAgent );
-if (ios){
-  var element = document.getElementById('dropdown');
-  element.style.display = "none";
-}
+function iphone(){
+  var userAgent = window.navigator.userAgent.toLowerCase(),
+  ios = /iphone|ipod|ipad/.test( userAgent );
+  if (ios){
+    var element = document.getElementById('dropdown');
+    element.style.display = "none";
+  }
+};
+
+iphone();
+window.setTimeout(iphone, 50);
 //-->
 
 </script>
