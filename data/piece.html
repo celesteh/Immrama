@@ -32,9 +32,13 @@ launchIntoFullscreen(document.getElementById("score")); // any individual elemen
 
 
 function fullScreen() {
+  var elements = document.getElementsByClassName('dropdown'), i;
   try {
     launchIntoFullscreen(document.getElementById("score")); // any individual element
   } catch (err){};
+  for (i in elements) {
+    i.innerHTML = "";
+  };
 };
 
 
