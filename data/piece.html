@@ -151,13 +151,20 @@ document.addEventListener("fullscreenchange", change_size, false);
 document.addEventListener("webkitfullscreenchange", change_size, false);
 document.addEventListener("mozfullscreenchange", change_size, false);
 document.addEventListener("MSFullscreenChanges", change_size, false);
+
+var userAgent = window.navigator.userAgent.toLowerCase(),
+ios = /iphone|ipod|ipad/.test( userAgent );
+if (ios){
+  var element = document.getElementById('dropdown');
+  element.style.display = "none";
+}
 //-->
 
 </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <noscript>
-<meta http-equiv="refresh" content="2">
+<meta http-equiv="refresh" content="2; url=refreshing.html">
 </noscript>
 <title>Immrama</title>
 </head>
