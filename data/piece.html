@@ -33,14 +33,11 @@ launchIntoFullscreen(document.getElementById("score")); // any individual elemen
 
 
 function fullScreen() {
-  var elements = document.getElementsByClassName('dropdown'), i;
+  var element = document.getElementsByID('dropdown');
   try {
     launchIntoFullscreen(document.getElementById("score")); // any individual element
   } catch (err){};
-  for (i in elements) {
-    console.log("i is ", i);
-    i.innerHTML = "";
-  };
+  element.style.display = "none";
 };
 
 
@@ -150,7 +147,7 @@ delayer();
   <div id="score">
     <!-- <img src="score.svg" /> -->
     <object type="image/svg+xml" width="100%" height="100%" data="score.svg" id="svg">This is incompatible with your  device.</object>
-  <div class="dropdown">
+  <div class="dropdown" id="dropdown">
     <button class="dropbtn">&#9776;</button>
    <div class="dropdown-content">
      <a href="./">Home</a>
