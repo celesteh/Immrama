@@ -31,13 +31,27 @@ launchIntoFullscreen(document.documentElement); // the whole page
 
 launchIntoFullscreen(document.getElementById("score")); // any individual element
 
+function change_size(){}
+// hide nav icon if full screen
+  var element = document.getElementById('dropdown');
+
+  if( (screen.availHeight || screen.height-30) <= window.innerHeight) {
+    // browser is almost certainly fullscreen
+    element.style.display = "none";
+  } else {
+    element.style.display = "block";
+  }
+};
+
+
 
 function fullScreen() {
-  var element = document.getElementById('dropdown');
+  //var element = document.getElementById('dropdown');
   try {
     launchIntoFullscreen(document.getElementById("score")); // any individual element
   } catch (err){};
-  element.style.display = "none";
+  //element.style.display = "none";
+  change_size();
 };
 
 
@@ -130,14 +144,15 @@ function delayer(){
 
 delayer();
 
-// hide nav icon if full screen
-if( (screen.availHeight || screen.height-30) <= window.innerHeight) {
-  // browser is almost certainly fullscreen
-  var element = document.getElementById('dropdown');
-  element.style.display = "none";
-}
+
+change_size();
+window.setTimeout(change_size, 50);
 //console.log("/scripts: " + new Date().getTime());
 
+document.addEventListener("fullscreenchange", change_size, false);
+document.addEventListener("webkitfullscreenchange", change_size, false);
+document.addEventListener("mozfullscreenchange", change_size, false);
+document.addEventListener("MSFullscreenChanges", change_size, false);
 //-->
 
 </script>
