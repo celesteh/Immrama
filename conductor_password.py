@@ -206,6 +206,7 @@ elif remove:
     if user:
         remove_user(user)
         check_pass_file()
+        #restart()
         print "Sucess: {} removed".format(user)
     else :
         print "Failure: You must specify a user to remove"
@@ -219,4 +220,5 @@ elif clear:
 else:
     # do check
     check_pass_file()
+    #restart()
     print "Checking if users exist"

@@ -74,9 +74,11 @@ function do_load(url, id){
     obj.data = newurl;
     obj.href = newurl;
   } catch (err){
-    obj.href = newurl;
-    obj.data = newurl;
-  }
+    try {
+      obj.href = newurl;
+      obj.data = newurl;
+    } catch (err){};
+  };
 };
 
 function updateIfChanged() {

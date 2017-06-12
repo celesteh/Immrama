@@ -101,7 +101,7 @@ if ((length == 0) or ((length >=8) and (length <=63) )):
         key_obj = lineMangler('^wpa_key_mgmt\s*=\s*.*','wpa_key_mgmt=WPA-PSK')
         rsn_obj = lineMangler('^rsn_pairwise\s*=\s*.*','rsn_pairwise=CCMP')
 
-        with open('/tmp/hostapd.conf', 'w') as result: #file to write
+        with open(tmp_dir + 'hostapd.conf', 'w') as result: #file to write
             with open('/etc/hostapd/hostapd.conf') as conf: #original file
                 for line in conf:
                     line = line.rstrip()
