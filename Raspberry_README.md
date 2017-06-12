@@ -8,6 +8,8 @@ To minimise the chances of overheating, set your computer so that it does not bo
 
 In steps that may cause the processor to overheat, I've used the nice command to run the process more slowly.
 
+Finally, Pi 3s have a higher power draw than earlier models. Your old mobile phone charger may not be putting out enough power. If your computer shuts down unexpectedly, try running it with an official Pi 3 power adaptor to see if that helps.
+
 ## Setting up the SD card
 * Get Raspbian onto an SD card, by downloading it or buying a pre-loaded card. https://www.raspberrypi.org/downloads/raspbian/
 * Re-size the card and change the name of the computer by running `sudo raspi-config`
@@ -211,7 +213,7 @@ webserver runs as. For me, it was `www-data`
 `www-data immrama= NOPASSWD: /home/pi/Documents/Immrama/conductor_password.py`
 but use whatever name was in the 4th column of output from the ls -las
 * Edit CheckPass so the paths in it point to where you have put the files
-* `cp CheckPass /etc/init.d/CheckPass`
+* `sudo cp CheckPass /etc/init.d/CheckPass`
 * Make script executable `sudo chmod 755 /etc/init.d/CheckPass`
 * Test the program `sudo /etc/init.d/CheckPass`
 * To register your script to be run at start-up and shutdown, `sudo update-rc.d CheckPass defaults`
