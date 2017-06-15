@@ -61,7 +61,7 @@ if ($_POST['newpass'] != $_POST['confirm']) {
 <body>
   <div id="words">
     <div class="dropdown">
-      <button class="dropbtn">&#9776;</button>
+      <button class="dropbtn">&#8801;</button>
      <div class="dropdown-content">
        <a href="../">Home</a>
        <a href="./">(Re)Start Piece</a>
