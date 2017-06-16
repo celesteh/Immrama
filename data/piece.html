@@ -35,10 +35,15 @@ function change_size(){
 // hide nav icon if full screen
   var element = document.getElementById('dropdown');
 
-  if( (screen.availHeight || screen.height-30) <= window.innerHeight) {
+  if(( (screen.availHeight || screen.height-30) <= window.innerHeight) ||
+    ((document.webkitIsFullScreen == true)|| (document.mozFullScreen == true) || (document.msFullscreenElement ==true))) {
     // browser is almost certainly fullscreen
-    element.style.display = "none";
-  };
+    //element.style.display = "none";
+    element.style.visibility = "hidden";
+  } else {
+    //element.style.display = "inline"
+    element.style.visibility = "visible";
+  }
 };
 
 
@@ -48,8 +53,8 @@ function fullScreen() {
   try {
     launchIntoFullscreen(document.getElementById("score")); // any individual element
   } catch (err){};
-  element.style.display = "none";
-  //change_size();
+  //element.style.display = "none";
+  change_size();
 };
 
 
@@ -157,7 +162,7 @@ function iphone(){
   ios = /iphone|ipod|ipad/.test( userAgent );
   if (ios){
     var element = document.getElementById('dropdown');
-    element.style.display = "none";
+    //element.style.display = "none";
   }
 };
 
