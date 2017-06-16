@@ -38,11 +38,11 @@ function change_size(){
   if(( (screen.availHeight || screen.height-30) <= window.innerHeight) ||
     ((document.webkitIsFullScreen == true)|| (document.mozFullScreen == true) || (document.msFullscreenElement ==true))) {
     // browser is almost certainly fullscreen
-    //element.style.display = "none";
-    element.style.visibility = "hidden";
+    element.style.display = "none";
+    //element.style.visibility = "hidden";
   } else {
-    //element.style.display = "inline"
-    element.style.visibility = "visible";
+    element.style.display = "inline"
+    //element.style.visibility = "visible";
   }
 };
 
