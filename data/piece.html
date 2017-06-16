@@ -102,8 +102,10 @@ function do_load(url, id){
 
 function updateIfChanged() {
 
-  change_size();
-  
+  try {
+    change_size();
+  } catch (err) {};
+
   getMTime('score.svg', function(mtime) {
     if (mtime) {
       if (lasttag != mtime){
