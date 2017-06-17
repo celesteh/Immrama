@@ -38,21 +38,29 @@ function change_size(){
   if(( (screen.availHeight || screen.height-30) <= window.innerHeight) ||
     ((document.webkitIsFullScreen == true)|| (document.mozFullScreen == true) || (document.msFullscreenElement ==true))) {
     // browser is almost certainly fullscreen
-    //element.style.display = "none";
-    element.style.visibility = "hidden";
+
+    if (element.style.visibility == null) {
+      element.style.display = "none";
+    } else {
+      element.style.visibility = "hidden";
+    }
   } else {
-    //element.style.display = "inline"
-    element.style.visibility = "visible";
+      if (element.style.visibility == null) {
+        element.style.display = "inline"
+      } else {
+        element.style.visibility = "visible";
+    }
   }
 };
 
 
 
 function fullScreen() {
-  var element = document.getElementById('dropdown');
+  //var element = document.getElementById('dropdown');
   try {
     launchIntoFullscreen(document.getElementById("score")); // any individual element
-    element.style.visibility = "hidden";
+    //element.style.visibility = "hidden";
+    change_size();
   } catch (err){};
   //element.style.display = "none";
   //change_size();
