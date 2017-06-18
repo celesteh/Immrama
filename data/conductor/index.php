@@ -68,6 +68,63 @@ try {
 // render the window before trying to make elements readonly
 window.setTimeout(readOnly,300);
 
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+// perform math for WCAG2
+function getLuminance (rgb){
+
+  for (var i =0; i<rgb.length; i++) {
+    if (rgb[i] <= 0.03928) {
+      rgb[i] = rgb[i] / 12.92;
+    } else {
+      rgb[i] = Math.pow( ((rgb[i]+0.055)/1.055), 2.4 );
+    }
+  }
+  var l = (0.2126 * rgb[0]) + (0.7152 * rgb[1]) + (0.0722 * rgb[2]);
+  return l;
+};
+
+
+function color_checker() {
+  // perform math for WCAG1
+	var brightnessThreshold = 125;
+	var colorThreshold = 500;
+
+  var bg = hexToRgb(form.foreground.value);
+  var fg = hexToRgb(form.background.value);
+
+	var bY=((bg.r * 299) + (bg.g * 587) + (bg.b * 114)) / 1000;
+	var fY=((fg.r * 299) + (fg.g * 587) + (fg.b * 114)) / 1000;
+	var brightnessDifference = Math.abs(bY-fY);
+
+  var colorDifference = (Math.max (fg.r, bg.r) - Math.min(fg.r, bg.r)) +
+                        (Math.max (fg.g, bg.g) - Math.min(fg.g, bg.g)) +
+                        (Math.max (fg.b, bg.b) - Math.min(fg.b, bg.b));
+
+  var ratio = 1;
+  var l1 = getLuminance([fg.r/255, fg.g/255, fg.b/255]);
+  var l2 = getLuminance([bg.r/255, bg.g/255, bg.b/255]);
+
+  if (l1 >= l2) {
+  	ratio = (l1 + .05) / (l2 + .05);
+  } else {
+  	ratio = (l2 + .05) / (l1 + .05);
+  }
+
+  if (ratio < 3 ) {
+    alert("Colours are too similar");
+    return false;
+  } else {
+    return true;
+  }
+}
 
 //-->
 </SCRIPT>
@@ -80,6 +137,7 @@ window.setTimeout(readOnly,300);
      <div class="dropdown-content">
        <a href="../">Home</a>
       <a href="./piece.html">Show Piece</a>
+      <a href="./end.php">Stop Piece</a>
       <a href="../wifi.php">Show WiFi Password</a>
       <a href="./advanced.html">Change WiFi Password</a>
       <a href="./requestshutdown.php">Shut down computer</a>

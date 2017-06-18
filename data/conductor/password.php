@@ -65,6 +65,7 @@ if ($_POST['newpass'] != $_POST['confirm']) {
      <div class="dropdown-content">
        <a href="../">Home</a>
        <a href="./">(Re)Start Piece</a>
+       <a href="./end.php">Stop Piece</a>
       <a href="./piece.html">Show Piece as Conductor</a>
       <a href="../piece.html">Show piece as Player</a>
       <a href="../wifi.php">Show WiFi Password</a>
