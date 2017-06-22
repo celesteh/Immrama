@@ -116,7 +116,7 @@ own wifi network or connected via ethernet, you can connect via ssh:
 whatever extension is used on your local network.
 
 The default password for an ssh connection is `graphicnotation`. If this
-does not work, then [see Stack Exchange](http://raspberrypi.stackexchange.com/a/12676)
+does not work, then see [Stack Exchange](http://raspberrypi.stackexchange.com/a/12676)
 for what to try next. [^1]
 
 [^1]: <http://raspberrypi.stackexchange.com/a/12676>
