@@ -1,4 +1,4 @@
-# Immrama
+# Immrama - Android Performers
 
 ## Preparing your smartphone or tablet
 

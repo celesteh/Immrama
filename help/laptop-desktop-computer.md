@@ -1,4 +1,4 @@
-# Immrama
+# Immrama - laptop and desktop devices
 
 While some ensembles may choose for every performer to have their own
 smart phone or tablet to view the piece, it is possible to also use

@@ -1,19 +1,24 @@
 # 'Makefile'
 src = $(wildcard *.md)
 html = $(src:.md=.html)
-MDFLAGS = --css ../style.css
+pdf = $(src:.md=.pdf)
+HTMLFLAGS = --css ../style.css
 
 .PHONY: all
-all: $(html)
-		#pandoc -o $@ $^ $(MDFLAGS)
+all: $(html) $(pdf)
+		#pandoc -o $@ $^ $(HTMLFLAGS)
 
 %.html: %.md
-		pandoc $< -o $@ $(MDFLAGS)
+		pandoc $< -o $@ $(HTMLFLAGS)
+
+%.pdf: %.md
+		pandoc $< -o $@
 
 .PHONY: install
 install: $(all)
 	  cp *html ../data/help/
+		cp *pdf ../data/help/
 
 .PHONY: clean
 clean:
-	    rm -f *.bak *~ *.html
+	    rm -f *.bak *~ *.html *.pdf

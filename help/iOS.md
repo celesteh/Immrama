@@ -1,8 +1,8 @@
-# Immrama
+# Immrama - iOS Performers
 
 ## Preparing your iPhone or iPad
 
-Any device with a web browser can be used to view the score. Users 
+Any device with a web browser can be used to view the score. Users
 are advised to take a few steps before performances or rehearsals.
 
 * Set the device to silent
