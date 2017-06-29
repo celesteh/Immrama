@@ -25,21 +25,33 @@ are advised to take a few steps before performances or rehearsals.
     *   [http://immrama.home](http://immrama.home)
     *   [http://immrama.localnet](http://immrama.localnet)
     *   [http://172.24.1.1](http://172.24.1.1)
-    *   [http://kent.ac.uk](http://ket.ac.uk)
+    *   [http://kent.ac.uk](http://kent.ac.uk)
 
 ## Opening the Piece
 
-* Once logged in, users should see a button on the top left of their screen.
-* Touch screen users should click this button. Others should put their mouse pointer over it.
-* A drop down menu should appear.
-* Performers should click on the `Performers` link
-* Some users will not see a drop down menu. Instead, they will see a button that has some text links
-by it or below it. Those users should click the `Old Devices` link or try a different web browser.
-* All Performers should then see a screen which says `Ready`
-* Performers should use their web browser to make a bookmark of this page.
-* Some performers will see a small button on the top left corner. They may click it to select `Full Screen`
-* To keep their screen from turning off, those using touch screen can stroke the bottom of their screen gently throughout the piece.
-* Performers _should not_ click the `Conductor` link. You are on the honor system.
+1. Once logged in, users should see a button on the top left of their screen.
+
+  ![Button](./menu.png)
+
+2. Some users will see a button that has some text links
+  by it or below it. Those users should click the `Old Devices` link and skip to step 6, or try a different web browser.
+
+![If you see this, click 'Old Devices'](./menu-glitch.png)
+
+3. Tap the button. A drop down menu should appear.
+
+![Dropdown menu](./dropdown.png)
+
+4. If no menu opens, click on the `Old Devices` link near the bottom of the page and go to step 6, or try a different web browser.
+5. Performers should click on the `Performers` link.
+6. All Performers should then see a screen which says `Ready`.
+7. Performers should use their web browser to make a bookmark of this page.
+8. Some performers will see a small button on the top left corner. They may click it to select `Full Screen`.
+
+  ![Small button](./hamburger.png)
+
+9. To keep their screen from turning off, users can stroke the bottom of their screen gently throughout the piece.
+10. Performers _should not_ click the `Conductor` link. You are on the honor system.
 
 ### Troubleshooting
 

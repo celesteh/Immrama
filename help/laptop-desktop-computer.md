@@ -2,7 +2,7 @@
 
 While some ensembles may choose for every performer to have their own
 smart phone or tablet to view the piece, it is possible to also use
-laptops, either one one per performer, or placed within the sight of several
+laptops (or iMacs, desktops, etc), either one one per performer, or placed within the sight of several
 performers. Ensembles may also wish to project the score, either for their
 performers, the audience or both.
 
@@ -25,23 +25,36 @@ performers, the audience or both.
     *   [http://immrama.home](http://immrama.home)
     *   [http://immrama.localnet](http://immrama.localnet)
     *   [http://172.24.1.1](http://172.24.1.1)
-    *   [http://kent.ac.uk](http://ket.ac.uk)
+    *   [http://kent.ac.uk](http://kent.ac.uk)
 
 ## Performers (or display devices)
 
 Follow these instructions for every browser window you intend to use to
 display the notation:
 
-* Once logged in, users should see a button on the top left of their screen.
-* Touch screen users should click this button. Others should put their mouse pointer over it.
-* A drop down menu should appear.
-* Performers should click on the `Performers` link
-* Some users will not see a drop down menu. Instead, they will see a button that has some text links
-by it or below it. Those users should click the `Old Devices` link or try a different web browser.
-* All Performers should then see a screen which says `Ready`
-* Performers should use their web browser to make a bookmark of this page. iOS users should save the link to their desktop and use that link when they next join the piece
-* Some performers will see a small button on the top left corner. They may click it to select `Full Screen`
-* Performers and Display Devices _should not_ click the `Conductor` link. You are on the honor system.
+1. Once logged in, users should see a button on the top left of their screen.
+
+  ![Button](./menu.png)
+
+2. Some users will see a button that has some text links
+  by it or below it. Those users should click the `Old Devices` link and skip to step 8, or try a different web browser.
+
+  ![If you see this, click 'Old Devices'](./menu-glitch.png)
+
+3. Touch screen users should click the button. Others should put their mouse pointer over it.
+4. A drop down menu should appear.
+
+  ![Dropdown menu](./dropdown.png)
+
+5. If no menu opens, click on the `Old Devices` link near the bottom of the page and go to step 8, or try a different web browser.
+7. Performers should click on the `Performers` link.
+8. All Performers should then see a screen which says `Ready`.
+7. Performers should use their web browser to make a bookmark of this page.
+9. Some performers will see a small button on the top left corner. They may use it to select `Full Screen`.
+
+  ![Small button](./hamburger.png)
+
+10. Performers and Display Devices _should not_ click the `Conductor` link. You are on the honor system.
 
 ### Troubleshooting
 

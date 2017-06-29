@@ -19,30 +19,41 @@ are advised to take a few steps before performances or rehearsals.
 * The wifi password is `12345678`
     *   If this changes, write it down.
 * iPhone and iPad users may see a prompt to log in to the network via a web page.
-
     1. First, use Safari or another browser to try connecting to one of the following URLs:
         *   [http://immrama.local](http://immrama.local)
         *   [http://immrama](http://immrama)
         *   [http://immrama.home](http://immrama.home)
         *   [http://immrama.localnet](http://immrama.localnet)
         *   [http://172.24.1.1](http://172.24.1.1)
-        *   [http://kent.ac.uk](http://ket.ac.uk)
+        *   [http://kent.ac.uk](http://kent.ac.uk)
     2. If your device drops your network connection or fails to load the piece from those URLs, then follow the login prompt to open the login page.
 
 
 ## Opening the Piece
 
-* Once logged in, users should see a button on the top left of their screen.
-* Touch screen users should click this button. Others should put their mouse pointer over it.
-* A drop down menu should appear.
-* Performers should click on the `Performers` link
-* Some users will not see a drop down menu. Instead, they will see a button that has some text links
-by it or below it. Those users should click the `Old Devices` link
-* All Performers should then see a screen which says `Ready`
-* Performers should try to use their web browser to make a bookmark of this page. Save the link to your desktop and use that link when you next join the piece
-* Some performers will see a small button on the top left corner. They may click it to select `Full Screen`
-* To keep their screen from turning off, those using touch screen can stroke the bottom of their screen gently throughout the piece.
-* Performers _should not_ click the `Conductor` link. You are on the honor system.
+1. Once logged in, users should see a button on the top left of their screen.
+
+  ![Button](./menu.png)
+
+2. Some users will see a button that has some text links
+    by it or below it. Those users should click the `Old Devices` link and skip to step 6, or try a different web browser.
+
+  ![If you see this, click 'Old Devices'](./menu-glitch.png)
+
+3. Tap the button. A drop down menu should appear.
+
+  ![Dropdown menu](./dropdown.png)
+
+4. If no menu opens, click on the `Old Devices` link near the bottom of the page and go to step 6, or try a different web browser.
+5. Performers should click on the `Performers` link.
+6. All Performers should then see a screen which says `Ready`.
+7. Performers should try to use their web browser to make a bookmark of this page. Save the link to your desktop and use that link when you next join the piece.
+8. Some performers will see a small button on the top left corner. They may click it to select `Full Screen`.
+
+  ![Small button](./hamburger.png)
+
+9. To keep their screen from turning off, users can stroke the bottom of their screen gently throughout the piece.
+10. Performers _should not_ click the `Conductor` link. You are on the honor system.
 
 ### Troubleshooting
 
