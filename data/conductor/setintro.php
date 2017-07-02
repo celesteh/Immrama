@@ -55,7 +55,11 @@ try{
   new SimpleMDE({
   		element: document.getElementById("inputtext"),
       spellChecker: false,
-      <? php if($newfile){ echo "placeholder: \"## Header\n\nText...\",\n";} ?>
+      <? php
+      if($newfile){
+        echo "placeholder: \"## Header\n\nText...\",\n";
+      }
+      ?>
       toolbar: [
         {
   		      name: "heading",
