@@ -4,7 +4,15 @@
 <link rel="stylesheet" type="text/css" href="../style.css">
 <link rel="stylesheet" href="../color.css" type="text/css" />
 <link rel="stylesheet" href=" bower_components/simplemde/dist/simplemde.min.css" type="text/css" />
+<script src=" bower_components/simplemde/dist/simplemde.min.js">
+var simplemde;
 
+function setup(){
+  simplemde = new SimpleMDE({ element: document.getElementById("inputtext") });
+}
+
+window.setTimeout(setup, 100);
+</script>
 <title>Set front page text</title>
 </head>
 <body>
@@ -23,15 +31,6 @@
   </div>
 </div>
 <main class="main">
-<script src=" bower_components/simplemde/dist/simplemde.min.js">
-var simplemde;
-
-function setup(){
-  simplemde = new SimpleMDE({ element: document.getElementById("inputtext") });
-}
-
-window.setTimeout(setup, 50);
-</script>
 <h1>Set Introductory Text</h1>
 <p>Set the text on the <a href="../">Home</a> page.</p>
 <form>
@@ -42,6 +41,7 @@ window.setTimeout(setup, 50);
 </textarea>
 </form>
 </main>
+<script> setup();</script>
     </div>
   </body>
   </html>
