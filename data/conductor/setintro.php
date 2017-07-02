@@ -27,7 +27,7 @@
 var simplemde;
 
 function setup(){
-  simplemde = new SimpleMDE();
+  simplemde = new SimpleMDE({ element: document.getElementById("inputtext") });
 }
 
 window.setTimeout(setup, 50);
