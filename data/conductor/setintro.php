@@ -26,6 +26,8 @@
 <script src=" bower_components/simplemde/dist/simplemde.min.js">
 var simplemde = new SimpleMDE();
 </script>
+<textarea>
+</textarea>
 </main>
     </div>
   </body>
