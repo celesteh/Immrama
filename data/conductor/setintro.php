@@ -60,7 +60,15 @@ try{
         echo "placeholder: \"## Header\n\nText...\",\n";
       }
       ?>
-      toolbar: ["heading", "bold", "italic", "|", "unordered-list", "ordered-list", "quote", "|"]
+      toolbar: ["heading", "bold", "italic", "|", "unordered-list", "ordered-list", "quote", "|",
+      {
+          name: "guide",
+          action: "https:../help/setintro.html",
+          className: "fa fa-question-circle",
+          title: "Guide",
+          default: true
+      }
+      ]
       /*
       toolbar: [
         {
