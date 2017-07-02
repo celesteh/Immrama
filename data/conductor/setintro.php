@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="../style.css">
 <link rel="stylesheet" href="../color.css" type="text/css" />
 <link rel="stylesheet" href=" bower_components/simplemde/dist/simplemde.min.css" type="text/css" />
+<link rel="stylesheet" href=" font-awesome.min.css" type="text/css" />
 
 <title>Set front page text</title>
 </head>
@@ -19,7 +20,6 @@
     <a href="../piece.html">Show piece as Player</a>
     <a href="../wifi.php">Show WiFi Password</a>
     <a href="./requestshutdown.php">Shut down computer</a>
-    <a href="./setintro.php">Set introductory text</a>
   </div>
 </div>
 <main class="main">
@@ -35,7 +35,8 @@
 <script src=" bower_components/simplemde/dist/simplemde.min.js"></script>
 <script>
 new SimpleMDE({
-		element: document.getElementById("inputtext")
+		element: document.getElementById("inputtext"),
+    spellChecker: false
   });
 </script>
 </main>

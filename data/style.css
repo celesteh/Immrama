@@ -264,6 +264,11 @@ textarea {
   font: inherit;
 }
 
+textarea{
+  align-content: center;
+  text-align: left;
+}
+
 /**
  * Restore the font weight unset by the previous rule.
  */
@@ -473,7 +478,7 @@ body {
   src: local("Bravura Regular"),
     local("BravuraRegular"),
     local("Bravura"),
-    url(Bravura.ttf) format("truetype");
+    url('fonts/Bravura.ttf') format("truetype");
 }
 
 body {

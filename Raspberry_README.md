@@ -219,6 +219,14 @@ but use whatever name was in the 4th column of output from the ls -las
 * To register your script to be run at start-up and shutdown, `sudo update-rc.d CheckPass defaults`
 * If you ever want to remove the script from start-up, `sudo update-rc.d -f CheckPass remove`
 
+## Allow a nice text editor for setting the intro text
+
+* `sudo apt-get update`
+* `sudo apt-get install npm`
+* `sudo npm install -g bower`
+* `cd /var/www/html/conductor/`
+* `bower install simplemde --save`
+
 ## Troubleshooting
 
 * The first thing to check is file permissions. Re-run all the chmod commands above. Also, there are circumatsance where score.svg make have the wrong permissions. Either delete the file entirely or `sudo chmod 666 /var/www/html/score.svg`
