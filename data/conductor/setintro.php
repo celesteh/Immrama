@@ -32,14 +32,11 @@
 <textarea id="inputtext" name="textin">
 </textarea>
 </form>
-<script src=" bower_components/simplemde/dist/simplemde.min.js">
-var simplemde;
-
-function setup(){
-  global simplemde = new SimpleMDE({ element: document.getElementById("inputtext") });
-}
-
-window.setTimeout(setup, 100);
+<script src=" bower_components/simplemde/dist/simplemde.min.js"></script>
+<script>
+new SimpleMDE({
+		element: document.getElementById("inputtext")
+  });
 </script>
 </main>
     </div>
