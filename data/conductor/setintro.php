@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<? php
+$file = preg_replace('/[^-a-zA-Z0-9_]/', '', $_GET['file']);
+
+if(empty($file)) { $file="current"; };
+
+if(strcmp($file, "new")==0) {
+  $newfile = true;
+} else {
+  $newfile = false;
+  $file = "intro/" . $file . ".md";
+  if (! file_exists($file)) {
+    $file = "intro/current.md";
+  }
+}
+?>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../style.css">
@@ -40,7 +55,65 @@ try{
   new SimpleMDE({
   		element: document.getElementById("inputtext"),
       spellChecker: false,
-      hideIcons: ["guide", "link", "image"]
+      <? php if($newfile){ echo "placeholder: \"## Header\n\nText...\"";} ?>
+      toolbar: [
+        {
+  		      name: "heading",
+  		      action: toggleHeadingSmaller,
+  		      className: "fa fa-header",
+            title: "Heading",
+            default: true
+        },
+        {
+		        name: "bold",
+            action: toggleBold,
+            className: "fa fa-bold",
+            title: "Bold",
+            default: true
+        },
+        {
+		        name: "italic",
+            action: toggleItalic,
+            className: "fa fa-italic",
+            title: "Italic",
+            default: true
+        }, "|",
+        {
+		        name: "quote",
+		        action: toggleBlockquote,
+            className: "fa fa-quote-left",
+            title: "Quote",
+            default: true
+        },
+        {
+		        name: "unordered-list",
+            action: toggleUnorderedList,
+            className: "fa fa-list-ul",
+            title: "Generic List",
+            default: true
+	       },
+         {
+		         name: "ordered-list",
+             action: toggleOrderedList,
+             className: "fa fa-list-ol",
+             title: "Numbered List",
+             default: true
+           }, "|",
+           {
+		           name: "preview",
+               action: togglePreview,
+               className: "fa fa-eye no-disable",
+               title: "Toggle Preview",
+               default: true
+          }, "|",
+          {
+		          name: "guide",
+		          action: "https:../help/setintro.html",
+              className: "fa fa-question-circle",
+              title: "Guide",
+              default: true
+          }
+      ]
     });
   } catch (err){}; // Don't die if MDE not installed
 </script>
