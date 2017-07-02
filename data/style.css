@@ -569,11 +569,18 @@ form
 {
 width: 90%;
 float: left;
-text-align: right;
 margin-right: 0.5em;
 display: block;
 }
 
+form.cond
+{
+  text-align: right;
+}
+
+form.intro {
+  text-align: left;
+}
 
 
 .submit input

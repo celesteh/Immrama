@@ -25,9 +25,11 @@
 <main class="main">
 <h1>Set Introductory Text</h1>
 <p>Set the text on the <a href="../">Home</a> page.</p>
-<form>
+<form class="intro">
   <noscript>
+    <label for="title">Title:</label>
     <input type="text" name="title">
+    <label for="textin">Text:</label> < br/>
   </noscript>
 <textarea id="inputtext" name="textin">
 </textarea>

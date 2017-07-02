@@ -147,12 +147,12 @@ function color_checker() {
   <main class="main">
     <noscript>
       <h1>Error</h1>
-      <p>This device does not understand javascript.</p>
-      <p>You may use this device to view the score, using the
+      <p>This device does not understand javascript. Try to enable javascript via your web browser and reload this page.</p>
+      <p>If this error persists, you may use this device to view the score, using the
         'old devices' link on the previous page. But this
         device may have problems with some of the Conductor pages.</p>
       </noscript>
-  <form action="play.php" method="post" id="configform">
+  <form action="play.php" method="post" id="configform" class="cond">
 
 
 <BUTTON name="submit" value="submit" type="submit">Start</BUTTON>
