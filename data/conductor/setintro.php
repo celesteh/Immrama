@@ -3,6 +3,8 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../style.css">
 <link rel="stylesheet" href="../color.css" type="text/css" />
+<link rel="stylesheet" href=" bower_components/simplemde/dist/simplemde.min.css" type="text/css" />
+
 <title>Set front page text</title>
 </head>
 <body>
@@ -21,7 +23,7 @@
   </div>
 </div>
 <main class="main">
-<script>
+<script src=" bower_components/simplemde/dist/simplemde.min.js">
 var simplemde = new SimpleMDE();
 </script>
 </main>
