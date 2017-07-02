@@ -2,13 +2,13 @@
 
 ## Physical Setup
 
-The Pi 3 sometimes has problems with overheating. I ran into this during the setup (compiling inkscape), but never during a performance, even with more than 20 performers on the network.
+The Pi 3 has a much greater potential power draw than previous versions of the Pi. Using your old phone charger may not deliver enough electricity, which can cause the computer to unexpectedly reboot I ran into this during the setup (compiling inkscape), but never during a performance, even with more than 20 performers on the network. The Pi 3 also can sometimes overheat.
 
-To minimise the chances of overheating, set your computer so that it does not boot the desktop. All of the commands below are via the command line and can be executed via an ssh connection. Also, get a heat sink and put it over the processor.
+To minimise the chances of overheating and to reduce power useage, set your computer so that it does not boot the desktop. All of the commands below are via the command line and can be executed via an ssh connection. Also, get a heat sink and put it over the processor.
 
 In steps that may cause the processor to overheat, I've used the nice command to run the process more slowly.
 
-Finally, Pi 3s have a higher power draw than earlier models. Your old mobile phone charger may not be putting out enough power. If your computer shuts down unexpectedly, try running it with an official Pi 3 power adaptor to see if that helps.
+If your computer shuts down unexpectedly, try running it with an official Pi 3 power adaptor to see if that helps.
 
 ## Setting up the SD card
 * Get Raspbian onto an SD card, by downloading it or buying a pre-loaded card. https://www.raspberrypi.org/downloads/raspbian/
@@ -112,6 +112,8 @@ Then, save the rules as instructed to on that page and follow the remainder of t
 
 ## Installing the webserver
 
+You will need to use an ethernet cable to connect the Pi to your router.
+
 * `sudo apt-get install lighttpd php5-cgi -y`
 * `sudo lighty-enable-mod fastcgi`
 * `sudo lighty-enable-mod fastcgi-php`
@@ -160,6 +162,7 @@ Try `sudo apt-get install inkscape -y` then `inkscape --version` If it comes bac
 * `sudo mkdir /usr/share/fonts/truetype/bravura`
 * `cd Immrama ; sudo cp -r data/* /var/www/html/ ; cd data ; sudo cp Bravura.ttf /usr/share/fonts/truetype/bravura && sudo fc-cache -f -v`
 * `sudo chmod 777 /var/www/html/conductor/`
+* `sudo chmod 777 /var/www/html/conductor/intro/`
 * `sudo chmod 666 /var/www/html/conductor/config.ini`
 
 ### Building Inkscape
