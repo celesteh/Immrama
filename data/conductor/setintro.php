@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<? php
+<?php
 $file = preg_replace('/[^-a-zA-Z0-9_]/', '', $_GET['file']);
 
 if(empty($file)) { $file="current"; };
@@ -55,7 +55,7 @@ try{
   new SimpleMDE({
   		element: document.getElementById("inputtext"),
       spellChecker: false,
-      <? php
+      <?php
       if($newfile){
         echo "placeholder: \"## Header\n\nText...\",\n";
       }
