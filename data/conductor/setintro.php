@@ -24,10 +24,23 @@
 </div>
 <main class="main">
 <script src=" bower_components/simplemde/dist/simplemde.min.js">
-var simplemde = new SimpleMDE();
+var simplemde;
+
+function setup(){
+  simplemde = new SimpleMDE();
+}
+
+window.setTimeout(setup, 50);
 </script>
-<textarea>
+<h1>Set Introductory Text</h1>
+<p>Set the text on the <a href="../">Home</a> page.</p>
+<form>
+  <noscript>
+    <input type="text" name="title">
+  </noscript>
+<textarea id="inputtext" name="textin">
 </textarea>
+</form>
 </main>
     </div>
   </body>
