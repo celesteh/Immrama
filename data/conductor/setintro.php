@@ -57,10 +57,10 @@ try{
       spellChecker: false,
       <?php
       if($newfile){
-        echo "placeholder: \"## Header\n\nText...\",\n";
+        echo "placeholder: \"## Header\\n\\nText...\",\n";
       }
       ?>
-      toolbar: ["heading", "bold", "italic", "|", "unordered-list", "ordered-list", "quote", "|",
+      toolbar: ["heading", "bold", "italic", "|", "unordered-list", "ordered-list", "quote", "|","|",
       {
           name: "guide",
           action: "../help/setintro.html",
