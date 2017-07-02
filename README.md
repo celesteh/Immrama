@@ -30,3 +30,8 @@ If you want a pause before starting, set init_sleep to any number aside from 0. 
 ## Run From Command Line
 From the command line, start the piece:
     `./immrama`
+
+## Included third-party projects
+
+* This project includes the Bravura font, under an SIL license
+* This project includes Font Awesome, under an SIL and MIT License

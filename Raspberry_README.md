@@ -163,7 +163,7 @@ Try `sudo apt-get install inkscape -y` then `inkscape --version` If it comes bac
 * `sudo chmod 666 /var/www/html/conductor/config.ini`
 
 ### Building Inkscape
-* First inkscape--version! If the number is at or ABOVE 0.91, stop. Otherwise, carry on.
+* First `inkscape --version`! If the number is at or ABOVE 0.91, stop. Otherwise, carry on.
 * `sudo nano /etc/apt/sources.list`
   * Uncomment the line with deb-src in it
 * `sudo apt-get update && sudo nice apt-get upgrade -y`
@@ -192,7 +192,7 @@ webserver runs as. For me, it was `www-data`
 * append to the file: `www-data immrama= NOPASSWD: /sbin/halt`
 but use whatever name was in the 4th column of output from the ls -las
 
-## Allow chaning the WPA password via the web interface
+## Allow changing the WPA password via the web interface
 * Use the web interface to start running Immrama
 * Log into the computer via ssh or keyboard, mouse & monitor
 * `ls -las /var/www/html/color.css` This will tell you what user the
@@ -229,7 +229,7 @@ but use whatever name was in the 4th column of output from the ls -las
 
 ## Troubleshooting
 
-* The first thing to check is file permissions. Re-run all the chmod commands above. Also, there are circumatsance where score.svg make have the wrong permissions. Either delete the file entirely or `sudo chmod 666 /var/www/html/score.svg`
+* The first thing to check is file permissions. Re-run all the chmod commands above. Also, there are circumstances where score.svg make have the wrong permissions. Either delete the file entirely or `sudo chmod 666 /var/www/html/score.svg`
 
 * If you forget the wifi password, use a computer to connect to the Pi via
 an ethernet cable and use the web form to reset the password
