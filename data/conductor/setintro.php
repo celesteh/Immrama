@@ -36,10 +36,12 @@
 </form>
 <script src=" bower_components/simplemde/dist/simplemde.min.js"></script>
 <script>
-new SimpleMDE({
-		element: document.getElementById("inputtext"),
-    spellChecker: false
-  });
+try{
+  new SimpleMDE({
+  		element: document.getElementById("inputtext"),
+      spellChecker: false
+    });
+  } catch (err){}; // Don't die if MDE not installed
 </script>
 </main>
     </div>
