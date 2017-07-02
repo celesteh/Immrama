@@ -39,7 +39,8 @@
 try{
   new SimpleMDE({
   		element: document.getElementById("inputtext"),
-      spellChecker: false
+      spellChecker: false,
+      hideIcons: ["guide", "link", "image"]
     });
   } catch (err){}; // Don't die if MDE not installed
 </script>
