@@ -63,7 +63,7 @@ try{
       toolbar: ["heading", "bold", "italic", "|", "unordered-list", "ordered-list", "quote", "|",
       {
           name: "guide",
-          action: "https:../help/setintro.html",
+          action: "../help/setintro.html",
           className: "fa fa-question-circle",
           title: "Guide",
           default: true
