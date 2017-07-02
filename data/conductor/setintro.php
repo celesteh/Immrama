@@ -60,6 +60,8 @@ try{
         echo "placeholder: \"## Header\n\nText...\",\n";
       }
       ?>
+      toolbar: ["heading", "bold", "italic", "|", "unordered-list", "ordered-list", "quote", "|"]
+      /*
       toolbar: [
         {
   		      name: "heading",
@@ -117,7 +119,7 @@ try{
               title: "Guide",
               default: true
           }
-      ]
+      ]*/
     });
   } catch (err){}; // Don't die if MDE not installed
 </script>
