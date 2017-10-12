@@ -11,7 +11,20 @@ performers, the audience or both.
 * Disable your screen saver
 * Set your screen not to dim for at least the planned duration of the piece
 * If your device is connected to a projector, it is not necessary to mirror displays. You may open a web browser in a second projector screen and also have a web browser open in the screen in front of you.
-* This piece has been tested with Firefox and Chrome and should also work with Safari and recent versions of Internet Explorer. If you have problems with the score not looking or functioning correctly, please download and use a recent version of Firefox.
+* This piece has been tested with Firefox, Chrome and Safari 11.0. It should also work with recent versions of Internet Explorer. If you have problems with the score not looking or functioning correctly, please download and use a recent version of Firefox. Some users may wish to run more than one browser at a time and switch between them if one of them stops working.
+
+### Apple Users
+
+* Open system preferences
+* Go to network
+* Create a new network location
+* Turn off and unlist all interfaces aside from WiFi
+* Make sure WiFi is turned on
+* Unselect the checkbox next to 'Ask to join new networks'
+* Clicking on the advanced button will bring up a new panel. The left-most tab is 'Wi-Fi'
+* Under the Wi-Fi tab is a list of preferred networks. Once you join Immrama in the next step, put it at the top of the list.
+ * Later on, if your computer keeps changing to a different network, you may need to temporarily remove other networks. See the troubleshooting section further down.
+ * Some users will find Safari to be the most reliable web browser for displaying the piece. It is possible to run Firefox and Safari at the same time and switch between them if one of them stops updating.
 
 ## Joining the network
 

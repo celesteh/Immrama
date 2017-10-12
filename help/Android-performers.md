@@ -7,6 +7,7 @@ are advised to take a few steps before performances or rehearsals.
 
 * Set the device to silent
 * Disable receiving SMS and phone calls
+* Turn off the data connection
 * Ensure that WiFI is turned on
 * Set a long delay before the screen turns off
 * Consider disabling your device password
@@ -18,8 +19,9 @@ are advised to take a few steps before performances or rehearsals.
 * Join the Immrama wifi network.
 * The wifi password is `12345678`
     *   If this changes, write it down.
-* Smart phone users may see a prompt to log in via a web browser. You should follow this prompt _if_ you can log in with a fully-functional web browser.
-* Users that _do not_ see a login should try connecting to one of the following URLs:
+* Smart phone users may see a prompt to log in via a web browser. Follow this prompt.
+* Some users will see a '...' menu at the top right of the 'sign into network' app. Those users should select 'use this network as is'.
+* Users should then open a fully-featured browser and connect to one of the following URLs:
     *   [http://immrama.local](http://immrama.local)
     *   [http://immrama](http://immrama)
     *   [http://immrama.home](http://immrama.home)
@@ -55,12 +57,13 @@ are advised to take a few steps before performances or rehearsals.
 
 ### Troubleshooting
 
-When the piece is running, not everyone will see updates at the same time. If you do not see updates at all:
+When the piece is running, not everyone will see updates at the same time. If you do not see updates at all or if updates stop working after some period of time:
 
 1. Make sure you are on the right wifi network. If your device allows you to say which devices you prefer,
 put this one at the top of the list.
 2. If your device keeps switching to another network (such as eduroam) and you can't get it to stop otherwise, tell it to forget the other network. In this case, you will need to forget the network before every performance or
 rehearsal of the piece. When you rejoin the 'forgotten' network later, you will need to have the
 password, etc as if you are a new user.
-3. Check if you have javascript disabled. If so, enable it and reload the page.
-4. If you still do not see updates, go back a page and select `Old Devices`. Be sure to update your bookmark.
+3. Your device may also switch to mobile data, so be sure this is disabled.
+4. Check if you have javascript disabled. If so, enable it and reload the page.
+5. If you still do not see updates, go back a page and select `Old Devices`. Be sure to update your bookmark.
