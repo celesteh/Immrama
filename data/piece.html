@@ -35,20 +35,23 @@ function change_size(){
 // hide nav icon if full screen
   var element = document.getElementById('dropdown');
 
-  if(( (screen.availHeight || screen.height-30) <= window.innerHeight) ||
-    ((document.webkitIsFullScreen == true)|| (document.mozFullScreen == true) || (document.msFullscreenElement ==true))) {
-    // browser is almost certainly fullscreen
+  if (element != null) {
 
-    if (element.style.visibility == null) {
-      element.style.display = "none";
-    } else {
-      element.style.visibility = "hidden";
-    }
-  } else {
+    if(( (screen.availHeight || screen.height-30) <= window.innerHeight) ||
+      ((document.webkitIsFullScreen == true)|| (document.mozFullScreen == true) || (document.msFullscreenElement ==true))) {
+      // browser is almost certainly fullscreen
+
       if (element.style.visibility == null) {
-        element.style.display = "inline"
+        element.style.display = "none";
       } else {
-        element.style.visibility = "visible";
+        element.style.visibility = "hidden";
+      }
+    } else {
+        if (element.style.visibility == null) {
+          element.style.display = "inline"
+        } else {
+          element.style.visibility = "visible";
+      }
     }
   }
 };
