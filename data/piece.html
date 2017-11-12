@@ -95,6 +95,7 @@ getMTime('score.svg', function(mtime) {
 
 
 function do_load(url, id){
+  var success = true;
   var obj = document.getElementById(id);
   var newurl = url + "?" + + new Date().getMilliseconds();
 
@@ -105,13 +106,20 @@ function do_load(url, id){
     try {
       obj.href = newurl;
       obj.data = newurl;
-    } catch (err) {};
-  }
+    } catch (err) {
+      success = false;
+    };
+  };
+  return success;
 };
 
 
 
 function updateIfChanged() {
+
+  var success;
+
+  success = true;
 
   try {
     change_size();
@@ -128,7 +136,7 @@ function updateIfChanged() {
         catch (err){
           imgobj.data = "score.svg#" + mtime;//.toISOString();
         }; */
-        do_load('../score.svg', "svg")
+        success = do_load('../score.svg', "svg")
         do_load('../color.css', "color")
         lasttag=mtime;
         //console.log("changed: " + new Date().getTime());
@@ -142,12 +150,21 @@ function updateIfChanged() {
       }
       catch (err) {
         // try again
-        imgobj.data = "score.svg#" + new Date().getTime();
+        try {
+          imgobj.data = "score.svg#" + new Date().getTime();
+        } catch (err2) {
+          success = false;
+        }
       };
       //console.log("no time found: " + new Date().getTime());
     }
   });
-  window.setTimeout(delayer,1000);
+  if (success){
+    window.setTimeout(delayer,1000);
+  } else {
+    // wait and try again
+    window.setTimeout(updateIfChanged,700);
+  }
 };
 /*
 function forceUpdate(){
