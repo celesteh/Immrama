@@ -7,6 +7,7 @@ are advised to take a few steps before performances or rehearsals.
 
 * Set the device to silent
 * Disable receiving SMS and phone calls
+* Turn off mobile data
 * Ensure that WiFI is turned on
 * Set a long delay before the screen turns off
 * Consider disabling your device password

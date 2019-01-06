@@ -141,7 +141,7 @@ function color_checker() {
       <a href="../wifi.php">Show WiFi Password</a>
       <a href="./advanced.html">Change WiFi Password</a>
       <a href="./requestshutdown.php">Shut down computer</a>
-      <a href="./setintro.php">Set introductory text</a>
+      <!--<a href="./setintro.php">Set introductory text</a>-->
     </div>
   </div>
   <main class="main">

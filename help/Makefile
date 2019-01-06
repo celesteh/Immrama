@@ -2,7 +2,7 @@
 src = $(wildcard *.md)
 html = $(src:.md=.html)
 pdf = $(src:.md=.pdf)
-HTMLFLAGS = --css ../style.css --css ./help.css
+HTMLFLAGS = --css ../style.css --css ./help.css --standalone
 
 .PHONY: all
 all: $(html) $(pdf)

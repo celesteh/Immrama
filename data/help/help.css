@@ -8,13 +8,56 @@ img {
 
 P.caption { text-align: center }
 
+figcaption { text-align: center }
+
 DIV.figure {
   padding:1px;
   /*border:1px solid #021a40;*/
   /*min-height: 10em;*/
   display: /*table-cell;*/ block;
   vertical-align: middle;
-  text-align: center
+  text-align: center;
   margin-left: auto;
   margin-right: auto
+}
+
+figure {
+  padding:1px;
+  /*border:1px solid #021a40;*/
+  /*min-height: 10em;*/
+  display: /*table-cell;*/ block;
+  vertical-align: middle;
+
+  text-align: center;
+  margin-right: 0.6em;
+  margin-left: 0.6em;
+  /*margin-left: auto;
+  margin-right: auto*/
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+body {
+  width: 90%;
+  /*text-align: center;*/
+  margin-left: auto;
+  margin-right: auto
+
+}
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    width: 95%
+  }
+}
+
+p, ul {
+  width: 100%;
+  float: left;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  display: block;
+
 }

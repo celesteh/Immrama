@@ -7,6 +7,7 @@ are advised to take a few steps before performances or rehearsals.
 
 * Set the device to silent
 * Disable receiving SMS and phone calls
+* Turn off mobile data
 * Ensure that WiFI is turned on
 * Set a long delay before the screen turns off
 * Consider disabling your device password
@@ -32,7 +33,7 @@ are advised to take a few steps before performances or rehearsals.
     *   [http://immrama.home](http://immrama.home)
     *   [http://immrama.localnet](http://immrama.localnet)
     *   [http://172.24.1.1](http://172.24.1.1)
-    *   [http://kent.ac.uk](http://ket.ac.uk)
+    *   [http://kent.ac.uk](http://kent.ac.uk)
 
 ## Performers (or display devices)
 
