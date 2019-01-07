@@ -54,15 +54,6 @@ function write_php_ini($array, $file)
 }
 
 /*
-function write_color_style($foreground, $background, $file)
-{
-  $css = "body {\n  background-color: ". $background .
-    ";\n  color: ".$foreground.";\n}\n\n" .
-    "svg {\n  fill: " .$foreground . ";\n  path: " . $foreground . ";\n}\n" ;
-
-  safefilerewrite($file, $css);
-}
-
 // This is for phone ratios on laptops, basically
 function write_geometry_css($dowrite, $width, $file)
 {
