@@ -13,7 +13,6 @@ system("nohup ". $line . " >/dev/null 2>/dev/null &");
 <html>
 <head>
   <link rel="stylesheet" href="../style.css" type="text/css" />
-  <link rel="stylesheet" href="../color.css" type="text/css" />
   <title>Playing</title>
   <META http-equiv="refresh" content="0;URL=./">
   </head>
