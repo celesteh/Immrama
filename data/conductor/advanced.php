@@ -6,7 +6,6 @@ $filename = $conf['working']['data'] .'/conductor/advanced.php';
 <html>
 <head>
   <link rel="stylesheet" href="/style.css" type="text/css" />
-  <link rel="stylesheet" href="/color.css" type="text/css" />
   <title>Advanced Options</title>
   </head>
   <body>

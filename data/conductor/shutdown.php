@@ -16,7 +16,6 @@ if ($_POST['timestamp']){
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../style.css">
-<link rel="stylesheet" href="../color.css" type="text/css" />
 <title><?php if($failed) {echo "Failure";} else {echo "Success";};?></title>
 </head>
 <body>

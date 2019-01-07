@@ -17,7 +17,6 @@ if(strcmp($file, "new")==0) {
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../style.css">
-<link rel="stylesheet" href="../color.css" type="text/css" />
 <link rel="stylesheet" href=" bower_components/simplemde/dist/simplemde.min.css" type="text/css" />
 <link rel="stylesheet" href=" font-awesome.min.css" type="text/css" />
 

@@ -7,7 +7,6 @@ $conf = parse_ini_file("config.ini");
 <html>
 <head>
   <link rel="stylesheet" href="../style.css" type="text/css" />
-  <link rel="stylesheet" href="../color.css" type="text/css" />
   <SCRIPT LANGUAGE="javascript">
 <!--
 function OnChangeSize(form)

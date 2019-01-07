@@ -7,7 +7,6 @@ $passwdfile = $conf['htpasswd'];
 <html>
 <head>
   <link rel="stylesheet" href="../style.css" type="text/css" />
-  <link rel="stylesheet" href="../color.css" type="text/css" />
   <script>
   //<!--
 

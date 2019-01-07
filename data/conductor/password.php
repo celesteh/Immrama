@@ -55,7 +55,6 @@ if ($_POST['newpass'] != $_POST['confirm']) {
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../style.css">
-<link rel="stylesheet" href="../color.css" type="text/css" />
 <title><?php echo $success ?></title>
 </head>
 <body>
