@@ -73,17 +73,36 @@ CONFIG=data/conductor/config.ini
 
 echo $CONFIG
 
-echo "[automated]" >> $CONFIG
-echo "dir = $HTTPDIR" >> $CONFIG
-echo "data = $HTTPDIR" >> $CONFIG
-echo "installation = $SCRIPT_DIR" >> $CONFIG
-echo "inkscape = $INKSCAPE" >> $CONFIG
+FLAG=`false`
+
+while IFS= read -r line; do
+  #printf '%s\n' "$line"
+  if [[ $line =~ ^\[automated\].* ]]
+  then
+    FLAG=`true`
+  fi
+
+  if [[ ! $FLAG ]]
+  then
+    echo >> $CONFIG.new
+  fi
+done < $CONFIG
+
+
+echo -e "\n[automated]" >> $CONFIG.new
+echo "dir = $HTTPDIR" >> $CONFIG.new
+echo "data = $HTTPDIR" >> $CONFIG.new
+echo "installation = $SCRIPT_DIR" >> $CONFIG.new
+echo "inkscape = $INKSCAPE" >> $CONFIG.new
 
 if [[ ! $NOSQL ]]
 then
-	echo "msql_user = $MUSER" >> $CONFIG
-	echo "msql_pass = $MPASS" >> $CONFIG
+	echo "msql_user = $MUSER" >> $CONFIG.new
+	echo "msql_pass = $MPASS" >> $CONFIG.new
 fi
+
+mv --backup=numbered --verbose $CONFIG $CONFIG.bak
+mv $CONFIG.new $CONFIG
 
 #DESTINATION = ${HTTPDIR%/}/conductor/config.ini
 cp $CONFIG ${HTTPDIR%/}/conductor/config.ini
