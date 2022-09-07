@@ -38,7 +38,10 @@ install_dir = config.get('automated', 'installation')
 if not install_dir:
     install_dir = config.get('working', 'installation')
 
-inkscape = config.get('working', 'inkscape')
+inkscape = config.get('automated', 'inkscape')
+if not inkscape:
+    inkscape = config.get('working', 'inkscape')
+
 bgcolor = config.get('working', 'background')
 fgcolor =config.get('working', 'foreground')
 
