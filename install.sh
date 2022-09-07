@@ -66,15 +66,6 @@ INKSCAPE=${INKSCAPE=$INKS}
 #cd $CGI
 cp -r data/* $HTTPDIR
 
-# set up fonts
-if [[ ! -d $HOME/.fonts ]]
-then
-	mkdir $HOME/.fonts
-fi
-
-cd data/fonts
-cp Bravura.ttf $HOME/.fonts
-
 
 # Setup config.ini
 
@@ -95,4 +86,14 @@ then
 fi
 
 cp $config $HTTPDIR/data/conductor/
+
+
+# set up fonts
+if [[ ! -d $HOME/.fonts ]]
+then
+	mkdir $HOME/.fonts
+fi
+
+cd data/fonts
+cp Bravura.ttf $HOME/.fonts
 
