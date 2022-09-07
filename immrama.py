@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 
 import os
 import shutil
@@ -143,7 +143,7 @@ svg {
 
 # get ready
 shutil.copy(data_dir + 'start.svg', dest)
-os.chmod(dest, 0666)
+os.chmod(dest, 0o666)
 shutil.copy(data_dir + 'style.css', tmp_dir)
 shutil.copy(data_dir + 'color.css', tmp_dir)
 
@@ -168,7 +168,7 @@ while loop > 0 :
     after = time.time()
 
     shutil.copy(tmp, dest)
-    os.chmod(dest, 0666)
+    os.chmod(dest, 0o666)
 
     # calculate the timings
     if first == 1:
@@ -194,7 +194,7 @@ while loop > 0 :
 
 # finish
 shutil.copy(data_dir + 'end.svg' , dest)
-os.chmod(dest, 0666)
+os.chmod(dest, 0o666)
 #reset
 # give enough time for the finish
 if (slide_dur < 12):
@@ -202,8 +202,8 @@ if (slide_dur < 12):
 
 time.sleep(slide_dur)
 shutil.copy(data_dir + 'start.svg', dest)
-os.chmod(dest, 0666)
+os.chmod(dest, 0o666)
 
 time.sleep(slide_dur)
 shutil.copy(data_dir + 'ready.svg', dest)
-os.chmod(dest, 0666)
+os.chmod(dest, 0o666)
