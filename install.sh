@@ -78,7 +78,7 @@ cp Bravura.ttf $HOME/.fonts
 
 # Setup config.ini
 
-CONFIG=$HTTPDIR/conductor/config.ini
+CONFIG=data/conductor/config.ini
 
 echo $CONFIG
 
@@ -94,5 +94,5 @@ then
 	echo "msql_pass = $MPASS" >> $CONFIG
 fi
 
-
+cp $config $HTTPDIR/data/conductor/
 
