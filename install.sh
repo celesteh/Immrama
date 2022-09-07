@@ -85,7 +85,7 @@ then
 	echo "msql_pass = $MPASS" >> $CONFIG
 fi
 
-cp $config $HTTPDIR/data/conductor/
+cp $CONFIG $HTTPDIR/data/conductor/
 
 
 # set up fonts
