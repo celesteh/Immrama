@@ -73,13 +73,13 @@ CONFIG=data/conductor/config.ini
 
 echo $CONFIG
 
-FLAG=`true`
+FLAG='true'
 
 while IFS= read -r line; do
   #printf '%s\n' "$line"
-  if [[ $line =~ .*automated.* ]]
+  if [[ $line =~ .*\[automated\].* ]]
   then
-    FLAG=`false`
+    FLAG='false'
   fi
 
   if [[ $FLAG ]]
