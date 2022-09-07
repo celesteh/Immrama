@@ -357,7 +357,7 @@ if random.randrange(0,100) < 36:
 
     # put text into svg
     text = read_text()
-    t_arr = text.split('\n')
+    t_arr = text.split(b'\n')
     for line in t_arr:
         if len(line) > 0:
             rotate = (random.randrange(0, 100) < 30)
