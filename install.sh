@@ -21,7 +21,7 @@ function usage {
 }
 
 # Define list of arguments expected in the input
-optstring=":hdcispr"
+optstring=":h:d:c:i:s:p:r"
 
 while getopts ${optstring} arg; do
   case "${arg}" in
@@ -67,7 +67,7 @@ INKSCAPE=${INKSCAPE=$INKS}
 cp -r data/* $HTTPDIR
 
 # set up fonts
-if [[ ! -f $HOME/.fonts ]]
+if [[ ! -d $HOME/.fonts ]]
 then
 	mkdir $HOME/.fonts
 fi
