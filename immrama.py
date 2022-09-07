@@ -2,7 +2,8 @@
 
 import os
 import shutil
-from ConfigParser import SafeConfigParser
+#from ConfigParser import SafeConfigParser
+import configparser
 import time
 import os
 import setproctitle
@@ -30,7 +31,8 @@ filename = args.config
 #print(filename)
 
 # read config
-config = SafeConfigParser()
+config = configparser.ConfigParser()
+#config = SafeConfigParser()
 config.read(filename)
 
 # Check the installed config bits first
