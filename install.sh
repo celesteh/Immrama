@@ -77,7 +77,7 @@ FLAG=`true`
 
 while IFS= read -r line; do
   #printf '%s\n' "$line"
-  if [[ $line =~ ^\[automated\].* ]]
+  if [[ $line =~ .*automated.* ]]
   then
     FLAG=`false`
   fi
