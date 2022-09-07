@@ -218,10 +218,10 @@ glyphs = ['&#x0e201;','&#x1d157;','&#x1d15d;','&#x0e0c1;','&#x0e0c2;','&#x0e155;
 
 # this def from https://wiki.python.org/moin/EscapingXml
 def unescape(s):
-    want_unicode = False
-    if isinstance(s, unicode):
-        s = s.encode("utf-8")
-        want_unicode = True
+    want_unicode = True # False
+    #if isinstance(s, unicode):
+    #    s = s.encode("utf-8")
+    #    want_unicode = True
 
     # the rest of this assumes that `s` is UTF-8
     list = []
