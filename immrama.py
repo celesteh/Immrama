@@ -31,7 +31,8 @@ filename = args.config
 #print(filename)
 
 # read config
-config = configparser.ConfigParser()
+config = configparser.SafeConfigParser()
+#config = configparser.ConfigParser()
 #config = SafeConfigParser()
 config.read(filename)
 
