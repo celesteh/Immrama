@@ -416,7 +416,7 @@ xmlstr = xmlstr.encode('ascii', 'xmlcharrefreplace') # re-escape the glyphs
 with open(filename, 'w') as fp:
     #fp.write('<?xml version="1.0" encoding="utf-8" ?>\n')
     #fp.write('<?xml-stylesheet href="style.css" type="text/css" title="style" alternate="no" media="all"?>\n')
-    fp.write(xmlstr)
+    fp.write(tostring(xmlstr, encoding="unicode"))
     fp.close()
 
 ## skip for demo
