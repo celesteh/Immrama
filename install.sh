@@ -72,7 +72,7 @@ then
 	mkdir $HOME/.fonts
 fi
 
-cd data
+cd data/fonts
 cp Bravura.ttf $HOME/.fonts
 
 
