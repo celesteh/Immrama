@@ -82,7 +82,7 @@ while IFS= read -r line; do
     FLAG='false'
   fi
 
-  if [[ $FLAG ]]
+  if $FLAG
   then
     echo $line >> $CONFIG.new
   fi
