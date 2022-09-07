@@ -33,16 +33,25 @@ filename = args.config
 config = SafeConfigParser()
 config.read(filename)
 
+# Check the installed config bits first
+webdir = config.get('automated'' dir')
+if not webdir:
+    webdir =  config.get('main', 'dir') # -> "value1"
 
-webdir =  config.get('main', 'dir') # -> "value1"
 dur = config.getint('main', 'dur')
 slide_dur =  config.getint('main', 'slide_dur')
 init_sleep = config.getint('main', 'init_sleep')
 
 tmp_dir = config.get('working', 'tmp')
 rendered = config.get('working', 'rendered')
-data_dir = config.get('working', 'data') # -> "value1"
-install_dir = config.get('working', 'installation')
+
+data_dir = config.get('automated', 'data') # -> "value1"
+if not data_dir:
+    data_dir = config.get('working', 'data') # -> "value1"
+
+install_dir = config.get('automated', 'installation')
+if not install_dir:
+    install_dir = config.get('working', 'installation')
 
 # stuff for css
 bgcolor = config.get('working', 'background')
@@ -72,7 +81,7 @@ if dur is None:
     dur = 300
 
 if slide_dur is None:
-    slide_dur is 25
+    slide_dur = 25
 
 if init_sleep is None:
     init_sleep = 5
@@ -83,7 +92,7 @@ if data_dir.endswith('/') == False:
 
 # finish
 shutil.copy(data_dir + 'end.svg' , dest)
-os.chmod(dest, 0666)
+os.chmod(dest, 0o666)
 #reset
 # give enough time for the finish
 if (slide_dur < 12):
@@ -91,8 +100,8 @@ if (slide_dur < 12):
 
 time.sleep(slide_dur)
 shutil.copy(data_dir + 'start.svg', dest)
-os.chmod(dest, 0666)
+os.chmod(dest, 0o666)
 
 time.sleep(slide_dur)
 shutil.copy(data_dir + 'ready.svg', dest)
-os.chmod(dest, 0666)
+os.chmod(dest, 0o666)

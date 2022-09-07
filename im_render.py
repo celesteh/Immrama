@@ -27,8 +27,15 @@ height = config.getint('working', 'imageheight')
 tmp = config.get('working', 'tmp')
 filename = config.get('working', 'file') # -> "value1"
 rendered = config.get('working', 'rendered')
-data_dir = config.get('working', 'data') # -> "value1"
-install_dir = config.get('working', 'installation')
+
+data_dir = config.get('automated', 'data') # -> "value1"
+if not data_dir:
+    data_dir = config.get('working', 'data') # -> "value1"
+
+install_dir = config.get('automated', 'installation')
+if not install_dir:
+    install_dir = config.get('working', 'installation')
+
 inkscape = config.get('working', 'inkscape')
 bgcolor = config.get('working', 'background')
 fgcolor =config.get('working', 'foreground')

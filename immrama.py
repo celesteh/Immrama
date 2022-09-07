@@ -33,15 +33,26 @@ filename = args.config
 config = SafeConfigParser()
 config.read(filename)
 
-webdir =  config.get('main', 'dir') # -> "value1"
+# Check the installed config bits first
+webdir = config.get('automated'' dir')
+if not webdir:
+    webdir =  config.get('main', 'dir') # -> "value1"
+
 dur = config.getint('main', 'dur')
 slide_dur =  config.getint('main', 'slide_dur')
 init_sleep = config.getint('main', 'init_sleep')
 
 tmp_dir = config.get('working', 'tmp')
 rendered = config.get('working', 'rendered')
-data_dir = config.get('working', 'data') # -> "value1"
-install_dir = config.get('working', 'installation')
+
+data_dir = config.get('automated', 'data') # -> "value1"
+if not data_dir:
+    data_dir = config.get('working', 'data') # -> "value1"
+
+install_dir = config.get('automated', 'installation')
+if not install_dir:
+    install_dir = config.get('working', 'installation')
+
 
 # stuff for css
 bgcolor = config.get('working', 'background')
