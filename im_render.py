@@ -229,7 +229,7 @@ def unescape(s):
     # create and initialize a parser object
     p = xml.parsers.expat.ParserCreate("utf-8")
     p.buffer_text = True
-    p.returns_unicode = want_unicode
+    #p.returns_unicode = want_unicode
     p.CharacterDataHandler = list.append
 
     # parse the data wrapped in a dummy element
