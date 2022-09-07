@@ -121,8 +121,8 @@ $line = $cmd . " " . $args;
 //LaunchBackgroundProcess($line);
 //$escaped = escapeshellcmd("nohup ". $line . " >/dev/null 2>/dev/null &");
 //exec($escaped);
-//exec("nohup ". $line . " >/dev/null 2>/dev/null &");
-system("nohup ". $line . " >/dev/null 2>/dev/null &");
+exec("nohup ". $line . " >/dev/null 2>/dev/null &");
+//system("nohup ". $line . " >/dev/null 2>/dev/null &");
 
 ?>
 <html>
