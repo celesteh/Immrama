@@ -420,7 +420,7 @@ with open(filename, 'w') as fp:
     #fp.write('<?xml version="1.0" encoding="utf-8" ?>\n')
     #fp.write('<?xml-stylesheet href="style.css" type="text/css" title="style" alternate="no" media="all"?>\n')
     #fp.write(tostring(xmlstr, encoding="unicode"))
-    fp.write(str(xmlstr))
+    fp.write(str(xmlstr).decode('utf-8')) #write it as unicode
     fp.close()
 
 ## skip for demo
