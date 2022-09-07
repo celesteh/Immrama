@@ -37,7 +37,7 @@ config = configparser.SafeConfigParser()
 config.read(filename)
 
 # Check the installed config bits first
-webdir = config.get('automated'' dir')
+webdir = config.get('automated','dir')
 if not webdir:
     webdir =  config.get('main', 'dir') # -> "value1"
 
