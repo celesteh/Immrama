@@ -77,6 +77,8 @@ cp Bravura.ttf $HOME/.fonts
 
 CONFIG=$HTTPDIR/conductor/config.ini
 
+echo $CONFIG
+
 echo "[automated]" >> $CONFIG
 echo "dir = $HTTPDIR" >> $CONFIG
 echo "data = $HTTPDIR" >> $CONFIG
