@@ -163,8 +163,8 @@ def make_dots(drawing, num, topx, topy, botx, boty, max_s, min_s):
         x = random.randint(topx, botx)
         y = random.randint(topy, boty)
         r = random.randint(max_s, min_s)
-	circle = drawing.circle(center=(x, y), r=r, stroke=fgcolor)
-	circle.fill(fgcolor)
+	    circle = drawing.circle(center=(x, y), r=r, stroke=fgcolor)
+	    circle.fill(fgcolor)
         drawing.add(circle)
 
 #end dots
