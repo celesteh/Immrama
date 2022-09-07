@@ -88,15 +88,15 @@ write_geometry_css(($height > $width), $width,
   $conf['working']['data'] . '/geometry.css')
 */
 
-$prefix = $conf['automated']['installation']
+$prefix = $conf['automated']['installation'];
 if (empty($prefix)) {
-  $prefix = $conf['working']['installation']
+  $prefix = $conf['working']['installation'];
 }
 $cmd = $prefix . '/immrama.py';
 
-$prefix = $conf['automated']['data']
+$prefix = $conf['automated']['data'];
 if (empty($prefix)) {
-  $prefix = $conf['working']['data']
+  $prefix = $conf['working']['data'];
 }
 $args = $prefix . '/conductor/config.ini';
 $line = $cmd . " " . $args;
