@@ -7,7 +7,8 @@ import os
 import xml.parsers.expat
 import socket
 import cgi
-from ConfigParser import SafeConfigParser
+#from ConfigParser import SafeConfigParser
+import configparser
 import argparse
 
 # did we get a config from the CL?
@@ -19,7 +20,8 @@ config_file = args.config
 #print(config_file)
 
 # read config
-config = SafeConfigParser()
+#config = SafeConfigParser()
+config = configparser.SafeConfigParser()
 config.read(config_file)
 
 width =  config.getint('working', 'imagewidth')
