@@ -41,6 +41,9 @@ while getopts ${optstring} arg; do
   esac
 done
 
+
+echo $HTTPDIR
+
 if [[ -v $MUSER ]] || [[ -v $MPASS ]]
 then
 	NOSQL='true'
