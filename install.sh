@@ -31,7 +31,7 @@ while getopts ${optstring} arg; do
     i) INKSCAPE="${OPTARG}" ;;
     s) MUSER="${OPTARG}" ;;
     p) MPASS="${OPTARG}" ;;
-    r) NOSQL='true'
+    r) NOSQL='true' ;;
 
     ?)
       echo "Invalid option: -${OPTARG}."
