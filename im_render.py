@@ -378,7 +378,8 @@ if random.randrange(0,100) < 36:
 
 #end the if that decides text stuff
 
-tasks = range(len(options))
+tasks = []
+tasks.extend(range(len(options)))
 random.shuffle(tasks)
 print(tasks)
 
